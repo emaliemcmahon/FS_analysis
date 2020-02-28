@@ -1,0 +1,258 @@
+mktemplate-sess log file
+$Id: mktemplate-sess,v 1.11 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Fri Feb 21 10:05:03 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+UpdateOnly 0
+/software/apps/freesurfer/6.0.0/fsfast/bin/mktemplate-sess -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold
+ 
+Session: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001 ----------------
+Fri Feb 21 10:05:03 EST 2020
+Detected input format at nii
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/template.nii.gz --frame 0
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/template.nii.gz --frame 0 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 0
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/template.nii.gz...
+  Run: 003 ----------------
+  Fri Feb 21 10:05:05 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 59
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/template.nii.gz...
+  Run: 004 ----------------
+  Fri Feb 21 10:05:06 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/004/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/004/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/004/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/004/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/004/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 59
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/004/template.nii.gz...
+  Run: 005 ----------------
+  Fri Feb 21 10:05:08 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/005/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/005/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/005/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/005/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/005/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 40
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/005/template.nii.gz...
+  Run: 006 ----------------
+  Fri Feb 21 10:05:09 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/006/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/006/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/006/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/006/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/006/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 67
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/006/template.nii.gz...
+  Run: 007 ----------------
+  Fri Feb 21 10:05:12 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/007/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/007/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/007/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/007/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/007/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 59
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/007/template.nii.gz...
+  Run: 008 ----------------
+  Fri Feb 21 10:05:14 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/008/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/008/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/008/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/008/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/008/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 59
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/008/template.nii.gz...
+  Run: 009 ----------------
+  Fri Feb 21 10:05:16 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/009/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/009/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/009/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/009/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/009/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 40
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/009/template.nii.gz...
+  Run: 010 ----------------
+  Fri Feb 21 10:05:17 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 105
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/template.nii.gz...
+  Run: 011 ----------------
+  Fri Feb 21 10:05:20 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/011/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/011/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/011/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/011/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/011/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 59
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/011/template.nii.gz...
+  Run: 012 ----------------
+  Fri Feb 21 10:05:22 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/012/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/012/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/012/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/012/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/012/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 59
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/012/template.nii.gz...
+  Run: 013 ----------------
+  Fri Feb 21 10:05:24 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/013/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/013/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/013/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/013/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/013/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 40
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/013/template.nii.gz...
+  Run: 014 ----------------
+  Fri Feb 21 10:05:25 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/014/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/014/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/014/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/014/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/014/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 67
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/014/template.nii.gz...
+  Run: 015 ----------------
+  Fri Feb 21 10:05:27 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/015/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/015/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/015/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/015/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/015/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 59
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/015/template.nii.gz...
+  Run: 016 ----------------
+  Fri Feb 21 10:05:29 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/016/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/016/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/016/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/016/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/016/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 59
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/016/template.nii.gz...
+  Run: 017 ----------------
+  Fri Feb 21 10:05:31 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/017/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/017/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/017/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/017/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/017/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 40
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/017/template.nii.gz...
+  Run: 018 ----------------
+  Fri Feb 21 10:05:32 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 105
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/template.nii.gz...
+  Run: 019 ----------------
+  Fri Feb 21 10:05:35 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/019/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/019/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/019/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/019/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/019/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 59
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/019/template.nii.gz...
+  Run: 020 ----------------
+  Fri Feb 21 10:05:37 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/020/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/020/template.nii.gz --mid-frame
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/020/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/020/template.nii.gz --mid-frame 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/020/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 59
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/020/template.nii.gz...
+Fri Feb 21 10:05:39 EST 2020
+mktemplate-sess completed 

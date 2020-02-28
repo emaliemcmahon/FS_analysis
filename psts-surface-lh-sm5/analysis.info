@@ -1,0 +1,40 @@
+# FSBUILD freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+# MKAVERSION $Id: mkanalysis-sess,v 1.78 2015/12/10 22:51:30 zkaufman Exp $
+# MKACMD /software/apps/freesurfer/6.0.0/fsfast/bin/mkanalysis-sess -a psts-surface-lh-sm5 -surface self lh -fsd bold -fwhm 5 -event-related -paradigm psts.para -nconditions 2 -refeventdur 16 -TR 2 -nskip 2 -polyfit 1 -spmhrf 0 -runlistfile psts.rlf -mcextreg -per-run -force
+# DATE Fri Feb 21 10:35:15 EST 2020
+
+analysis psts-surface-lh-sm5
+mcstem fmcpr
+fsd bold
+runlistfile psts.rlf
+TR 2
+RegDOF 6
+PerSession 0
+RawSpace surface self lh
+mask brain
+RawFWHM 5
+RawSTC none
+nSliceGroups 1
+UseB0DC 0
+ApplySubCortMask 1
+inorm 100
+acfbins 30
+fixacf  1
+acffwhm 20
+acfsvd  0
+designtype event-related
+nskip 2
+polyfit 1
+HPFCutoffHz 0
+HeteroGCor 0
+nconditions 2
+parname psts.para
+RefEventDur 16
+timewindow 40.000000
+prestim 0
+TER 0.050000
+spmhrf 0
+stimulusdelay -1.00000000000000000000
+Condition 1 Condition01
+Condition 2 Condition02
+nuisreg mcprextreg 3

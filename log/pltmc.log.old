@@ -1,0 +1,11 @@
+plot-twf-sess log file
+$Id: plot-twf-sess,v 1.16 2015/12/10 22:51:30 zkaufman Exp $
+uid=3996(emcmaho7@jhu.edu) gid=1405(lisik3) groups=1405(lisik3),1502(mbonner5)
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/plot-twf-sess
+-s s001 -df sessdir -fsd bold -mc
+Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Fri Feb 21 10:46:00 EST 2020
+-------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001 
+Fri Feb 21 10:46:00 EST 2020

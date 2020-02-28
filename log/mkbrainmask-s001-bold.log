@@ -1,0 +1,3304 @@
+mkbrainmask-sess
+s001
+$Id: mkbrainmask-sess,v 1.26 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Fri Feb 21 10:49:55 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask-sess -maskstem brain -fsd bold -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -per-run
+ProjectDir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+------------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001 
+Fri Feb 21 10:49:55 EST 2020
+mkbrainmask -i template.nii.gz -o masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:49:55 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i template.nii.gz -o masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/register.dof6.lta --inv --interp nearest --o masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99868  -0.05143  -0.00071   2.03914;
+ 0.00562   0.09542   0.99542  -19.60750;
+-0.05112  -0.99411   0.09558  -2.90005;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1582886994
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99868   0.00562  -0.05112  -2.07453;
+-0.05143   0.09542  -0.99411  -0.90717;
+-0.00071   0.99542   0.09558   19.79635;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74636  -0.14059  -0.01967   26.17796;
+-0.00195   0.26285  -3.48383   156.99257;
+ 0.14142   2.73380   0.33395   6.40683;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i masks/brain.nii.gz --o masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i masks/brain.nii.gz --o masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41153 values in range
+Counting number of voxels in first frame
+Found 41153 voxels in final mask
+Count: 41153 1089223.178221 217600 18.912224
+mri_binarize done
+Diliating 1
+mri_binarize --i masks/brain.nii.gz --min 0.5 --dilate 1 --o masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i masks/brain.nii.gz --min 0.5 --dilate 1 --o masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41153 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59280 voxels in final mask
+Count: 59280 1569002.259979 217600 27.242647
+mri_binarize done
+ 
+Started at Fri Feb 21 10:49:55 EST 2020 
+Ended   at Fri Feb 21 10:49:59 EST 2020
+Mkbrainmask-Run-Time-Sec 4
+ 
+mkbrainmask Done
+mri_binarize --i masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 58064 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 27213 voxels in final mask
+Count: 27213 720264.144751 217600 12.505974
+mri_binarize done
+mkbrainmask -i 003/template.nii.gz -o 003/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:00 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 003/template.nii.gz -o 003/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 003/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/register.dof6.lta --inv --interp nearest --o 003/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99868  -0.05131   0.00098   2.03664;
+ 0.00398   0.09661   0.99531  -19.60888;
+-0.05117  -0.99400   0.09669  -2.92720;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 003/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 003/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1582468602
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99868   0.00398  -0.05117  -2.10562;
+-0.05131   0.09661  -0.99400  -0.91066;
+ 0.00098   0.99531   0.09669   19.79802;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74638  -0.14071  -0.01394   26.11608;
+ 0.00271   0.26590  -3.48345   156.67661;
+ 0.14111   2.73350   0.33813   6.35681;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 003/masks/brain.nii.gz --o 003/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 003/masks/brain.nii.gz --o 003/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      003/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     003/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41150 values in range
+Counting number of voxels in first frame
+Found 41150 voxels in final mask
+Count: 41150 1089143.775272 217600 18.910846
+mri_binarize done
+Diliating 1
+mri_binarize --i 003/masks/brain.nii.gz --min 0.5 --dilate 1 --o 003/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 003/masks/brain.nii.gz --min 0.5 --dilate 1 --o 003/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      003/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     003/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41150 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59296 voxels in final mask
+Count: 59296 1569425.742371 217600 27.250000
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:00 EST 2020 
+Ended   at Fri Feb 21 10:50:01 EST 2020
+Mkbrainmask-Run-Time-Sec 1
+ 
+mkbrainmask Done
+mri_binarize --i 003/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 003/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 003/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 003/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      003/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     003/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 58083 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 27224 voxels in final mask
+Count: 27224 720555.288895 217600 12.511029
+mri_binarize done
+mkbrainmask -i 004/template.nii.gz -o 004/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/004/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:01 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 004/template.nii.gz -o 004/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/004/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 004/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/004/register.dof6.lta --inv --interp nearest --o 004/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99868  -0.05118   0.00293   2.13007;
+ 0.00217   0.09932   0.99505  -19.52566;
+-0.05122  -0.99374   0.09930  -3.11211;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 004/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 004/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/004/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1583047029
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99869   0.00217  -0.05122  -2.24427;
+-0.05118   0.09932  -0.99374  -1.04426;
+ 0.00293   0.99505   0.09930   19.73187;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74638  -0.14086  -0.00760   26.15240;
+ 0.00806   0.27308  -3.48254   156.22572;
+ 0.14075   2.73278   0.34761   6.10493;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 004/masks/brain.nii.gz --o 004/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 004/masks/brain.nii.gz --o 004/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      004/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     004/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41135 values in range
+Counting number of voxels in first frame
+Found 41135 voxels in final mask
+Count: 41135 1088746.760530 217600 18.903952
+mri_binarize done
+Diliating 1
+mri_binarize --i 004/masks/brain.nii.gz --min 0.5 --dilate 1 --o 004/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 004/masks/brain.nii.gz --min 0.5 --dilate 1 --o 004/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      004/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     004/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41135 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59217 voxels in final mask
+Count: 59217 1567334.798063 217600 27.213695
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:01 EST 2020 
+Ended   at Fri Feb 21 10:50:02 EST 2020
+Mkbrainmask-Run-Time-Sec 1
+ 
+mkbrainmask Done
+mri_binarize --i 004/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 004/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 004/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 004/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      004/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     004/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 58001 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 27193 voxels in final mask
+Count: 27193 719734.791761 217600 12.496783
+mri_binarize done
+mkbrainmask -i 005/template.nii.gz -o 005/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/005/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:03 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 005/template.nii.gz -o 005/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/005/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 005/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/005/register.dof6.lta --inv --interp nearest --o 005/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99866  -0.05158   0.00453   2.11540;
+ 0.00064   0.09984   0.99500  -19.52772;
+-0.05177  -0.99367   0.09974  -3.16122;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 005/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 005/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/005/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1582745897
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99866   0.00064  -0.05177  -2.26370;
+-0.05158   0.09984  -0.99367  -1.08250;
+ 0.00453   0.99500   0.09974   19.73586;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74631  -0.14238  -0.00225   26.14463;
+ 0.01246   0.27427  -3.48237   155.99504;
+ 0.14185   2.73258   0.34941   6.00035;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 005/masks/brain.nii.gz --o 005/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 005/masks/brain.nii.gz --o 005/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      005/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     005/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41180 values in range
+Counting number of voxels in first frame
+Found 41180 voxels in final mask
+Count: 41180 1089937.804756 217600 18.924632
+mri_binarize done
+Diliating 1
+mri_binarize --i 005/masks/brain.nii.gz --min 0.5 --dilate 1 --o 005/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 005/masks/brain.nii.gz --min 0.5 --dilate 1 --o 005/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      005/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     005/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41180 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59268 voxels in final mask
+Count: 59268 1568684.648186 217600 27.237132
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:03 EST 2020 
+Ended   at Fri Feb 21 10:50:04 EST 2020
+Mkbrainmask-Run-Time-Sec 1
+ 
+mkbrainmask Done
+mri_binarize --i 005/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 005/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 005/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 005/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      005/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     005/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 58053 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 27236 voxels in final mask
+Count: 27236 720872.900688 217600 12.516544
+mri_binarize done
+mkbrainmask -i 006/template.nii.gz -o 006/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/006/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:04 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 006/template.nii.gz -o 006/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/006/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 006/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/006/register.dof6.lta --inv --interp nearest --o 006/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99874  -0.04998   0.00464   2.25771;
+ 0.00033   0.09897   0.99509  -19.49006;
+-0.05019  -0.99383   0.09886  -3.04176;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 006/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 006/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/006/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1583272685
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99874   0.00033  -0.05019  -2.40118;
+-0.04998   0.09897  -0.99383  -0.98129;
+ 0.00464   0.99509   0.09886   19.68460;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74653  -0.13802  -0.00114   26.08006;
+ 0.01277   0.27186  -3.48267   156.13551;
+ 0.13743   2.73305   0.34637   6.31119;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 006/masks/brain.nii.gz --o 006/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 006/masks/brain.nii.gz --o 006/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      006/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     006/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41183 values in range
+Counting number of voxels in first frame
+Found 41183 voxels in final mask
+Count: 41183 1090017.207705 217600 18.926011
+mri_binarize done
+Diliating 1
+mri_binarize --i 006/masks/brain.nii.gz --min 0.5 --dilate 1 --o 006/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 006/masks/brain.nii.gz --min 0.5 --dilate 1 --o 006/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      006/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     006/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41183 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59295 voxels in final mask
+Count: 59295 1569399.274721 217600 27.249540
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:04 EST 2020 
+Ended   at Fri Feb 21 10:50:06 EST 2020
+Mkbrainmask-Run-Time-Sec 2
+ 
+mkbrainmask Done
+mri_binarize --i 006/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 006/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 006/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 006/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      006/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     006/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 58080 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 27244 voxels in final mask
+Count: 27244 721084.641884 217600 12.520221
+mri_binarize done
+mkbrainmask -i 007/template.nii.gz -o 007/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/007/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:06 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 007/template.nii.gz -o 007/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/007/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 007/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/007/register.dof6.lta --inv --interp nearest --o 007/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99872  -0.05030   0.00538   2.30986;
+ 0.00024   0.11102   0.99382  -19.48830;
+-0.05058  -0.99254   0.11089  -2.64995;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 007/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 007/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/007/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1583017950
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99872   0.00024  -0.05058  -2.43627;
+-0.05030   0.11102  -0.99254  -0.35034;
+ 0.00538   0.99382   0.11089   19.64926;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74648  -0.13911  -0.00084   26.15565;
+ 0.01479   0.30496  -3.47822   154.69060;
+ 0.13832   2.72950   0.38857   6.33132;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 007/masks/brain.nii.gz --o 007/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 007/masks/brain.nii.gz --o 007/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      007/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     007/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41144 values in range
+Counting number of voxels in first frame
+Found 41144 voxels in final mask
+Count: 41144 1088984.969376 217600 18.908088
+mri_binarize done
+Diliating 1
+mri_binarize --i 007/masks/brain.nii.gz --min 0.5 --dilate 1 --o 007/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 007/masks/brain.nii.gz --min 0.5 --dilate 1 --o 007/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      007/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     007/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41144 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59186 voxels in final mask
+Count: 59186 1566514.300930 217600 27.199449
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:06 EST 2020 
+Ended   at Fri Feb 21 10:50:07 EST 2020
+Mkbrainmask-Run-Time-Sec 1
+ 
+mkbrainmask Done
+mri_binarize --i 007/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 007/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 007/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 007/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      007/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     007/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 57978 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 27231 voxels in final mask
+Count: 27231 720740.562441 217600 12.514246
+mri_binarize done
+mkbrainmask -i 008/template.nii.gz -o 008/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/008/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:08 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 008/template.nii.gz -o 008/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/008/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 008/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/008/register.dof6.lta --inv --interp nearest --o 008/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99864  -0.05205   0.00291   2.27866;
+ 0.00268   0.10695   0.99426  -19.58720;
+-0.05206  -0.99290   0.10694  -2.59767;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 008/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 008/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/008/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1582571519
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99864   0.00268  -0.05206  -2.35826;
+-0.05205   0.10695  -0.99290  -0.36582;
+ 0.00291   0.99426   0.10694   19.74597;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74626  -0.14317  -0.00939   26.39399;
+ 0.00799   0.29409  -3.47977   155.32687;
+ 0.14313   2.73048   0.37430   6.32652;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 008/masks/brain.nii.gz --o 008/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 008/masks/brain.nii.gz --o 008/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      008/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     008/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41178 values in range
+Counting number of voxels in first frame
+Found 41178 voxels in final mask
+Count: 41178 1089884.869457 217600 18.923713
+mri_binarize done
+Diliating 1
+mri_binarize --i 008/masks/brain.nii.gz --min 0.5 --dilate 1 --o 008/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 008/masks/brain.nii.gz --min 0.5 --dilate 1 --o 008/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      008/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     008/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41178 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59219 voxels in final mask
+Count: 59219 1567387.733362 217600 27.214614
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:08 EST 2020 
+Ended   at Fri Feb 21 10:50:09 EST 2020
+Mkbrainmask-Run-Time-Sec 1
+ 
+mkbrainmask Done
+mri_binarize --i 008/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 008/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 008/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 008/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      008/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     008/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 58011 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 27010 voxels in final mask
+Count: 27010 714891.211910 217600 12.412684
+mri_binarize done
+mkbrainmask -i 009/template.nii.gz -o 009/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/009/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:09 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 009/template.nii.gz -o 009/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/009/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 009/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/009/register.dof6.lta --inv --interp nearest --o 009/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99897  -0.04544   0.00064   2.31433;
+ 0.00424   0.10709   0.99424  -19.77132;
+-0.04525  -0.99321   0.10718  -1.70073;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 009/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 009/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/009/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1583175086
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99897   0.00424  -0.04525  -2.30509;
+-0.04544   0.10709  -0.99321   0.53338;
+ 0.00064   0.99424   0.10718   19.83824;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74716  -0.12443  -0.01483   25.64819;
+ 0.00175   0.29473  -3.47969   155.45721;
+ 0.12496   2.73133   0.37481   7.90989;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 009/masks/brain.nii.gz --o 009/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 009/masks/brain.nii.gz --o 009/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      009/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     009/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41124 values in range
+Counting number of voxels in first frame
+Found 41124 voxels in final mask
+Count: 41124 1088455.616386 217600 18.898897
+mri_binarize done
+Diliating 1
+mri_binarize --i 009/masks/brain.nii.gz --min 0.5 --dilate 1 --o 009/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 009/masks/brain.nii.gz --min 0.5 --dilate 1 --o 009/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      009/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     009/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41124 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59184 voxels in final mask
+Count: 59184 1566461.365631 217600 27.198529
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:09 EST 2020 
+Ended   at Fri Feb 21 10:50:11 EST 2020
+Mkbrainmask-Run-Time-Sec 2
+ 
+mkbrainmask Done
+mri_binarize --i 009/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 009/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 009/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 009/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      009/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     009/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 57974 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 26767 voxels in final mask
+Count: 26767 708459.573092 217600 12.301011
+mri_binarize done
+mkbrainmask -i 010/template.nii.gz -o 010/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:11 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 010/template.nii.gz -o 010/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 010/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/register.dof6.lta --inv --interp nearest --o 010/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99878  -0.04720   0.01444   2.42296;
+-0.00919   0.10963   0.99393  -19.73029;
+-0.04850  -0.99285   0.10906  -1.64386;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 010/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 010/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1582745545
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99878  -0.00919  -0.04850  -2.68095;
+-0.04720   0.10963  -0.99285   0.64530;
+ 0.01444   0.99393   0.10906   19.75484;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74665  -0.13336   0.03215   25.60301;
+ 0.03970   0.29993  -3.47861   153.79657;
+ 0.12980   2.73034   0.38369   7.71689;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 010/masks/brain.nii.gz --o 010/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 010/masks/brain.nii.gz --o 010/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      010/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     010/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41070 values in range
+Counting number of voxels in first frame
+Found 41070 voxels in final mask
+Count: 41070 1087026.363316 217600 18.874081
+mri_binarize done
+Diliating 1
+mri_binarize --i 010/masks/brain.nii.gz --min 0.5 --dilate 1 --o 010/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 010/masks/brain.nii.gz --min 0.5 --dilate 1 --o 010/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      010/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     010/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41070 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59264 voxels in final mask
+Count: 59264 1568578.777588 217600 27.235294
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:11 EST 2020 
+Ended   at Fri Feb 21 10:50:12 EST 2020
+Mkbrainmask-Run-Time-Sec 1
+ 
+mkbrainmask Done
+mri_binarize --i 010/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 010/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 010/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 010/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      010/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     010/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 58047 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 27215 voxels in final mask
+Count: 27215 720317.080050 217600 12.506893
+mri_binarize done
+mkbrainmask -i 011/template.nii.gz -o 011/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/011/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:12 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 011/template.nii.gz -o 011/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/011/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 011/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/011/register.dof6.lta --inv --interp nearest --o 011/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99861  -0.05218   0.00783   2.29730;
+-0.00207   0.10952   0.99398  -19.91965;
+-0.05272  -0.99261   0.10926  -1.67410;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 011/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 011/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/011/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1582330169
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99861  -0.00207  -0.05272  -2.42359;
+-0.05218   0.10952  -0.99261   0.63974;
+ 0.00783   0.99398   0.10926   19.96470;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74617  -0.14499   0.00724   26.25320;
+ 0.02153   0.30046  -3.47879   154.29510;
+ 0.14349   2.72969   0.38330   7.19621;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 011/masks/brain.nii.gz --o 011/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 011/masks/brain.nii.gz --o 011/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      011/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     011/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41073 values in range
+Counting number of voxels in first frame
+Found 41073 voxels in final mask
+Count: 41073 1087105.766264 217600 18.875460
+mri_binarize done
+Diliating 1
+mri_binarize --i 011/masks/brain.nii.gz --min 0.5 --dilate 1 --o 011/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 011/masks/brain.nii.gz --min 0.5 --dilate 1 --o 011/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      011/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     011/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41073 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59186 voxels in final mask
+Count: 59186 1566514.300930 217600 27.199449
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:12 EST 2020 
+Ended   at Fri Feb 21 10:50:14 EST 2020
+Mkbrainmask-Run-Time-Sec 2
+ 
+mkbrainmask Done
+mri_binarize --i 011/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 011/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 011/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 011/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      011/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     011/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 57952 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 27115 voxels in final mask
+Count: 27115 717670.315104 217600 12.460938
+mri_binarize done
+mkbrainmask -i 012/template.nii.gz -o 012/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/012/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:14 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 012/template.nii.gz -o 012/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/012/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 012/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/012/register.dof6.lta --inv --interp nearest --o 012/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99875  -0.04963   0.00588   2.30972;
+-0.00026   0.11247   0.99366  -19.81522;
+-0.04998  -0.99241   0.11232  -1.65819;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 012/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 012/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/012/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1583125988
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99875  -0.00026  -0.04998  -2.39486;
+-0.04963   0.11247  -0.99242   0.69761;
+ 0.00588   0.99366   0.11232   19.86216;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74656  -0.13743   0.00091   26.01404;
+ 0.01617   0.30887  -3.47765   154.25647;
+ 0.13648   2.72914   0.39362   7.38110;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 012/masks/brain.nii.gz --o 012/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 012/masks/brain.nii.gz --o 012/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      012/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     012/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41097 values in range
+Counting number of voxels in first frame
+Found 41097 voxels in final mask
+Count: 41097 1087740.989851 217600 18.886489
+mri_binarize done
+Diliating 1
+mri_binarize --i 012/masks/brain.nii.gz --min 0.5 --dilate 1 --o 012/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 012/masks/brain.nii.gz --min 0.5 --dilate 1 --o 012/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      012/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     012/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41097 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59207 voxels in final mask
+Count: 59207 1567070.121569 217600 27.209099
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:14 EST 2020 
+Ended   at Fri Feb 21 10:50:16 EST 2020
+Mkbrainmask-Run-Time-Sec 2
+ 
+mkbrainmask Done
+mri_binarize --i 012/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 012/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 012/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 012/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      012/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     012/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 57983 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 26827 voxels in final mask
+Count: 26827 710047.632059 217600 12.328585
+mri_binarize done
+mkbrainmask -i 013/template.nii.gz -o 013/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/013/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:16 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 013/template.nii.gz -o 013/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/013/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 013/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/013/register.dof6.lta --inv --interp nearest --o 013/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99872  -0.04958   0.01002   2.40215;
+-0.00393   0.12154   0.99258  -19.75960;
+-0.05043  -0.99135   0.12119  -1.69312;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 013/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 013/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/013/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1582664409
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99872  -0.00393  -0.05043  -2.56204;
+-0.04958   0.12154  -0.99135   0.84220;
+ 0.01002   0.99258   0.12119   19.79407;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74648  -0.13869   0.01374   26.01681;
+ 0.02756   0.33327  -3.47388   152.82874;
+ 0.13635   2.72621   0.42537   7.10864;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 013/masks/brain.nii.gz --o 013/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 013/masks/brain.nii.gz --o 013/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      013/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     013/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 40918 values in range
+Counting number of voxels in first frame
+Found 40918 voxels in final mask
+Count: 40918 1083003.280598 217600 18.804228
+mri_binarize done
+Diliating 1
+mri_binarize --i 013/masks/brain.nii.gz --min 0.5 --dilate 1 --o 013/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 013/masks/brain.nii.gz --min 0.5 --dilate 1 --o 013/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      013/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     013/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 40918 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59150 voxels in final mask
+Count: 59150 1565561.465549 217600 27.182904
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:16 EST 2020 
+Ended   at Fri Feb 21 10:50:17 EST 2020
+Mkbrainmask-Run-Time-Sec 1
+ 
+mkbrainmask Done
+mri_binarize --i 013/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 013/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 013/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 013/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      013/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     013/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 57928 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 26820 voxels in final mask
+Count: 26820 709862.358513 217600 12.325368
+mri_binarize done
+mkbrainmask -i 014/template.nii.gz -o 014/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/014/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:17 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 014/template.nii.gz -o 014/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/014/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 014/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/014/register.dof6.lta --inv --interp nearest --o 014/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99871  -0.04863   0.01440   2.31453;
+-0.00863   0.11669   0.99313  -19.78262;
+-0.04998  -0.99198   0.11612  -1.39284;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 014/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 014/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/014/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1583211800
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99871  -0.00863  -0.04998  -2.55194;
+-0.04863   0.11669  -0.99198   1.03941;
+ 0.01440   0.99313   0.11612   19.77514;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74646  -0.13744   0.03021   25.67744;
+ 0.03959   0.31934  -3.47581   152.95645;
+ 0.13374   2.72794   0.40841   7.62943;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 014/masks/brain.nii.gz --o 014/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 014/masks/brain.nii.gz --o 014/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      014/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     014/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41003 values in range
+Counting number of voxels in first frame
+Found 41003 voxels in final mask
+Count: 41003 1085253.030802 217600 18.843290
+mri_binarize done
+Diliating 1
+mri_binarize --i 014/masks/brain.nii.gz --min 0.5 --dilate 1 --o 014/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 014/masks/brain.nii.gz --min 0.5 --dilate 1 --o 014/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      014/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     014/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41003 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59194 voxels in final mask
+Count: 59194 1566726.042126 217600 27.203125
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:17 EST 2020 
+Ended   at Fri Feb 21 10:50:19 EST 2020
+Mkbrainmask-Run-Time-Sec 2
+ 
+mkbrainmask Done
+mri_binarize --i 014/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 014/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 014/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 014/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      014/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     014/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 57977 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 27155 voxels in final mask
+Count: 27155 718729.021082 217600 12.479320
+mri_binarize done
+mkbrainmask -i 015/template.nii.gz -o 015/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/015/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:19 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 015/template.nii.gz -o 015/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/015/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 015/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/015/register.dof6.lta --inv --interp nearest --o 015/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99863  -0.05117   0.01104   2.31297;
+-0.00525   0.11194   0.99370  -19.88258;
+-0.05209  -0.99240   0.11151  -1.34088;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 015/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 015/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/015/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1582740740
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99863  -0.00525  -0.05209  -2.48401;
+-0.05117   0.11194  -0.99240   1.01325;
+ 0.01104   0.99370   0.11151   19.88134;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74623  -0.14324   0.01837   26.05220;
+ 0.03036   0.30666  -3.47781   153.76054;
+ 0.14073   2.72909   0.39176   7.56041;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 015/masks/brain.nii.gz --o 015/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 015/masks/brain.nii.gz --o 015/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      015/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     015/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41024 values in range
+Counting number of voxels in first frame
+Found 41024 voxels in final mask
+Count: 41024 1085808.851440 217600 18.852941
+mri_binarize done
+Diliating 1
+mri_binarize --i 015/masks/brain.nii.gz --min 0.5 --dilate 1 --o 015/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 015/masks/brain.nii.gz --min 0.5 --dilate 1 --o 015/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      015/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     015/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41024 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59164 voxels in final mask
+Count: 59164 1565932.012642 217600 27.189338
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:19 EST 2020 
+Ended   at Fri Feb 21 10:50:20 EST 2020
+Mkbrainmask-Run-Time-Sec 1
+ 
+mkbrainmask Done
+mri_binarize --i 015/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 015/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 015/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 015/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      015/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     015/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 57934 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 26924 voxels in final mask
+Count: 26924 712614.994057 217600 12.373162
+mri_binarize done
+mkbrainmask -i 016/template.nii.gz -o 016/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/016/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:20 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 016/template.nii.gz -o 016/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/016/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 016/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/016/register.dof6.lta --inv --interp nearest --o 016/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99862  -0.05081   0.01329   2.50336;
+-0.00722   0.11792   0.99300  -19.98133;
+-0.05203  -0.99172   0.11739  -1.16061;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 016/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 016/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/016/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1583277976
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99862  -0.00722  -0.05203  -2.70452;
+-0.05081   0.11792  -0.99172   1.33243;
+ 0.01329   0.99300   0.11739   19.94436;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74620  -0.14307   0.02526   26.14978;
+ 0.03656   0.32283  -3.47534   152.76102;
+ 0.13974   2.72724   0.41271   7.63730;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 016/masks/brain.nii.gz --o 016/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 016/masks/brain.nii.gz --o 016/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      016/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     016/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 40916 values in range
+Counting number of voxels in first frame
+Found 40916 voxels in final mask
+Count: 40916 1082950.345299 217600 18.803309
+mri_binarize done
+Diliating 1
+mri_binarize --i 016/masks/brain.nii.gz --min 0.5 --dilate 1 --o 016/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 016/masks/brain.nii.gz --min 0.5 --dilate 1 --o 016/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      016/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     016/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 40916 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59027 voxels in final mask
+Count: 59027 1562305.944666 217600 27.126379
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:20 EST 2020 
+Ended   at Fri Feb 21 10:50:22 EST 2020
+Mkbrainmask-Run-Time-Sec 2
+ 
+mkbrainmask Done
+mri_binarize --i 016/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 016/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 016/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 016/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      016/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     016/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 57794 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 27077 voxels in final mask
+Count: 27077 716664.544424 217600 12.443474
+mri_binarize done
+mkbrainmask -i 017/template.nii.gz -o 017/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/017/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:22 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 017/template.nii.gz -o 017/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/017/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 017/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/017/register.dof6.lta --inv --interp nearest --o 017/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99860  -0.05053   0.01585   2.67923;
+-0.00919   0.12942   0.99155  -19.78455;
+-0.05215  -0.99030   0.12878  -1.20146;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 017/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 017/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/017/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1582801167
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99860  -0.00919  -0.05215  -2.92004;
+-0.05053   0.12942  -0.99030   1.50613;
+ 0.01585   0.99155   0.12878   19.72955;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74614  -0.14342   0.03218   26.26414;
+ 0.04360   0.35413  -3.47027   151.35558;
+ 0.13895   2.72333   0.45296   7.31451;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 017/masks/brain.nii.gz --o 017/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 017/masks/brain.nii.gz --o 017/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      017/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     017/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 40818 values in range
+Counting number of voxels in first frame
+Found 40818 voxels in final mask
+Count: 40818 1080356.515652 217600 18.758272
+mri_binarize done
+Diliating 1
+mri_binarize --i 017/masks/brain.nii.gz --min 0.5 --dilate 1 --o 017/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 017/masks/brain.nii.gz --min 0.5 --dilate 1 --o 017/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      017/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     017/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 40818 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 58999 voxels in final mask
+Count: 58999 1561564.850481 217600 27.113511
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:22 EST 2020 
+Ended   at Fri Feb 21 10:50:23 EST 2020
+Mkbrainmask-Run-Time-Sec 1
+ 
+mkbrainmask Done
+mri_binarize --i 017/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 017/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 017/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 017/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      017/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     017/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 57787 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 26868 voxels in final mask
+Count: 26868 711132.805687 217600 12.347426
+mri_binarize done
+mkbrainmask -i 018/template.nii.gz -o 018/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:23 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 018/template.nii.gz -o 018/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 018/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/register.dof6.lta --inv --interp nearest --o 018/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99862  -0.04756   0.02213   2.92662;
+-0.01619   0.12200   0.99240  -19.82664;
+-0.04990  -0.99139   0.12106  -0.77823;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 018/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 018/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1582330503
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99862  -0.01619  -0.04990  -3.28232;
+-0.04756   0.12200  -0.99139   1.78647;
+ 0.02213   0.99240   0.12106   19.70535;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74621  -0.13722   0.05665   25.95953;
+ 0.06087   0.33292  -3.47325   151.58853;
+ 0.13079   2.72632   0.42698   8.24342;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 018/masks/brain.nii.gz --o 018/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 018/masks/brain.nii.gz --o 018/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      018/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     018/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 40839 values in range
+Counting number of voxels in first frame
+Found 40839 voxels in final mask
+Count: 40839 1080912.336290 217600 18.767923
+mri_binarize done
+Diliating 1
+mri_binarize --i 018/masks/brain.nii.gz --min 0.5 --dilate 1 --o 018/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 018/masks/brain.nii.gz --min 0.5 --dilate 1 --o 018/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      018/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     018/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 40839 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59018 voxels in final mask
+Count: 59018 1562067.735821 217600 27.122243
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:23 EST 2020 
+Ended   at Fri Feb 21 10:50:25 EST 2020
+Mkbrainmask-Run-Time-Sec 2
+ 
+mkbrainmask Done
+mri_binarize --i 018/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 018/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 018/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 018/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      018/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     018/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 57807 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 27099 voxels in final mask
+Count: 27099 717246.832712 217600 12.453585
+mri_binarize done
+mkbrainmask -i 019/template.nii.gz -o 019/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/019/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:25 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 019/template.nii.gz -o 019/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/019/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 019/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/019/register.dof6.lta --inv --interp nearest --o 019/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99855  -0.05246   0.01174   2.76633;
+-0.00533   0.12066   0.99268  -19.71375;
+-0.05349  -0.99131   0.12021  -1.13417;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 019/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 019/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/019/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1582864235
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99855  -0.00533  -0.05349  -2.92803;
+-0.05246   0.12066  -0.99131   1.39949;
+ 0.01174   0.99268   0.12021   19.67329;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74602  -0.14711   0.01865   26.65450;
+ 0.03227   0.33057  -3.47423   152.87491;
+ 0.14427   2.72609   0.42230   7.40581;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 019/masks/brain.nii.gz --o 019/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 019/masks/brain.nii.gz --o 019/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      019/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     019/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 40940 values in range
+Counting number of voxels in first frame
+Found 40940 voxels in final mask
+Count: 40940 1083585.568886 217600 18.814338
+mri_binarize done
+Diliating 1
+mri_binarize --i 019/masks/brain.nii.gz --min 0.5 --dilate 1 --o 019/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 019/masks/brain.nii.gz --min 0.5 --dilate 1 --o 019/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      019/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     019/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 40940 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59156 voxels in final mask
+Count: 59156 1565720.271446 217600 27.185662
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:25 EST 2020 
+Ended   at Fri Feb 21 10:50:26 EST 2020
+Mkbrainmask-Run-Time-Sec 1
+ 
+mkbrainmask Done
+mri_binarize --i 019/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 019/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 019/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 019/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      019/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     019/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 57934 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 27120 voxels in final mask
+Count: 27120 717802.653351 217600 12.463235
+mri_binarize done
+mkbrainmask -i 020/template.nii.gz -o 020/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/020/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 10:50:27 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i 020/template.nii.gz -o 020/masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/020/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov 020/template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/020/register.dof6.lta --inv --interp nearest --o 020/masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99847  -0.05315   0.01544   2.76265;
+-0.00823   0.13319   0.99106  -19.55492;
+-0.05474  -0.98966   0.13255  -0.99153;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol 020/template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol 020/masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/020/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1582401283
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99847  -0.00823  -0.05474  -2.97363;
+-0.05315   0.13319  -0.98966   1.77012;
+ 0.01544   0.99106   0.13255   19.46880;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74578  -0.15052   0.02881   26.67342;
+ 0.04245   0.36451  -3.46855   151.21811;
+ 0.14618   2.72158   0.46615   7.13544;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i 020/masks/brain.nii.gz --o 020/masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 020/masks/brain.nii.gz --o 020/masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      020/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     020/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 40853 values in range
+Counting number of voxels in first frame
+Found 40853 voxels in final mask
+Count: 40853 1081282.883383 217600 18.774357
+mri_binarize done
+Diliating 1
+mri_binarize --i 020/masks/brain.nii.gz --min 0.5 --dilate 1 --o 020/masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 020/masks/brain.nii.gz --min 0.5 --dilate 1 --o 020/masks/brain.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      020/masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     020/masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 40853 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59082 voxels in final mask
+Count: 59082 1563761.665386 217600 27.151654
+mri_binarize done
+ 
+Started at Fri Feb 21 10:50:27 EST 2020 
+Ended   at Fri Feb 21 10:50:28 EST 2020
+Mkbrainmask-Run-Time-Sec 1
+ 
+mkbrainmask Done
+mri_binarize --i 020/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 020/masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i 020/masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o 020/masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      020/masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     020/masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 57876 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 26820 voxels in final mask
+Count: 26820 709862.358513 217600 12.325368
+mri_binarize done
+meanval --i 003/f.nii --m 003/masks/brain.e3.nii.gz --o 003/global.meanval.dat --avgwf 003/global.waveform.dat
+Fri Feb 21 10:50:28 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 003/f.nii --m 003/masks/brain.e3.nii.gz --o 003/global.meanval.dat --avgwf 003/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 003/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/tmpdir.meanval.16870/blah.16870 --in 003/f.nii --sfavg 003/global.meanval.dat --avgwf 003/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 003/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/003/tmpdir.meanval.16870/blah.16870 --in 003/f.nii --sfavg 003/global.meanval.dat --avgwf 003/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 003/masks/brain.e3.nii.gz
+Loading 003/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 003/global.meanval.dat
+0 83114.4
+Writing to 003/global.waveform.dat
+mri_segstats done
+meanval --i 004/f.nii --m 004/masks/brain.e3.nii.gz --o 004/global.meanval.dat --avgwf 004/global.waveform.dat
+Fri Feb 21 10:50:30 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 004/f.nii --m 004/masks/brain.e3.nii.gz --o 004/global.meanval.dat --avgwf 004/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 004/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/004/tmpdir.meanval.16915/blah.16915 --in 004/f.nii --sfavg 004/global.meanval.dat --avgwf 004/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 004/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/004/tmpdir.meanval.16915/blah.16915 --in 004/f.nii --sfavg 004/global.meanval.dat --avgwf 004/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 004/masks/brain.e3.nii.gz
+Loading 004/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 004/global.meanval.dat
+0 83758.1
+Writing to 004/global.waveform.dat
+mri_segstats done
+meanval --i 005/f.nii --m 005/masks/brain.e3.nii.gz --o 005/global.meanval.dat --avgwf 005/global.waveform.dat
+Fri Feb 21 10:50:32 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 005/f.nii --m 005/masks/brain.e3.nii.gz --o 005/global.meanval.dat --avgwf 005/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 005/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/005/tmpdir.meanval.16961/blah.16961 --in 005/f.nii --sfavg 005/global.meanval.dat --avgwf 005/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 005/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/005/tmpdir.meanval.16961/blah.16961 --in 005/f.nii --sfavg 005/global.meanval.dat --avgwf 005/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 005/masks/brain.e3.nii.gz
+Loading 005/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 005/global.meanval.dat
+0 83697.6
+Writing to 005/global.waveform.dat
+mri_segstats done
+meanval --i 006/f.nii --m 006/masks/brain.e3.nii.gz --o 006/global.meanval.dat --avgwf 006/global.waveform.dat
+Fri Feb 21 10:50:33 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 006/f.nii --m 006/masks/brain.e3.nii.gz --o 006/global.meanval.dat --avgwf 006/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 006/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/006/tmpdir.meanval.17005/blah.17005 --in 006/f.nii --sfavg 006/global.meanval.dat --avgwf 006/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 006/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/006/tmpdir.meanval.17005/blah.17005 --in 006/f.nii --sfavg 006/global.meanval.dat --avgwf 006/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 006/masks/brain.e3.nii.gz
+Loading 006/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 006/global.meanval.dat
+0 83876.5
+Writing to 006/global.waveform.dat
+mri_segstats done
+meanval --i 007/f.nii --m 007/masks/brain.e3.nii.gz --o 007/global.meanval.dat --avgwf 007/global.waveform.dat
+Fri Feb 21 10:50:35 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 007/f.nii --m 007/masks/brain.e3.nii.gz --o 007/global.meanval.dat --avgwf 007/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 007/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/007/tmpdir.meanval.17050/blah.17050 --in 007/f.nii --sfavg 007/global.meanval.dat --avgwf 007/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 007/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/007/tmpdir.meanval.17050/blah.17050 --in 007/f.nii --sfavg 007/global.meanval.dat --avgwf 007/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 007/masks/brain.e3.nii.gz
+Loading 007/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 007/global.meanval.dat
+0 84028.9
+Writing to 007/global.waveform.dat
+mri_segstats done
+meanval --i 008/f.nii --m 008/masks/brain.e3.nii.gz --o 008/global.meanval.dat --avgwf 008/global.waveform.dat
+Fri Feb 21 10:50:37 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 008/f.nii --m 008/masks/brain.e3.nii.gz --o 008/global.meanval.dat --avgwf 008/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 008/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/008/tmpdir.meanval.17095/blah.17095 --in 008/f.nii --sfavg 008/global.meanval.dat --avgwf 008/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 008/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/008/tmpdir.meanval.17095/blah.17095 --in 008/f.nii --sfavg 008/global.meanval.dat --avgwf 008/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 008/masks/brain.e3.nii.gz
+Loading 008/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 008/global.meanval.dat
+0 83862.3
+Writing to 008/global.waveform.dat
+mri_segstats done
+meanval --i 009/f.nii --m 009/masks/brain.e3.nii.gz --o 009/global.meanval.dat --avgwf 009/global.waveform.dat
+Fri Feb 21 10:50:39 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 009/f.nii --m 009/masks/brain.e3.nii.gz --o 009/global.meanval.dat --avgwf 009/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 009/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/009/tmpdir.meanval.17141/blah.17141 --in 009/f.nii --sfavg 009/global.meanval.dat --avgwf 009/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 009/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/009/tmpdir.meanval.17141/blah.17141 --in 009/f.nii --sfavg 009/global.meanval.dat --avgwf 009/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 009/masks/brain.e3.nii.gz
+Loading 009/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 009/global.meanval.dat
+0 82715.1
+Writing to 009/global.waveform.dat
+mri_segstats done
+meanval --i 010/f.nii --m 010/masks/brain.e3.nii.gz --o 010/global.meanval.dat --avgwf 010/global.waveform.dat
+Fri Feb 21 10:50:41 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 010/f.nii --m 010/masks/brain.e3.nii.gz --o 010/global.meanval.dat --avgwf 010/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 010/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/tmpdir.meanval.17187/blah.17187 --in 010/f.nii --sfavg 010/global.meanval.dat --avgwf 010/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 010/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/tmpdir.meanval.17187/blah.17187 --in 010/f.nii --sfavg 010/global.meanval.dat --avgwf 010/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 010/masks/brain.e3.nii.gz
+Loading 010/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 010/global.meanval.dat
+0 82746.6
+Writing to 010/global.waveform.dat
+mri_segstats done
+meanval --i 011/f.nii --m 011/masks/brain.e3.nii.gz --o 011/global.meanval.dat --avgwf 011/global.waveform.dat
+Fri Feb 21 10:50:44 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 011/f.nii --m 011/masks/brain.e3.nii.gz --o 011/global.meanval.dat --avgwf 011/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 011/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/011/tmpdir.meanval.17234/blah.17234 --in 011/f.nii --sfavg 011/global.meanval.dat --avgwf 011/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 011/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/011/tmpdir.meanval.17234/blah.17234 --in 011/f.nii --sfavg 011/global.meanval.dat --avgwf 011/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 011/masks/brain.e3.nii.gz
+Loading 011/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 011/global.meanval.dat
+0 82551.2
+Writing to 011/global.waveform.dat
+mri_segstats done
+meanval --i 012/f.nii --m 012/masks/brain.e3.nii.gz --o 012/global.meanval.dat --avgwf 012/global.waveform.dat
+Fri Feb 21 10:50:46 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 012/f.nii --m 012/masks/brain.e3.nii.gz --o 012/global.meanval.dat --avgwf 012/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 012/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/012/tmpdir.meanval.17278/blah.17278 --in 012/f.nii --sfavg 012/global.meanval.dat --avgwf 012/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 012/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/012/tmpdir.meanval.17278/blah.17278 --in 012/f.nii --sfavg 012/global.meanval.dat --avgwf 012/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 012/masks/brain.e3.nii.gz
+Loading 012/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 012/global.meanval.dat
+0 82350.3
+Writing to 012/global.waveform.dat
+mri_segstats done
+meanval --i 013/f.nii --m 013/masks/brain.e3.nii.gz --o 013/global.meanval.dat --avgwf 013/global.waveform.dat
+Fri Feb 21 10:50:48 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 013/f.nii --m 013/masks/brain.e3.nii.gz --o 013/global.meanval.dat --avgwf 013/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 013/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/013/tmpdir.meanval.17327/blah.17327 --in 013/f.nii --sfavg 013/global.meanval.dat --avgwf 013/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 013/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/013/tmpdir.meanval.17327/blah.17327 --in 013/f.nii --sfavg 013/global.meanval.dat --avgwf 013/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 013/masks/brain.e3.nii.gz
+Loading 013/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 013/global.meanval.dat
+0 82459
+Writing to 013/global.waveform.dat
+mri_segstats done
+meanval --i 014/f.nii --m 014/masks/brain.e3.nii.gz --o 014/global.meanval.dat --avgwf 014/global.waveform.dat
+Fri Feb 21 10:50:49 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 014/f.nii --m 014/masks/brain.e3.nii.gz --o 014/global.meanval.dat --avgwf 014/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 014/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/014/tmpdir.meanval.17371/blah.17371 --in 014/f.nii --sfavg 014/global.meanval.dat --avgwf 014/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 014/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/014/tmpdir.meanval.17371/blah.17371 --in 014/f.nii --sfavg 014/global.meanval.dat --avgwf 014/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 014/masks/brain.e3.nii.gz
+Loading 014/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 014/global.meanval.dat
+0 82159.7
+Writing to 014/global.waveform.dat
+mri_segstats done
+meanval --i 015/f.nii --m 015/masks/brain.e3.nii.gz --o 015/global.meanval.dat --avgwf 015/global.waveform.dat
+Fri Feb 21 10:50:51 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 015/f.nii --m 015/masks/brain.e3.nii.gz --o 015/global.meanval.dat --avgwf 015/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 015/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/015/tmpdir.meanval.17452/blah.17452 --in 015/f.nii --sfavg 015/global.meanval.dat --avgwf 015/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 015/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/015/tmpdir.meanval.17452/blah.17452 --in 015/f.nii --sfavg 015/global.meanval.dat --avgwf 015/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 015/masks/brain.e3.nii.gz
+Loading 015/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 015/global.meanval.dat
+0 81814.3
+Writing to 015/global.waveform.dat
+mri_segstats done
+meanval --i 016/f.nii --m 016/masks/brain.e3.nii.gz --o 016/global.meanval.dat --avgwf 016/global.waveform.dat
+Fri Feb 21 10:50:53 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 016/f.nii --m 016/masks/brain.e3.nii.gz --o 016/global.meanval.dat --avgwf 016/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 016/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/016/tmpdir.meanval.17528/blah.17528 --in 016/f.nii --sfavg 016/global.meanval.dat --avgwf 016/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 016/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/016/tmpdir.meanval.17528/blah.17528 --in 016/f.nii --sfavg 016/global.meanval.dat --avgwf 016/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 016/masks/brain.e3.nii.gz
+Loading 016/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 016/global.meanval.dat
+0 82073.8
+Writing to 016/global.waveform.dat
+mri_segstats done
+meanval --i 017/f.nii --m 017/masks/brain.e3.nii.gz --o 017/global.meanval.dat --avgwf 017/global.waveform.dat
+Fri Feb 21 10:50:55 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 017/f.nii --m 017/masks/brain.e3.nii.gz --o 017/global.meanval.dat --avgwf 017/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 017/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/017/tmpdir.meanval.17577/blah.17577 --in 017/f.nii --sfavg 017/global.meanval.dat --avgwf 017/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 017/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/017/tmpdir.meanval.17577/blah.17577 --in 017/f.nii --sfavg 017/global.meanval.dat --avgwf 017/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 017/masks/brain.e3.nii.gz
+Loading 017/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 017/global.meanval.dat
+0 82435
+Writing to 017/global.waveform.dat
+mri_segstats done
+meanval --i 018/f.nii --m 018/masks/brain.e3.nii.gz --o 018/global.meanval.dat --avgwf 018/global.waveform.dat
+Fri Feb 21 10:50:57 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 018/f.nii --m 018/masks/brain.e3.nii.gz --o 018/global.meanval.dat --avgwf 018/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 018/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/tmpdir.meanval.17623/blah.17623 --in 018/f.nii --sfavg 018/global.meanval.dat --avgwf 018/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 018/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/tmpdir.meanval.17623/blah.17623 --in 018/f.nii --sfavg 018/global.meanval.dat --avgwf 018/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 018/masks/brain.e3.nii.gz
+Loading 018/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 018/global.meanval.dat
+0 81956.5
+Writing to 018/global.waveform.dat
+mri_segstats done
+meanval --i 019/f.nii --m 019/masks/brain.e3.nii.gz --o 019/global.meanval.dat --avgwf 019/global.waveform.dat
+Fri Feb 21 10:51:00 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 019/f.nii --m 019/masks/brain.e3.nii.gz --o 019/global.meanval.dat --avgwf 019/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 019/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/019/tmpdir.meanval.17670/blah.17670 --in 019/f.nii --sfavg 019/global.meanval.dat --avgwf 019/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 019/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/019/tmpdir.meanval.17670/blah.17670 --in 019/f.nii --sfavg 019/global.meanval.dat --avgwf 019/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 019/masks/brain.e3.nii.gz
+Loading 019/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 019/global.meanval.dat
+0 82199.5
+Writing to 019/global.waveform.dat
+mri_segstats done
+meanval --i 020/f.nii --m 020/masks/brain.e3.nii.gz --o 020/global.meanval.dat --avgwf 020/global.waveform.dat
+Fri Feb 21 10:51:03 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/bin/meanval --i 020/f.nii --m 020/masks/brain.e3.nii.gz --o 020/global.meanval.dat --avgwf 020/global.waveform.dat
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_segstats --seg 020/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/020/tmpdir.meanval.17718/blah.17718 --in 020/f.nii --sfavg 020/global.meanval.dat --avgwf 020/global.waveform.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg 020/masks/brain.e3.nii.gz --id 1 --sum /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/020/tmpdir.meanval.17718/blah.17718 --in 020/f.nii --sfavg 020/global.meanval.dat --avgwf 020/global.waveform.dat 
+sysname  Linux
+hostname compute0199
+machine  x86_64
+user     emcmaho7@jhu.edu
+UseRobust  0
+Loading 020/masks/brain.e3.nii.gz
+Loading 020/f.nii
+Voxel Volume is 26.4676 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to 020/global.meanval.dat
+0 81936.9
+Writing to 020/global.waveform.dat
+mri_segstats done
+Fri Feb 21 10:51:04 EST 2020
+mkbrainmask-sess done

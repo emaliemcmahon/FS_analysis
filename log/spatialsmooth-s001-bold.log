@@ -1,0 +1,32 @@
+spatiallysmooth-sess
+$Id: spatialsmooth-sess,v 1.23 2015/12/10 22:51:31 zkaufman Exp $
+s001
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Thu Feb 20 11:53:49 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/spatialsmooth-sess -i fmcpr -o fmcpr.sm5 -fwhm 5 -fsd bold -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -rlf biomotion.rlf
+ProjectDir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+------------------------------------------------
+------------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001
+Thu Feb 20 11:53:49 EST 2020
+RunList 010 018
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+mri_fwhm --i 010/fmcpr.nii.gz --o 010/fmcpr.sm5.nii.gz --smooth-only --fwhm 5 --mask masks/brain.nii.gz
+voxelvolume 26.4676 mm3
+Loading mask masks/brain.nii.gz
+Search region is 59249 voxels = 1568181.762846 mm3
+Smoothing input by fwhm=5.000000, gstd=2.123305
+Saving to 010/fmcpr.sm5.nii.gz
+SmoothOnly requested, so exiting now
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+mri_fwhm --i 018/fmcpr.nii.gz --o 018/fmcpr.sm5.nii.gz --smooth-only --fwhm 5 --mask masks/brain.nii.gz
+voxelvolume 26.4676 mm3
+Loading mask masks/brain.nii.gz
+Search region is 59249 voxels = 1568181.762846 mm3
+Smoothing input by fwhm=5.000000, gstd=2.123305
+Saving to 018/fmcpr.sm5.nii.gz
+SmoothOnly requested, so exiting now
+Started at Thu Feb 20 11:53:49 EST 2020
+Ended   at Thu Feb 20 11:55:21 EST 2020
+spatiallysmooth-sess Done

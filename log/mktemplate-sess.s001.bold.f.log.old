@@ -1,0 +1,11 @@
+mktemplate-sess log file
+$Id: mktemplate-sess,v 1.11 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0199 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Fri Feb 21 10:01:02 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+UpdateOnly 0
+/software/apps/freesurfer/6.0.0/fsfast/bin/mktemplate-sess -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -rlf psts
+ 
+Session: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001 ----------------
+Fri Feb 21 10:01:02 EST 2020
+ERROR: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/psts does not exist

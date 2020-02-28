@@ -1,0 +1,1444 @@
+selxavg3-sess log file
+/software/apps/freesurfer/6.0.0/fsfast/bin/selxavg3-sess
+-s s001 -df sessdir -analysis biomotion-surface-rh-sm5 -svres
+$Id: selxavg3-sess,v 1.68 2016/05/10 03:24:18 greve Exp $
+uid=3996(emcmaho7@jhu.edu) gid=1405(lisik3) groups=1405(lisik3),1502(mbonner5)
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+Linux compute0092 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Fri Feb 21 13:30:22 EST 2020
+preproc-sess -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -a biomotion-surface-rh-sm5 -nolog
+--------------------------------------------------------------
+preproc-sess logfile is /dev/null
+--------------------------------------------------------------
+$Id: preproc-sess,v 1.64.2.1 2016/08/02 21:19:09 greve Exp $
+emcmaho7@jhu.edu
+setenv FREESURFER_HOME /software/apps/freesurfer/6.0.0
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+Linux compute0092 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/preproc-sess
+-s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -a biomotion-surface-rh-sm5 -nolog
+Fri Feb 21 13:30:23 EST 2020
+instem   f 
+mc   1     f fmcpr 
+stc  0     fmcpr
+sm   0   
+mask 1   brain
+s001 Template -----------------------------
+mktemplate-sess -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -rlf biomotion.rlf -nolog -update
+ 
+Session: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001 ----------------
+Fri Feb 21 13:30:23 EST 2020
+Detected input format at nii
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+mri_convert /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/template.nii.gz --frame 0
+mri_convert.bin /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/f.nii /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/template.nii.gz --frame 0 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+keeping frame 0
+writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/template.nii.gz...
+  Run: 010 ----------------
+  Fri Feb 21 13:30:27 EST 2020
+  s001 010 Update not needed
+  Run: 018 ----------------
+  Fri Feb 21 13:30:27 EST 2020
+  s001 018 Update not needed
+Fri Feb 21 13:30:27 EST 2020
+mktemplate-sess completed 
+s001 Registration -----------------------------
+register-sess -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -delete-dat -dof 6 -bold -rlf biomotion.rlf -per-run -nolog -update -init-coreg
+--------------------------------------------------------------
+register-sess logfile is /dev/null
+--------------------------------------------------------------
+Fri Feb 21 13:30:28 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/register-sess -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -delete-dat -dof 6 -bold -rlf biomotion.rlf -per-run -nolog -update -init-coreg
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0092 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+ 
+Session: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001 ----------------
+Fri Feb 21 13:30:28 EST 2020
+--------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001
+bbregister --s s001 --init-coreg --6 --bold --mov bold/template.nii.gz --reg bold/register.dof6.dat --lta bold/register.dof6.lta --init-reg-out bold/init.register.dof6.dat
+tmp bold/tmp.bbregister.27538
+Log file is bold/register.dof6.dat.log
+Fri Feb 21 13:30:28 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001
+/software/apps/freesurfer/6.0.0/bin/bbregister --s s001 --init-coreg --6 --bold --mov bold/template.nii.gz --reg bold/register.dof6.dat --lta bold/register.dof6.lta --init-reg-out bold/init.register.dof6.dat
+
+$Id: bbregister,v 1.75 2016/05/10 20:02:28 greve Exp $
+Linux compute0092 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+FREESURFER_HOME /software/apps/freesurfer/6.0.0
+mri_convert bold/template.nii.gz bold/tmp.bbregister.27538/template.nii
+mri_convert.bin bold/template.nii.gz bold/tmp.bbregister.27538/template.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from bold/template.nii.gz...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.99843, 0.0560047, -0.000214797)
+j_ras = (0.0558209, 0.99483, -0.0848416)
+k_ras = (0.00453784, 0.0847204, 0.996394)
+writing to bold/tmp.bbregister.27538/template.nii...
+mri_coreg --s s001 --mov bold/tmp.bbregister.27538/template.nii --regdat bold/tmp.bbregister.27538/reg.init.dat --reg bold/tmp.bbregister.27538/mri_coreg.lta --nthreads 1 --dof 6 --sep 4 --ftol .0001 --linmintol .01
+
+$Id: mri_coreg.c,v 1.27 2016/04/30 15:11:49 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001
+cmdline mri_coreg --s s001 --mov bold/tmp.bbregister.27538/template.nii --regdat bold/tmp.bbregister.27538/reg.init.dat --reg bold/tmp.bbregister.27538/mri_coreg.lta --nthreads 1 --dof 6 --sep 4 --ftol .0001 --linmintol .01 
+sysname  Linux
+hostname compute0092
+machine  x86_64
+user     emcmaho7@jhu.edu
+dof    6
+nsep    1
+cras0    1
+ftol    0.000100
+linmintol    0.010000
+bf       1
+bflim    30.000000
+bfnsamp    30
+SmoothRef 0
+SatPct    99.990000
+MovOOB 0
+optschema 1
+Reading in mov bold/tmp.bbregister.27538/template.nii
+Reading in ref /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/brainmask.mgz
+Reading in and applying refmask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+Setting cras translation parameters to align centers
+Creating random numbers for coordinate dithering
+Performing intensity dithering
+Initial parameters -0.0564 -0.5063 17.9268  0.0000  0.0000  0.0000  1.0000  1.0000  1.0000  0.0000  0.0000  0.0000 
+Separation list (1):  4   min = 4
+DoSmoothing 1
+DoCoordDither 1
+DoIntensityDither 1
+nitersmax 4
+ftol 1.000e-04
+linmintol 1.000e-02
+SatPct 99.990000
+Hist FWHM 7.000000 7.000000
+nthreads 1
+movsat = 169949.0625
+mov gstd 1.4186 1.4186 0.9458
+Smoothing mov
+refsat = 119.0000
+ref gstd 1.8914 1.8914 1.8914
+Smoothing ref
+COREGpreproc() done
+Testing if mov and target overlap
+Init cost   -1.0561756560
+nhits = 85243 out of 16777216, Percent Overlap:  32.5
+Initial  RefRAS-to-MovRAS
+ 1.00000   0.00000   0.00000  -0.05641;
+ 0.00000   1.00000   0.00000  -0.50630;
+ 0.00000   0.00000   1.00000   17.92677;
+ 0.00000   0.00000   0.00000   1.00000;
+Initial  RefVox-to-MovVox
+ 0.36307   0.00008   0.02037  -9.39739;
+-0.02030   0.03085   0.36176  -7.96941;
+-0.00130  -0.28470   0.02421   49.87767;
+ 0.00000   0.00000   0.00000   1.00000;
+sep = 4 -----------------------------------
+COREGoptBruteForce() 30 1 30
+Turning on MovOOB for BruteForce Search
+#BF# sep= 4 iter=0 lim=30.0 delta=2.00  -0.05641   1.49370   5.92677  -4.00000   2.00000   0.00000   -1.0432798
+Turning  MovOOB back off after brute force search
+
+
+---------------------------------
+Init Powel Params dof = 6
+Starting OpenPowel2(), sep = 4
+InitialCost        -1.0714211464 
+#@#  4  188  -0.05641 1.49370 5.92677 -4.00000 2.00000 0.00000   -1.0714211
+fs_powell::minimize
+  nparams 6
+  maxfev 4
+  ftol   0.000100
+  linmin_xtol_   0.010000
+  powell nthiter 0: fret = -1.071421
+#@#  4  195  -0.03333 1.49370 5.92677 -4.00000 2.00000 0.00000   -1.0714228
+#@#  4  197  -0.01276 1.49370 5.92677 -4.00000 2.00000 0.00000   -1.0714235
+#@#  4  204  -0.01276 0.87566 5.92677 -4.00000 2.00000 0.00000   -1.0714657
+#@#  4  206  -0.01276 1.08548 5.92677 -4.00000 2.00000 0.00000   -1.0714774
+#@#  4  207  -0.01276 1.07225 5.92677 -4.00000 2.00000 0.00000   -1.0714780
+#@#  4  208  -0.01276 1.03491 5.92677 -4.00000 2.00000 0.00000   -1.0714793
+#@#  4  215  -0.01276 1.03491 4.30874 -4.00000 2.00000 0.00000   -1.0724924
+#@#  4  216  -0.01276 1.03491 3.70574 -4.00000 2.00000 0.00000   -1.0724955
+#@#  4  217  -0.01276 1.03491 3.99805 -4.00000 2.00000 0.00000   -1.0725169
+#@#  4  219  -0.01276 1.03491 4.11672 -4.00000 2.00000 0.00000   -1.0725189
+#@#  4  221  -0.01276 1.03491 4.06575 -4.00000 2.00000 0.00000   -1.0725203
+#@#  4  226  -0.01276 1.03491 4.06575 -3.00000 2.00000 0.00000   -1.0725584
+#@#  4  230  -0.01276 1.03491 4.06575 -3.38197 2.00000 0.00000   -1.0726160
+#@#  4  242  -0.01276 1.03491 4.06575 -3.38197 1.38197 0.00000   -1.0726818
+#@#  4  244  -0.01276 1.03491 4.06575 -3.38197 1.44056 0.00000   -1.0726827
+#@#  4  245  -0.01276 1.03491 4.06575 -3.38197 1.45117 0.00000   -1.0726843
+  powell nthiter 1: fret = -1.072684
+#@#  4  266  0.36921 1.03491 4.06575 -3.38197 1.45117 0.00000   -1.0727220
+#@#  4  267  0.28254 1.03491 4.06575 -3.38197 1.45117 0.00000   -1.0727252
+#@#  4  268  0.29254 1.03491 4.06575 -3.38197 1.45117 0.00000   -1.0727260
+#@#  4  269  0.31407 1.03491 4.06575 -3.38197 1.45117 0.00000   -1.0727264
+#@#  4  280  0.30407 1.02491 4.06575 -3.38197 1.45117 0.00000   -1.0727267
+#@#  4  281  0.30407 1.01491 4.06575 -3.38197 1.45117 0.00000   -1.0727271
+#@#  4  308  0.30407 1.01491 4.06575 -3.38197 0.83314 0.00000   -1.0727590
+#@#  4  310  0.30407 1.01491 4.06575 -3.38197 1.04864 0.00000   -1.0727730
+Powell done niters total = 1
+OptTimeSec  7.8 sec
+OptTimeMin  0.13 min
+nEvals 322
+Final parameters   0.30406907   1.01491070   4.06575489  -3.38196611   1.04864419   0.01000000 
+Final cost   -1.072772935274316
+ 
+
+---------------------------------
+mri_coreg utimesec    67.026801
+mri_coreg stimesec    0.374942
+mri_coreg ru_maxrss   420992
+mri_coreg ru_ixrss    0
+mri_coreg ru_idrss    0
+mri_coreg ru_isrss    0
+mri_coreg ru_minflt   308617
+mri_coreg ru_majflt   0
+mri_coreg ru_nswap    0
+mri_coreg ru_inblock  0
+mri_coreg ru_oublock  16
+mri_coreg ru_msgsnd   0
+mri_coreg ru_msgrcv   0
+mri_coreg ru_nsignals 0
+mri_coreg ru_nvcsw    50
+mri_coreg ru_nivcsw   130
+Final  RefRAS-to-MovRAS
+ 0.99983   0.00017   0.01830   0.30407;
+ 0.00091   0.99826  -0.05898   1.01491;
+-0.01828   0.05899   0.99809   4.06575;
+ 0.00000   0.00000   0.00000   1.00000;
+Final  RefVox-to-MovVox
+ 0.36298   0.00792   0.02026  -10.72213;
+-0.02119   0.05176   0.35931  -9.89697;
+ 0.00389  -0.28275   0.04096   42.92844;
+ 0.00000   0.00000   0.00000   1.00000;
+Final parameters  0.3041  1.0149  4.0658 -3.3820  1.0486  0.0100 
+nhits = 85172 out of 16777216, Percent Overlap:  32.5
+mri_coreg RunTimeSec 67.4 sec
+To check run:
+   tkregisterfv --mov bold/tmp.bbregister.27538/template.nii --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/brainmask.mgz --reg bold/tmp.bbregister.27538/mri_coreg.lta --s s001 --surfs 
+
+mri_coreg done
+
+mri_segreg --mov bold/tmp.bbregister.27538/template.nii --init-reg bold/tmp.bbregister.27538/reg.init.dat --out-reg bold/tmp.bbregister.27538/bbr.pass1.dat --subsamp-brute 100 --subsamp 100 --tol 1e-4 --tol1d 1e-3 --brute -4 4 4 --surf white --gm-proj-frac 0.5 --gm-gt-wm 0.5
+$Id: mri_segreg.c,v 1.113 2016/05/10 03:23:20 greve Exp $
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001
+mri_segreg --mov bold/tmp.bbregister.27538/template.nii --init-reg bold/tmp.bbregister.27538/reg.init.dat --out-reg bold/tmp.bbregister.27538/bbr.pass1.dat --subsamp-brute 100 --subsamp 100 --tol 1e-4 --tol1d 1e-3 --brute -4 4 4 --surf white --gm-proj-frac 0.5 --gm-gt-wm 0.5 
+sysname  Linux
+hostname compute0092
+machine  x86_64
+user     emcmaho7@jhu.edu
+movvol bold/tmp.bbregister.27538/template.nii
+regfile bold/tmp.bbregister.27538/reg.init.dat
+subject s001
+dof 6
+outregfile bold/tmp.bbregister.27538/bbr.pass1.dat
+UseMask 0
+UseLH 1
+UseRH 1
+nsubsamp 100
+PenaltySign  -1
+PenaltySlope 0.500000
+PenaltyCenter 0.000000
+surfname white
+GMProjFrac 0.500000
+WMProjAbs 2.000000
+lhcostfile (null)
+rhcostfile (null)
+interp  trilinear (1)
+frame  0
+TolPowell 0.000100
+nMaxItersPowell 36
+n1dmin  3
+Profile   0
+Gdiag_no  -1
+AddNoise  0 (0)
+SynthSeed 1583125708
+TransRandMax 0.000000
+RotRandMax 0.000000
+Translations 0.000000 0.000000 0.000000
+Rotations   0.000000 0.000000 0.000000
+Input reg
+ 0.99821  -0.05572   0.02179   1.79384;
+-0.01360   0.14335   0.98958  -15.83067;
+-0.05826  -0.98810   0.14234  -0.02165;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Loading mov
+Projecting LH Surfs
+Loading lh.white surf
+Loading lh.thickness for GM
+GM Proj: 1 0.500000 2.000000
+WM Proj: 0 0.500000 2.000000
+Projecting RH Surfs
+Loading rh.white surf
+Loading rh.thickness for GM
+Projecting RH Surfs
+Using lh.cortex.label
+Using rh.cortex.label
+Computing relative cost
+ 0  -25.0 -25.0 -25.0   1.036470
+ 1  -25.0 -25.0  25.0   1.044292
+ 2  -25.0  25.0 -25.0   1.080930
+ 3  -25.0  25.0  25.0   1.062489
+ 4   25.0 -25.0 -25.0   1.080757
+ 5   25.0 -25.0  25.0   1.025405
+ 6   25.0  25.0 -25.0   1.050206
+ 7   25.0  25.0  25.0   1.061129
+REL:  8  0.907027    8.441677  1.055210 rel = 0.859571 
+Initial costs ----------------
+Number of surface hits 2744
+WM  Intensity 73327.0009 +/- 16252.7804
+Ctx Intensity 72810.1851 +/- 18502.8661
+Pct Contrast     -2.0556 +/-  20.2423
+Cost   0.9070
+RelCost   0.8596
+
+
+WARNING: initial G-W contrast is negative, but expecting positive.
+If the mov data has a T1 contrast, re-run with --T1
+
+
+
+------------------------------------
+Brute force preopt -4 4 4, n = 729
+     0  -4.0000  -4.0000  -4.0000  -4.0000  -4.0000  -4.0000      1.0151   1.0151  0.0
+     1  -4.0000  -4.0000  -4.0000  -4.0000  -4.0000   0.0000      0.9621   0.9621  0.0
+    12  -4.0000  -4.0000  -4.0000   0.0000   0.0000  -4.0000      0.9334   0.9334  0.0
+    15  -4.0000  -4.0000  -4.0000   0.0000   4.0000  -4.0000      0.9204   0.9204  0.0
+    33  -4.0000  -4.0000   0.0000  -4.0000   4.0000  -4.0000      0.9101   0.9101  0.0
+   244   0.0000  -4.0000  -4.0000  -4.0000  -4.0000   0.0000      0.9027   0.9027  0.0
+   247   0.0000  -4.0000  -4.0000  -4.0000   0.0000   0.0000      0.7870   0.7870  0.0
+   256   0.0000  -4.0000  -4.0000   0.0000   0.0000   0.0000      0.6691   0.6691  0.0
+Brute Force --------------------------
+Min cost was 0.669100
+Number of iterations   729
+Search time 1.178000 sec
+Parameters at best (transmm, rotdeg)
+  0.000  -4.000  -4.000  0.000  0.000  0.000 
+--------------------------------------------
+
+Starting Powell Minimization
+Init Powel Params dof = 6
+0 0
+1 -4
+2 -4
+3 0
+4 0
+5 0
+fs_powell::minimize
+  nparams 6
+  maxfev 36
+  ftol   0.000100
+  linmin_xtol_   0.001000
+  powell nthiter 0: fret = 0.669100
+   6  0.382 -4.000 -4.000  0.000  0.000  0.000   0.6679090931
+   7  0.249 -4.000 -4.000  0.000  0.000  0.000   0.6656133299
+   8  0.210 -4.000 -4.000  0.000  0.000  0.000   0.6653149994
+  10  0.208 -4.000 -4.000  0.000  0.000  0.000   0.6653117163
+  11  0.202 -4.000 -4.000  0.000  0.000  0.000   0.6653082915
+  13  0.204 -4.000 -4.000  0.000  0.000  0.000   0.6653074940
+  21  0.204 -4.029 -4.000  0.000  0.000  0.000   0.6652311497
+  22  0.204 -4.061 -4.000  0.000  0.000  0.000   0.6651972009
+  23  0.204 -4.065 -4.000  0.000  0.000  0.000   0.6651900361
+  25  0.204 -4.145 -4.000  0.000  0.000  0.000   0.6650092373
+  27  0.204 -4.157 -4.000  0.000  0.000  0.000   0.6649771412
+  28  0.204 -4.167 -4.000  0.000  0.000  0.000   0.6649695231
+  29  0.204 -4.166 -4.000  0.000  0.000  0.000   0.6649694386
+  32  0.204 -4.166 -3.000  0.000  0.000  0.000   0.6122358570
+  35  0.204 -4.166 -2.382  0.000  0.000  0.000   0.6047362017
+  37  0.204 -4.166 -2.419  0.000  0.000  0.000   0.6044248916
+  38  0.204 -4.166 -2.641  0.000  0.000  0.000   0.6025046388
+  42  0.204 -4.166 -2.622  0.000  0.000  0.000   0.6024890099
+  44  0.204 -4.166 -2.627  0.000  0.000  0.000   0.6024872745
+  45  0.204 -4.166 -2.626  0.000  0.000  0.000   0.6024872222
+  49  0.204 -4.166 -2.626 -1.618  0.000  0.000   0.5663755465
+  50  0.204 -4.166 -2.626 -1.423  0.000  0.000   0.5648051279
+  53  0.204 -4.166 -2.626 -1.216  0.000  0.000   0.5644929593
+  55  0.204 -4.166 -2.626 -1.226  0.000  0.000   0.5644628603
+  56  0.204 -4.166 -2.626 -1.238  0.000  0.000   0.5644546445
+  59  0.204 -4.166 -2.626 -1.237  0.000  0.000   0.5644544827
+  64  0.204 -4.166 -2.626 -1.237 -0.618  0.000   0.5506305038
+  67  0.204 -4.166 -2.626 -1.237 -0.720  0.000   0.5501543253
+  69  0.204 -4.166 -2.626 -1.237 -0.685  0.000   0.5500013515
+  71  0.204 -4.166 -2.626 -1.237 -0.677  0.000   0.5499988857
+  73  0.204 -4.166 -2.626 -1.237 -0.680  0.000   0.5499987980
+  77  0.204 -4.166 -2.626 -1.237 -0.680  1.000   0.5421264471
+  82  0.204 -4.166 -2.626 -1.237 -0.680  0.815   0.5412507015
+  83  0.204 -4.166 -2.626 -1.237 -0.680  0.816   0.5412471446
+  84  0.204 -4.166 -2.626 -1.237 -0.680  0.855   0.5406725042
+  88  0.204 -4.166 -2.626 -1.237 -0.680  0.848   0.5406673348
+  89  0.204 -4.166 -2.626 -1.237 -0.680  0.847   0.5406671958
+  90  0.204 -4.166 -2.626 -1.237 -0.680  0.846   0.5406670241
+  powell nthiter 1: fret = 0.540667
+  99  0.586 -4.166 -2.626 -1.237 -0.680  0.846   0.5396635285
+ 100  0.423 -4.166 -2.626 -1.237 -0.680  0.846   0.5388007318
+ 102  0.340 -4.166 -2.626 -1.237 -0.680  0.846   0.5386696848
+ 103  0.371 -4.166 -2.626 -1.237 -0.680  0.846   0.5386149888
+ 104  0.369 -4.166 -2.626 -1.237 -0.680  0.846   0.5386149201
+ 105  0.368 -4.166 -2.626 -1.237 -0.680  0.846   0.5386148393
+ 118  0.368 -4.196 -2.626 -1.237 -0.680  0.846   0.5386061639
+ 119  0.368 -4.183 -2.626 -1.237 -0.680  0.846   0.5385899633
+ 121  0.368 -4.184 -2.626 -1.237 -0.680  0.846   0.5385899311
+ 129  0.368 -4.184 -2.244 -1.237 -0.680  0.846   0.5282227790
+ 131  0.368 -4.184 -2.197 -1.237 -0.680  0.846   0.5276626149
+ 133  0.368 -4.184 -2.191 -1.237 -0.680  0.846   0.5276338916
+ 134  0.368 -4.184 -2.188 -1.237 -0.680  0.846   0.5276268557
+ 135  0.368 -4.184 -2.185 -1.237 -0.680  0.846   0.5276262071
+ 137  0.368 -4.184 -2.186 -1.237 -0.680  0.846   0.5276259633
+ 158  0.368 -4.184 -2.186 -1.237 -0.637  0.846   0.5274825632
+ 160  0.368 -4.184 -2.186 -1.237 -0.647  0.846   0.5274702763
+ 162  0.368 -4.184 -2.186 -1.237 -0.646  0.846   0.5274700434
+ 172  0.368 -4.184 -2.186 -1.237 -0.646  0.928   0.5268794282
+ 174  0.368 -4.184 -2.186 -1.237 -0.646  0.943   0.5268398852
+ 175  0.368 -4.184 -2.186 -1.237 -0.646  0.963   0.5268304370
+ 176  0.368 -4.184 -2.186 -1.237 -0.646  0.957   0.5268274670
+  powell nthiter 2: fret = 0.526827
+ 189  0.365 -4.184 -2.186 -1.237 -0.646  0.957   0.5268259780
+ 198  0.365 -4.142 -2.186 -1.237 -0.646  0.957   0.5265785468
+ 200  0.365 -4.143 -2.186 -1.237 -0.646  0.957   0.5265782694
+ 213  0.365 -4.144 -2.179 -1.237 -0.646  0.957   0.5265424728
+ 214  0.365 -4.144 -2.176 -1.237 -0.646  0.957   0.5265418291
+ 216  0.365 -4.144 -2.177 -1.237 -0.646  0.957   0.5265410621
+ 227  0.365 -4.144 -2.177 -1.257 -0.646  0.957   0.5264554990
+ 228  0.365 -4.144 -2.177 -1.256 -0.646  0.957   0.5264547055
+ 238  0.365 -4.144 -2.177 -1.256 -0.651  0.957   0.5264493173
+ 250  0.365 -4.144 -2.177 -1.256 -0.651  0.962   0.5264468516
+ 251  0.365 -4.144 -2.177 -1.256 -0.651  0.963   0.5264468259
+  powell nthiter 3: fret = 0.526447
+ 262  0.386 -4.144 -2.177 -1.256 -0.651  0.963   0.5263873247
+ 263  0.383 -4.144 -2.177 -1.256 -0.651  0.963   0.5263867451
+ 265  0.384 -4.144 -2.177 -1.256 -0.651  0.963   0.5263866398
+ 272  0.384 -4.142 -2.177 -1.256 -0.651  0.963   0.5263832209
+ 274  0.384 -4.136 -2.177 -1.256 -0.651  0.963   0.5263772053
+ 275  0.384 -4.135 -2.177 -1.256 -0.651  0.963   0.5263771747
+ 285  0.384 -4.135 -2.181 -1.256 -0.651  0.963   0.5263710664
+ 286  0.384 -4.135 -2.180 -1.256 -0.651  0.963   0.5263705776
+ 298  0.384 -4.135 -2.180 -1.265 -0.651  0.963   0.5263508179
+ 300  0.384 -4.135 -2.180 -1.264 -0.651  0.963   0.5263506443
+ 321  0.384 -4.135 -2.180 -1.264 -0.651  0.961   0.5263494147
+ 322  0.384 -4.135 -2.180 -1.264 -0.651  0.959   0.5263485203
+  powell nthiter 4: fret = 0.526349
+ 335  0.386 -4.135 -2.180 -1.264 -0.651  0.959   0.5263480362
+ 345  0.386 -4.131 -2.180 -1.264 -0.651  0.959   0.5263459972
+ 354  0.386 -4.131 -2.185 -1.264 -0.651  0.959   0.5263417523
+ 356  0.386 -4.131 -2.183 -1.264 -0.651  0.959   0.5263390821
+ 368  0.386 -4.131 -2.183 -1.269 -0.651  0.959   0.5263297226
+ 369  0.386 -4.131 -2.183 -1.270 -0.651  0.959   0.5263293044
+ 379  0.386 -4.131 -2.183 -1.270 -0.652  0.959   0.5263292800
+ 380  0.386 -4.131 -2.183 -1.270 -0.653  0.959   0.5263292194
+ 392  0.386 -4.131 -2.183 -1.270 -0.653  0.958   0.5263291881
+Powell done niters = 4
+Computing relative cost
+ 0  -25.0 -25.0 -25.0   1.025428
+ 1  -25.0 -25.0  25.0   1.067395
+ 2  -25.0  25.0 -25.0   1.082012
+ 3  -25.0  25.0  25.0   1.049766
+ 4   25.0 -25.0 -25.0   1.056005
+ 5   25.0 -25.0  25.0   1.025408
+ 6   25.0  25.0 -25.0   1.069333
+ 7   25.0  25.0  25.0   1.063191
+REL:  8  0.526329    8.438537  1.054817 rel = 0.498977 
+Number of iterations     4
+Min cost was 0.526329
+Number of FunctionCalls   394
+TolPowell 0.000100
+nMaxItersPowell 36
+OptimizationTime 0.689000 sec
+Parameters at optimum (transmm)  0.38573 -4.13064 -2.18332
+Parameters at optimum (rotdeg) -1.27034 -0.65283  0.95755 
+Final costs ----------------
+Number of surface hits 2741
+WM  Intensity 67960.6183 +/- 17909.1629
+Ctx Intensity 71178.7189 +/- 20579.8612
+Pct Contrast      2.8925 +/-  22.8603
+Cost   0.5263
+RelCost   0.8596
+Reg at min cost was 
+ 0.99891  -0.04645   0.00383   2.43995;
+ 0.00181   0.12065   0.99269  -19.92578;
+-0.04657  -0.99161   0.12060  -1.83358;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Writing optimal reg to bold/tmp.bbregister.27538/bbr.pass1.dat, type = 14 
+Original Reg 
+ 0.99821  -0.05572   0.02179   1.79384;
+-0.01360   0.14335   0.98958  -15.83067;
+-0.05826  -0.98810   0.14234  -0.02165;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Original Reg - Optimal Reg
+-0.00070  -0.00927   0.01796  -0.64611;
+-0.01541   0.02270  -0.00311   4.09511;
+-0.01169   0.00351   0.02173   1.81193;
+ 0.00000   0.00000   0.00000   0.00000;
+
+Computing change in lh position
+LH rmsDiffMean 5.083491
+Computing change in rh position
+Surface-RMS-Diff-mm 4.520653 1.058597 6.840484
+
+
+WARNING: initial G-W contrast was negative, but expected positive.
+If the mov data has a T1 contrast, re-run with --T1
+
+
+mri_segreg done
+mri_segreg --mov bold/tmp.bbregister.27538/template.nii --init-reg bold/tmp.bbregister.27538/bbr.pass1.dat --out-reg bold/register.dof6.dat --interp trilinear --wm-proj-abs 2 --tol 1e-8 --tol1d 1e-3 --c0 0 --mincost bold/register.dof6.dat.mincost --dof 6 --nmax 36 --param bold/register.dof6.dat.param --surf white --brute -0.1 0.1 0.1 --cur-reg bold/tmp.bbregister.27538/reg.curopt.dat --gm-proj-frac 0.5 --nsub 1 --gm-gt-wm 0.5
+$Id: mri_segreg.c,v 1.113 2016/05/10 03:23:20 greve Exp $
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001
+mri_segreg --mov bold/tmp.bbregister.27538/template.nii --init-reg bold/tmp.bbregister.27538/bbr.pass1.dat --out-reg bold/register.dof6.dat --interp trilinear --wm-proj-abs 2 --tol 1e-8 --tol1d 1e-3 --c0 0 --mincost bold/register.dof6.dat.mincost --dof 6 --nmax 36 --param bold/register.dof6.dat.param --surf white --brute -0.1 0.1 0.1 --cur-reg bold/tmp.bbregister.27538/reg.curopt.dat --gm-proj-frac 0.5 --nsub 1 --gm-gt-wm 0.5 
+sysname  Linux
+hostname compute0092
+machine  x86_64
+user     emcmaho7@jhu.edu
+movvol bold/tmp.bbregister.27538/template.nii
+regfile bold/tmp.bbregister.27538/bbr.pass1.dat
+subject s001
+dof 6
+outregfile bold/register.dof6.dat
+UseMask 0
+UseLH 1
+UseRH 1
+nsubsamp 1
+PenaltySign  -1
+PenaltySlope 0.500000
+PenaltyCenter 0.000000
+surfname white
+GMProjFrac 0.500000
+WMProjAbs 2.000000
+lhcostfile (null)
+rhcostfile (null)
+interp  trilinear (1)
+frame  0
+TolPowell 0.000000
+nMaxItersPowell 36
+n1dmin  3
+Profile   0
+Gdiag_no  -1
+AddNoise  0 (0)
+SynthSeed 1583064409
+TransRandMax 0.000000
+RotRandMax 0.000000
+Translations 0.000000 0.000000 0.000000
+Rotations   0.000000 0.000000 0.000000
+Input reg
+ 0.99891  -0.04645   0.00383   2.43995;
+ 0.00181   0.12065   0.99269  -19.92578;
+-0.04657  -0.99161   0.12060  -1.83358;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Loading mov
+Projecting LH Surfs
+Loading lh.white surf
+Loading lh.thickness for GM
+GM Proj: 1 0.500000 2.000000
+WM Proj: 0 0.500000 2.000000
+Projecting RH Surfs
+Loading rh.white surf
+Loading rh.thickness for GM
+Projecting RH Surfs
+Using lh.cortex.label
+Using rh.cortex.label
+Computing relative cost
+ 0  -25.0 -25.0 -25.0   1.040246
+ 1  -25.0 -25.0  25.0   1.073686
+ 2  -25.0  25.0 -25.0   1.083337
+ 3  -25.0  25.0  25.0   1.045939
+ 4   25.0 -25.0 -25.0   1.051200
+ 5   25.0 -25.0  25.0   1.035344
+ 6   25.0  25.0 -25.0   1.050310
+ 7   25.0  25.0  25.0   1.063207
+REL:  8  0.553781    8.443268  1.055409 rel = 0.524708 
+Initial costs ----------------
+Number of surface hits 273419
+WM  Intensity 67817.9270 +/- 18424.3340
+Ctx Intensity 70846.7962 +/- 21154.2364
+Pct Contrast      2.2398 +/-  23.4320
+Cost   0.5538
+RelCost   0.5247
+
+------------------------------------
+Brute force preopt -0.1 0.1 0.1, n = 729
+     0  -0.1000  -0.1000  -0.1000  -0.1000  -0.1000  -0.1000      0.5324   0.5324  0.0
+     3  -0.1000  -0.1000  -0.1000  -0.1000   0.0000  -0.1000      0.5304   0.5304  0.0
+     4  -0.1000  -0.1000  -0.1000  -0.1000   0.0000   0.0000      0.5303   0.5303  0.0
+     7  -0.1000  -0.1000  -0.1000  -0.1000   0.1000   0.0000      0.5301   0.5301  0.0
+    12  -0.1000  -0.1000  -0.1000   0.0000   0.0000  -0.1000      0.5300   0.5300  0.0
+    13  -0.1000  -0.1000  -0.1000   0.0000   0.0000   0.0000      0.5300   0.5300  0.0
+    30  -0.1000  -0.1000   0.0000  -0.1000   0.0000  -0.1000      0.5293   0.5293  0.0
+    33  -0.1000  -0.1000   0.0000  -0.1000   0.1000  -0.1000      0.5288   0.5288  0.0
+    40  -0.1000  -0.1000   0.0000   0.0000   0.0000   0.0000      0.5287   0.5287  0.0
+    57  -0.1000  -0.1000   0.1000  -0.1000   0.0000  -0.1000      0.5286   0.5286  0.0
+    60  -0.1000  -0.1000   0.1000  -0.1000   0.1000  -0.1000      0.5278   0.5278  0.0
+   138  -0.1000   0.0000   0.1000  -0.1000   0.0000  -0.1000      0.5271   0.5271  0.0
+   141  -0.1000   0.0000   0.1000  -0.1000   0.1000  -0.1000      0.5266   0.5266  0.0
+   364   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000      0.5263   0.5263  0.0
+Brute Force --------------------------
+Min cost was 0.526329
+Number of iterations   729
+Search time 1.156000 sec
+Parameters at best (transmm, rotdeg)
+  0.000   0.000   0.000  0.000  0.000  0.000 
+--------------------------------------------
+
+Starting Powell Minimization
+Init Powel Params dof = 6
+0 0
+1 0
+2 0
+3 0
+4 0
+5 0
+fs_powell::minimize
+  nparams 6
+  maxfev 36
+  ftol   0.000000
+  linmin_xtol_   0.001000
+  powell nthiter 0: fret = 0.553781
+  14  0.000  0.382  0.000  0.000  0.000  0.000   0.5526193650
+  15  0.000  0.230  0.000  0.000  0.000  0.000   0.5516776696
+  18  0.000  0.233  0.000  0.000  0.000  0.000   0.5516761555
+  19  0.000  0.234  0.000  0.000  0.000  0.000   0.5516756950
+  27  0.000  0.234  0.119  0.000  0.000  0.000   0.5510143147
+  28  0.000  0.234  0.122  0.000  0.000  0.000   0.5510121577
+  29  0.000  0.234  0.129  0.000  0.000  0.000   0.5510111259
+  31  0.000  0.234  0.127  0.000  0.000  0.000   0.5510108509
+  38  0.000  0.234  0.127 -0.618  0.000  0.000   0.5493068310
+  40  0.000  0.234  0.127 -0.370  0.000  0.000   0.5479521338
+  42  0.000  0.234  0.127 -0.359  0.000  0.000   0.5479463907
+  45  0.000  0.234  0.127 -0.339  0.000  0.000   0.5479430759
+  46  0.000  0.234  0.127 -0.342  0.000  0.000   0.5479427676
+  55  0.000  0.234  0.127 -0.342  0.013  0.000   0.5479376664
+  56  0.000  0.234  0.127 -0.342  0.012  0.000   0.5479374997
+  57  0.000  0.234  0.127 -0.342  0.010  0.000   0.5479374013
+  59  0.000  0.234  0.127 -0.342  0.009  0.000   0.5479373720
+  67  0.000  0.234  0.127 -0.342  0.009 -0.238   0.5468207158
+  68  0.000  0.234  0.127 -0.342  0.009 -0.231   0.5468199132
+  70  0.000  0.234  0.127 -0.342  0.009 -0.229   0.5468148185
+  73  0.000  0.234  0.127 -0.342  0.009 -0.216   0.5468091290
+  74  0.000  0.234  0.127 -0.342  0.009 -0.220   0.5468064933
+  powell nthiter 1: fret = 0.546807
+  84 -0.038  0.234  0.127 -0.342  0.009 -0.220   0.5467510022
+  86 -0.046  0.234  0.127 -0.342  0.009 -0.220   0.5467495978
+  88 -0.045  0.234  0.127 -0.342  0.009 -0.220   0.5467494715
+  89 -0.044  0.234  0.127 -0.342  0.009 -0.220   0.5467494521
+  97 -0.044  0.179  0.127 -0.342  0.009 -0.220   0.5465897046
+  98 -0.044  0.170  0.127 -0.342  0.009 -0.220   0.5465852908
+  99 -0.044  0.168  0.127 -0.342  0.009 -0.220   0.5465849304
+ 100 -0.044  0.165  0.127 -0.342  0.009 -0.220   0.5465845219
+ 102 -0.044  0.164  0.127 -0.342  0.009 -0.220   0.5465845043
+ 111 -0.044  0.164  0.176 -0.342  0.009 -0.220   0.5465423463
+ 112 -0.044  0.164  0.163 -0.342  0.009 -0.220   0.5465321138
+ 113 -0.044  0.164  0.161 -0.342  0.009 -0.220   0.5465319989
+ 121 -0.044  0.164  0.161 -0.408  0.009 -0.220   0.5464695183
+ 122 -0.044  0.164  0.161 -0.395  0.009 -0.220   0.5464667611
+ 126 -0.044  0.164  0.161 -0.392  0.009 -0.220   0.5464663386
+ 135 -0.044  0.164  0.161 -0.392  0.058 -0.220   0.5464244858
+ 136 -0.044  0.164  0.161 -0.392  0.048 -0.220   0.5464218187
+ 139 -0.044  0.164  0.161 -0.392  0.047 -0.220   0.5464217600
+ 147 -0.044  0.164  0.161 -0.392  0.047 -0.249   0.5463964993
+ 148 -0.044  0.164  0.161 -0.392  0.047 -0.256   0.5463941984
+ 149 -0.044  0.164  0.161 -0.392  0.047 -0.265   0.5463939021
+ 151 -0.044  0.164  0.161 -0.392  0.047 -0.261   0.5463937699
+ 152 -0.044  0.164  0.161 -0.392  0.047 -0.262   0.5463937553
+  powell nthiter 2: fret = 0.546394
+ 161 -0.054  0.164  0.161 -0.392  0.047 -0.262   0.5463841972
+ 162 -0.061  0.164  0.161 -0.392  0.047 -0.262   0.5463786951
+ 165 -0.066  0.164  0.161 -0.392  0.047 -0.262   0.5463763588
+ 167 -0.069  0.164  0.161 -0.392  0.047 -0.262   0.5463758697
+ 168 -0.070  0.164  0.161 -0.392  0.047 -0.262   0.5463758602
+ 176 -0.070  0.177  0.161 -0.392  0.047 -0.262   0.5463739369
+ 183 -0.070  0.176  0.161 -0.392  0.047 -0.262   0.5463738922
+ 191 -0.070  0.176  0.192 -0.392  0.047 -0.262   0.5463616034
+ 192 -0.070  0.176  0.182 -0.392  0.047 -0.262   0.5463563459
+ 211 -0.070  0.176  0.182 -0.392  0.076 -0.262   0.5463367284
+ 221 -0.070  0.176  0.182 -0.392  0.076 -0.269   0.5463259890
+ 223 -0.070  0.176  0.182 -0.392  0.076 -0.284   0.5463254690
+ 225 -0.070  0.176  0.182 -0.392  0.076 -0.293   0.5463220352
+ 227 -0.070  0.176  0.182 -0.392  0.076 -0.294   0.5463219163
+  powell nthiter 3: fret = 0.546322
+ 237 -0.081  0.176  0.182 -0.392  0.076 -0.294   0.5463199456
+ 239 -0.077  0.176  0.182 -0.392  0.076 -0.294   0.5463193105
+ 248 -0.077  0.185  0.182 -0.392  0.076 -0.294   0.5463189802
+ 249 -0.077  0.181  0.182 -0.392  0.076 -0.294   0.5463179477
+ 259 -0.077  0.181  0.185 -0.392  0.076 -0.294   0.5463173166
+ 260 -0.077  0.181  0.186 -0.392  0.076 -0.294   0.5463173000
+ 268 -0.077  0.181  0.186 -0.406  0.076 -0.294   0.5463169914
+ 269 -0.077  0.181  0.186 -0.399  0.076 -0.294   0.5463160644
+ 278 -0.077  0.181  0.186 -0.399  0.085 -0.294   0.5463119837
+ 279 -0.077  0.181  0.186 -0.399  0.087 -0.294   0.5463115287
+ 280 -0.077  0.181  0.186 -0.399  0.090 -0.294   0.5463114425
+ 281 -0.077  0.181  0.186 -0.399  0.089 -0.294   0.5463113597
+ 289 -0.077  0.181  0.186 -0.399  0.089 -0.301   0.5463106361
+ 290 -0.077  0.181  0.186 -0.399  0.089 -0.300   0.5463104628
+ 291 -0.077  0.181  0.186 -0.399  0.089 -0.299   0.5463103981
+  powell nthiter 4: fret = 0.546310
+ 302 -0.078  0.181  0.186 -0.399  0.089 -0.299   0.5463101562
+ 339 -0.078  0.181  0.186 -0.399  0.088 -0.299   0.5463100889
+ 359 -0.078  0.181  0.186 -0.399  0.087 -0.299   0.5463100660
+ 360 -0.078  0.181  0.186 -0.399  0.087 -0.299   0.5463100428
+  powell nthiter 5: fret = 0.546310
+ 421 -0.078  0.181  0.186 -0.399  0.087 -0.299   0.5463100428
+Powell done niters = 5
+Computing relative cost
+ 0  -25.0 -25.0 -25.0   1.040679
+ 1  -25.0 -25.0  25.0   1.072985
+ 2  -25.0  25.0 -25.0   1.083297
+ 3  -25.0  25.0  25.0   1.045344
+ 4   25.0 -25.0 -25.0   1.053049
+ 5   25.0 -25.0  25.0   1.035413
+ 6   25.0  25.0 -25.0   1.047485
+ 7   25.0  25.0  25.0   1.061968
+REL:  8  0.546310    8.440221  1.055028 rel = 0.517816 
+Number of iterations     5
+Min cost was 0.546310
+Number of FunctionCalls   428
+TolPowell 0.000000
+nMaxItersPowell 36
+OptimizationTime 51.058000 sec
+Parameters at optimum (transmm) -0.07839  0.18102  0.18586
+Parameters at optimum (rotdeg) -0.39934  0.08752 -0.29906 
+Final costs ----------------
+Number of surface hits 273450
+WM  Intensity 67872.3019 +/- 18316.3472
+Ctx Intensity 70988.8626 +/- 21054.0844
+Pct Contrast      2.3973 +/-  23.2420
+Cost   0.5463
+RelCost   0.5247
+Reg at min cost was 
+ 0.99883  -0.04737   0.00919   2.25487;
+-0.00373   0.11398   0.99348  -19.76951;
+-0.04811  -0.99235   0.11367  -1.51252;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Writing optimal reg to bold/register.dof6.dat, type = 14 
+Original Reg 
+ 0.99891  -0.04645   0.00383   2.43995;
+ 0.00181   0.12065   0.99269  -19.92578;
+-0.04657  -0.99161   0.12060  -1.83358;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Original Reg - Optimal Reg
+ 0.00008   0.00092  -0.00536   0.18509;
+ 0.00554   0.00667  -0.00078  -0.15627;
+ 0.00154   0.00074   0.00693  -0.32106;
+ 0.00000   0.00000   0.00000   0.00000;
+
+Computing change in lh position
+LH rmsDiffMean 0.555386
+Computing change in rh position
+Surface-RMS-Diff-mm 0.470293 0.213180 0.988277
+mri_segreg done
+MinCost: 0.546310 67872.301870 70988.862553 2.397254 
+tkregister2_cmdl --mov bold/template.nii.gz --reg bold/register.dof6.dat --noedit --ltaout bold/register.dof6.lta
+tkregister_tcl /software/apps/freesurfer/6.0.0/tktools/tkregister2.tcl
+INFO: no target volume specified, assuming FreeSurfer orig volume.
+target  volume orig
+movable volume bold/template.nii.gz
+reg file       bold/register.dof6.dat
+LoadVol        0
+ZeroCRAS       0
+$Id: tkregister2.c,v 1.132.2.1 2016/08/02 21:17:29 greve Exp $
+Diagnostic Level -1
+---- Input registration matrix --------
+ 0.99883  -0.04737   0.00919   2.25487;
+-0.00373   0.11398   0.99348  -19.76951;
+-0.04811  -0.99235   0.11367  -1.51252;
+ 0.00000   0.00000   0.00000   1.00000;
+float2int = 0
+---------------------------------------
+INFO: loading target /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/orig.mgz
+Ttarg: --------------------
+-1.00000   0.00000   0.00000   128.00000;
+ 0.00000   0.00000   1.00000  -128.00000;
+ 0.00000  -1.00000   0.00000   128.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+INFO: loading movable bold/template.nii.gz
+Tmov: --------------------
+-2.75000   0.00000   0.00000   110.00000;
+ 0.00000   0.00000   3.49985  -59.49753;
+ 0.00000  -2.75000   0.00000   110.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+mkheaderreg = 0, float2int = 0
+---- Input registration matrix --------
+ 0.99883  -0.04737   0.00919   2.25487;
+-0.00373   0.11398   0.99348  -19.76951;
+-0.04811  -0.99235   0.11367  -1.51252;
+ 0.00000   0.00000   0.00000   1.00000;
+Determinant 1
+subject = s001
+RegMat ---------------------------
+ 0.99883  -0.04737   0.00919   2.25487;
+-0.00373   0.11398   0.99348  -19.76951;
+-0.04811  -0.99235   0.11367  -1.51252;
+ 0.00000   0.00000   0.00000   1.00000;
+Cleaning up
+ 
+Started at Fri Feb 21 13:30:28 EST 2020 
+Ended   at Fri Feb 21 13:32:51 EST 2020
+BBR-Run-Time-Sec 143
+ 
+bbregister Done
+To check results, run:
+tkregisterfv --mov bold/template.nii.gz --reg bold/register.dof6.lta --surfs 
+ 
+  Run: 010 ----------------
+Fri Feb 21 13:32:51 EST 2020
+Update not needed
+  Run: 018 ----------------
+Fri Feb 21 13:32:51 EST 2020
+Update not needed
+Fri Feb 21 13:32:51 EST 2020
+register-sess completed 
+s001 Mask ------------------------
+mkbrainmask-sess -maskstem brain -fsd bold -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -per-run -rlf biomotion.rlf -nolog -update
+------------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001 
+Fri Feb 21 13:32:51 EST 2020
+mkbrainmask -i template.nii.gz -o masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/register.dof6.lta -ndil 1 -nerode 0
+Fri Feb 21 13:32:51 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkbrainmask -i template.nii.gz -o masks/brain.nii.gz -reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/register.dof6.lta -ndil 1 -nerode 0
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: mkbrainmask,v 1.17 2015/12/10 22:51:30 zkaufman Exp $
+Linux compute0092 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_vol2vol --mov template.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/register.dof6.lta --inv --interp nearest --o masks/brain.nii.gz --targ /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+regio_read_register: loading lta
+
+Matrix from regfile:
+ 0.99884  -0.04737   0.00919   2.25487;
+-0.00373   0.11398   0.99348  -19.76952;
+-0.04811  -0.99235   0.11367  -1.51253;
+ 0.00000   0.00000   0.00000   1.00000;
+
+movvol template.nii.gz
+targvol /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/mri/aparc+aseg.mgz
+outvol masks/brain.nii.gz
+regfile /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/register.dof6.lta
+invert 1
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1582703627
+
+Invert!
+Inverting registration
+
+Final tkRAS-to-tkRAS Matrix is:
+ 0.99884  -0.00373  -0.04811  -2.39880;
+-0.04737   0.11398  -0.99235   0.85926;
+ 0.00919   0.99348   0.11367   19.79175;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 2.74680  -0.13230   0.01306   25.59664;
+ 0.02527   0.31260  -3.47702   153.80275;
+ 0.13027   2.72897   0.39893   7.70808;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_binarize --i masks/brain.nii.gz --o masks/brain.nii.gz --min 0.5
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i masks/brain.nii.gz --o masks/brain.nii.gz --min 0.5 
+sysname  Linux
+hostname compute0092
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41048 values in range
+Counting number of voxels in first frame
+Found 41048 voxels in final mask
+Count: 41048 1086444.075027 217600 18.863971
+mri_binarize done
+Diliating 1
+mri_binarize --i masks/brain.nii.gz --min 0.5 --dilate 1 --o masks/brain.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i masks/brain.nii.gz --min 0.5 --dilate 1 --o masks/brain.nii.gz 
+sysname  Linux
+hostname compute0092
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      masks/brain.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     masks/brain.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 41048 values in range
+Dilating 1 voxels in 3d
+Counting number of voxels in first frame
+Found 59249 voxels in final mask
+Count: 59249 1568181.762846 217600 27.228401
+mri_binarize done
+ 
+Started at Fri Feb 21 13:32:51 EST 2020 
+Ended   at Fri Feb 21 13:32:52 EST 2020
+Mkbrainmask-Run-Time-Sec 1
+ 
+mkbrainmask Done
+mri_binarize --i masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o masks/brain.e3.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold
+cmdline mri_binarize.bin --i masks/brain.nii.gz --min 0.5 --zero-edges --erode 3 --o masks/brain.e3.nii.gz 
+sysname  Linux
+hostname compute0092
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      masks/brain.nii.gz
+frame      0
+nErode3d   3
+nErode2d   0
+output     masks/brain.e3.nii.gz
+Binarizing based on threshold
+min        0.5
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 58026 values in range
+Eroding 3 voxels in 3d
+Counting number of voxels in first frame
+Found 26900 voxels in final mask
+Count: 26900 711979.770470 217600 12.362132
+mri_binarize done
+s001 Update not needed for run 010 mask
+s001 Update not needed for run 018 mask
+s001 Update not needed for run 010 meanval
+s001 Update not needed for run 018 meanval
+Fri Feb 21 13:32:52 EST 2020
+mkbrainmask-sess done
+s001 MC -----------------------------
+mc-sess -fstem f -fmcstem fmcpr -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -rlf biomotion.rlf -per-run -nolog -update
+Logfile is /dev/null
+-------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001 
+RunList: 010 018
+s001 010 Update not needed
+s001 018 Update not needed
+
+
+Fri Feb 21 13:32:53 EST 2020
+mc-sess completed SUCCESSFULLY
+s001 To Surface -----------------------------
+rawfunc2surf-sess -fwhm 5 -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -hemi rh -self -rlf biomotion.rlf -nolog -update -per-run
+instem fmcpr
+outstem fmcpr.sm5.self.hemi
+------------------------------ 
+1/1 s001
+  1/1 s001 010 rh ---------
+    Fri Feb 21 13:32:53 EST 2020
+mri_vol2surf --mov /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/register.dof6.lta --trgsubject s001 --interp nearest --projfrac 0.5 --hemi rh --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.self.rh.pr.nii.gz --noreshape --cortex
+srcvol = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.nii.gz
+srcreg = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/register.dof6.lta
+srcregold = 0
+srcwarp unspecified
+surf = white
+hemi = rh
+trgsubject = s001
+surfreg = sphere.reg
+ProjFrac = 0.5
+thickness = thickness
+reshape = 0
+interp = nearest
+float2int = round
+GetProjMax = 0
+INFO: float2int code = 0
+INFO: changing type to float
+Done loading volume
+Input reg is LTA
+-------- original matrix -----------
+ 0.99878  -0.04720   0.01444   2.42293;
+-0.00919   0.10963   0.99393  -19.73030;
+-0.04850  -0.99285   0.10906  -1.64384;
+ 0.00000   0.00000   0.00000   1.00000;
+-------- original matrix -----------
+Loading label /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/label/rh.cortex.label
+Reading surface /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/surf/rh.white
+Done reading source surface
+Reading thickness /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/surf/rh.thickness
+Done
+Mapping Source Volume onto Source Subject Surface
+ 1 0.5 0.5 0.5
+using old
+Done mapping volume to surface
+Number of source voxels hit = 15074
+Masking with /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/label/rh.cortex.label
+Writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.self.rh.pr.nii.gz
+Dim: 144338 1 1
+mri_binarize --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.self.rh.pr.nii.gz --min .00001 --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.self.rh.pr.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+cmdline mri_binarize.bin --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.self.rh.pr.nii.gz --min .00001 --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.self.rh.pr.nii.gz 
+sysname  Linux
+hostname compute0092
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.self.rh.pr.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.self.rh.pr.nii.gz
+Binarizing based on threshold
+min        1e-05
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 136064 values in range
+Counting number of voxels in first frame
+Found 136064 voxels in final mask
+Count: 136064 136064.000000 144338 94.267622
+mri_binarize done
+  1/1 s001 018 rh ---------
+    Fri Feb 21 13:32:55 EST 2020
+mri_vol2surf --mov /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/register.dof6.lta --trgsubject s001 --interp nearest --projfrac 0.5 --hemi rh --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.self.rh.pr.nii.gz --noreshape --cortex
+srcvol = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.nii.gz
+srcreg = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/register.dof6.lta
+srcregold = 0
+srcwarp unspecified
+surf = white
+hemi = rh
+trgsubject = s001
+surfreg = sphere.reg
+ProjFrac = 0.5
+thickness = thickness
+reshape = 0
+interp = nearest
+float2int = round
+GetProjMax = 0
+INFO: float2int code = 0
+INFO: changing type to float
+Done loading volume
+Input reg is LTA
+-------- original matrix -----------
+ 0.99862  -0.04756   0.02213   2.92661;
+-0.01619   0.12200   0.99240  -19.82664;
+-0.04990  -0.99139   0.12106  -0.77823;
+ 0.00000   0.00000   0.00000   1.00000;
+-------- original matrix -----------
+Loading label /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/label/rh.cortex.label
+Reading surface /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/surf/rh.white
+Done reading source surface
+Reading thickness /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/surf/rh.thickness
+Done
+Mapping Source Volume onto Source Subject Surface
+ 1 0.5 0.5 0.5
+using old
+Done mapping volume to surface
+Number of source voxels hit = 15028
+Masking with /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/label/rh.cortex.label
+Writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.self.rh.pr.nii.gz
+Dim: 144338 1 1
+mri_binarize --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.self.rh.pr.nii.gz --min .00001 --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.self.rh.pr.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+cmdline mri_binarize.bin --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.self.rh.pr.nii.gz --min .00001 --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.self.rh.pr.nii.gz 
+sysname  Linux
+hostname compute0092
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.self.rh.pr.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.self.rh.pr.nii.gz
+Binarizing based on threshold
+min        1e-05
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 136064 values in range
+Counting number of voxels in first frame
+Found 136064 voxels in final mask
+Count: 136064 136064.000000 144338 94.267622
+mri_binarize done
+mri_concat --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/masks/brain.self.rh.pr.nii.gz --mean /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.self.rh.pr.nii.gz /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.self.rh.pr.nii.gz
+ninputs = 2
+Checking inputs
+nframestot = 2
+Allocing output
+Done allocing
+nframes = 2
+Computing mean across frames
+Writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/masks/brain.self.rh.pr.nii.gz
+mri_binarize --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/masks/brain.self.rh.pr.nii.gz --min 10e-10 --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/masks/brain.self.rh.pr.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+cmdline mri_binarize.bin --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/masks/brain.self.rh.pr.nii.gz --min 10e-10 --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/masks/brain.self.rh.pr.nii.gz 
+sysname  Linux
+hostname compute0092
+machine  x86_64
+user     emcmaho7@jhu.edu
+
+input      /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/masks/brain.self.rh.pr.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/masks/brain.self.rh.pr.nii.gz
+Binarizing based on threshold
+min        1e-09
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 136064 values in range
+Counting number of voxels in first frame
+Found 136064 voxels in final mask
+Count: 136064 136064.000000 144338 94.267622
+mri_binarize done
+  1/1 s001 010 rh ---------
+    Fri Feb 21 13:32:57 EST 2020
+mri_vol2surf --mov /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/fmcpr.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/register.dof6.lta --trgsubject s001 --interp trilin --projfrac 0.5 --hemi rh --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/fmcpr.sm5.self.rh.nii.gz --noreshape --cortex
+srcvol = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/fmcpr.nii.gz
+srcreg = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/register.dof6.lta
+srcregold = 0
+srcwarp unspecified
+surf = white
+hemi = rh
+trgsubject = s001
+surfreg = sphere.reg
+ProjFrac = 0.5
+thickness = thickness
+reshape = 0
+interp = trilin
+float2int = round
+GetProjMax = 0
+INFO: float2int code = 0
+Done loading volume
+Input reg is LTA
+-------- original matrix -----------
+ 0.99878  -0.04720   0.01444   2.42293;
+-0.00919   0.10963   0.99393  -19.73030;
+-0.04850  -0.99285   0.10906  -1.64384;
+ 0.00000   0.00000   0.00000   1.00000;
+-------- original matrix -----------
+Loading label /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/label/rh.cortex.label
+Reading surface /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/surf/rh.white
+Done reading source surface
+Reading thickness /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/surf/rh.thickness
+Done
+Mapping Source Volume onto Source Subject Surface
+ 1 0.5 0.5 0.5
+using old
+Done mapping volume to surface
+Number of source voxels hit = 15074
+Masking with /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/label/rh.cortex.label
+Writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/fmcpr.sm5.self.rh.nii.gz
+Dim: 144338 1 1
+mris_fwhm --s s001 --hemi rh --smooth-only --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/fmcpr.sm5.self.rh.nii.gz --fwhm 5 --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/fmcpr.sm5.self.rh.nii.gz --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.self.rh.nii.gz --no-detrend
+s001 rh white
+Number of vertices 144338
+Number of faces    288672
+Total area         98255.976562
+GroupSurface 0
+AvgVtxArea       0.680735
+AvgVtxDist       0.902294
+StdVtxDist       0.251302
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.self.rh.nii.gz
+Found 136064 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=5.000000, gstd=2.123305, niters=14 
+Only smoothing, so saving and exiting now
+  1/1 s001 018 rh ---------
+    Fri Feb 21 13:33:53 EST 2020
+mri_vol2surf --mov /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/fmcpr.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/register.dof6.lta --trgsubject s001 --interp trilin --projfrac 0.5 --hemi rh --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/fmcpr.sm5.self.rh.nii.gz --noreshape --cortex
+srcvol = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/fmcpr.nii.gz
+srcreg = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/register.dof6.lta
+srcregold = 0
+srcwarp unspecified
+surf = white
+hemi = rh
+trgsubject = s001
+surfreg = sphere.reg
+ProjFrac = 0.5
+thickness = thickness
+reshape = 0
+interp = trilin
+float2int = round
+GetProjMax = 0
+INFO: float2int code = 0
+Done loading volume
+Input reg is LTA
+-------- original matrix -----------
+ 0.99862  -0.04756   0.02213   2.92661;
+-0.01619   0.12200   0.99240  -19.82664;
+-0.04990  -0.99139   0.12106  -0.77823;
+ 0.00000   0.00000   0.00000   1.00000;
+-------- original matrix -----------
+Loading label /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/label/rh.cortex.label
+Reading surface /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/surf/rh.white
+Done reading source surface
+Reading thickness /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/surf/rh.thickness
+Done
+Mapping Source Volume onto Source Subject Surface
+ 1 0.5 0.5 0.5
+using old
+Done mapping volume to surface
+Number of source voxels hit = 15028
+Masking with /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/label/rh.cortex.label
+Writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/fmcpr.sm5.self.rh.nii.gz
+Dim: 144338 1 1
+mris_fwhm --s s001 --hemi rh --smooth-only --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/fmcpr.sm5.self.rh.nii.gz --fwhm 5 --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/fmcpr.sm5.self.rh.nii.gz --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.self.rh.nii.gz --no-detrend
+s001 rh white
+Number of vertices 144338
+Number of faces    288672
+Total area         98255.976562
+GroupSurface 0
+AvgVtxArea       0.680735
+AvgVtxDist       0.902294
+StdVtxDist       0.251302
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.self.rh.nii.gz
+Found 136064 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=5.000000, gstd=2.123305, niters=14 
+Only smoothing, so saving and exiting now
+
+Fri Feb 21 13:34:49 EST 2020
+rawfunc2surf-sess completed 
+----------------------------------------
+Started at Fri Feb 21 13:30:23 EST 2020
+Ended   at Fri Feb 21 13:34:49 EST 2020
+preproc-sess done
+-------------------------------------------
+1/1 /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001 
+Fri Feb 21 13:34:49 EST 2020
+anadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5
+    s001 Update needed
+MLF is /tmp/selxavg3-sess-24265.m
+------------------------------------------
+% Fri Feb 21 13:34:49 EST 2020  
+% /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis  
+%  biomotion-surface-rh-sm5  
+which fast_selxavg3
+which fast_ldanaflac
+which MRIread
+  
+  
+fast_selxavg3b('/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/sxa3.config.txt')
+if(~fast_fileexists('/tmp/selxavg3-sess-24265.ok')); quit; end
+%--------------------------------
+  
+  
+quit;
+------------------------------------------
+------------------------------------------
+------- matlab output --------------------
+MATLAB is selecting SOFTWARE OPENGL rendering.
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2019 The MathWorks, Inc.
+                  R2019a (9.6.0.1072779) 64-bit (glnxa64)
+                               March 8, 2019
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> /software/apps/freesurfer/6.0.0/fsfast/toolbox/fast_selxavg3.m
+>> /software/apps/freesurfer/6.0.0/fsfast/toolbox/fast_ldanaflac.m
+>> /software/apps/freesurfer/6.0.0/matlab/MRIread.m
+>> >> >> starting fast_selxavg3b
+
+
+#@# s001 ###############################
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001
+-------------------------
+$Id: fast_selxavg3b.m,v 1.4 2016/05/04 22:16:47 greve Exp $
+-------------------------
+outtop = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata
+Extension format = nii.gz
+INFO: key nSliceGroups unrecognized, line 12, skipping
+ 1 bio_scrambled.mat
+ 2 bio_translation.mat
+ 3 fixation.mat
+ 4 motion_static.mat
+Excluding 2 points
+nruns = 2
+autostimdur = 
+
+
+outanadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5
+Excluding 2 points
+Excluding 2 points
+parfiles condition id list:  1  2  3  4 
+Found 136064/144338 (94.3) voxels in mask 1
+Creating Design Matrix
+ ... creation time =  0.007 sec
+DoMCFit = 1
+ntptot = 422, nX = 18, DOF = 404
+Saving X matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/Xtmp.mat
+XCond = 1164.38 (normalized)
+Computing compensation for resdual AR1 bias
+ 1  -0.5  -0.500275    (t=0.028398)
+ 2  -0.25  -0.262414    (t=0.043641)
+ 3  0  -0.0287009    (t=0.058857)
+ 4  0.25  0.197626    (t=0.073216)
+ 5  0.5  0.408239    (t=0.092679)
+AR1 Correction M: 0.0407151 1.0973
+Computing contrast matrices
+OLS Beta Pass 
+  run 1    t= 0.0
+reading data ... 1.87289
+    Global Mean 82746.60
+  run 2    t= 3.1
+reading data ... 1.90025
+    Global Mean 81956.50
+Global In-Mask Mean = 82351.6 (70287.1)
+Rescale Target = 100
+RescaleFactor = 0.00121431
+OLS Residual Pass 
+  run 1    t= 0.0
+reading data ... 1.88891
+Saving rho1
+  run 2    t= 5.2
+reading data ... 1.88773
+Saving rho1
+Smoothing ACF
+/software/apps/freesurfer/6.0.0/bin/mris_fwhm --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/mask.nii.gz --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/rho1mn.nii.gz --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/rho1mn.sm.nii.gz --fwhm 20.000000 --smooth-only --s s001 --hemi rh --sd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+s001 rh white
+Number of vertices 144338
+Number of faces    288672
+Total area         98255.976562
+GroupSurface 0
+AvgVtxArea       0.680735
+AvgVtxDist       0.902294
+StdVtxDist       0.251302
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/mask.nii.gz
+Found 136064 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=20.000000, gstd=8.493218, niters=217 
+Only smoothing, so saving and exiting now
+
+Found 0 voxels with corrected AR1 > 0.90
+Whitening
+Computing whitening matrices
+Alloc Sinv: 422 422 30 ...  done t = 0.002703 sec
+  seg   1   4535  nrho1 = 0.104
+  seg   2   4535  nrho1 = 0.179
+  seg   3   4535  nrho1 = 0.248
+  seg   4   4535  nrho1 = 0.299
+  seg   5   4535  nrho1 = 0.327
+  seg   6   4535  nrho1 = 0.348
+  seg   7   4535  nrho1 = 0.365
+  seg   8   4535  nrho1 = 0.378
+  seg   9   4535  nrho1 = 0.389
+  seg  10   4535  nrho1 = 0.400
+  seg  11   4535  nrho1 = 0.409
+  seg  12   4535  nrho1 = 0.418
+  seg  13   4535  nrho1 = 0.427
+  seg  14   4535  nrho1 = 0.435
+  seg  15   4535  nrho1 = 0.442
+  seg  16   4535  nrho1 = 0.450
+  seg  17   4535  nrho1 = 0.457
+  seg  18   4535  nrho1 = 0.463
+  seg  19   4535  nrho1 = 0.470
+  seg  20   4535  nrho1 = 0.477
+  seg  21   4535  nrho1 = 0.485
+  seg  22   4535  nrho1 = 0.491
+  seg  23   4535  nrho1 = 0.498
+  seg  24   4535  nrho1 = 0.505
+  seg  25   4535  nrho1 = 0.511
+  seg  26   4535  nrho1 = 0.519
+  seg  27   4535  nrho1 = 0.530
+  seg  28   4535  nrho1 = 0.544
+  seg  29   4535  nrho1 = 0.558
+  seg  30   4549  nrho1 = 0.576
+GLS Beta Pass 
+  run 1    t= 0.0
+  run 2    t= 2.9
+GLS Residual Pass 
+  run 1    t= 0.0
+  run 2    t=12.7
+Found 8274 zero-valued voxels
+Computing contrasts
+Starting contrasts
+bio_scrambled J=1 -------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/bio_scrambled exists, deleting
+Saving efficiency 24.2796
+Testing Motion Correction Parameters
+  2.05   0.07   2.28   4.46  -0.86   0.27   3.00   2.31  -0.10  -1.89  -0.25   5.65  -1.59  -2.21   3.00   2.31  -3.00  -2.31 
+bio_translation J=1 -------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/bio_translation exists, deleting
+Saving efficiency 22.772
+Testing Motion Correction Parameters
+  0.75  -0.56   1.06   0.17  -1.82   0.22   4.26   3.41   1.04  -1.21  -0.07   0.51  -1.73  -0.01   4.26   3.41  -4.26  -3.41 
+fixation J=1 -------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/fixation exists, deleting
+Saving efficiency 69.5722
+Testing Motion Correction Parameters
+  1.41   1.02  -4.95   0.32   1.82   1.20  15.43  12.92   6.48  -0.65  -3.37   0.01   3.45   0.20  15.42  12.92 -15.43 -12.92 
+motion_static J=1 -------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/motion_static exists, deleting
+Saving efficiency 36.268
+Testing Motion Correction Parameters
+ -1.09  -1.29   5.19   0.04  -1.61  -2.60   0.45   0.46   1.82   0.35   3.10   0.54  -3.34  -1.07   0.45   0.46  -0.45  -0.46 
+Saving h.dat to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/h.dat
+cputime-min 0.567167
+fast_selxavg3 done for /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001
+
+ans =
+
+     0
+
+>> >> >> >> >> ------------------------------------------
+Started at Fri Feb 21 13:30:22 EST 2020
+Ended   at Fri Feb 21 13:36:18 EST 2020
+ 
+selxavg3-sess completed
+ 
