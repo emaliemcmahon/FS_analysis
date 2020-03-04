@@ -1,9 +1,9 @@
 mkcontrast-sess log file
 $Id: mkcontrast-sess,v 1.19 2015/12/10 22:51:30 zkaufman Exp $
 $0
-Darwin cogsci-li-lap1.lan 19.3.0 Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64 x86_64
-Tue Mar  3 08:07:57 EST 2020
+Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Wed Mar  4 15:39:15 EST 2020
 -analysis amodal-surface-rh-sm5 -contrast fixation -a 1 -a 2
-/Applications/freesurfer/fsfast/bin/mkcontrast
-Condition Weights: .50000000000000000000 .50000000000000000000 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-Tue Mar  3 08:08:00 EST 2020
+/software/apps/freesurfer/6.0.0/fsfast/bin/mkcontrast
+Condition Weights: .50000000000000000000 .50000000000000000000
+Wed Mar  4 15:39:26 EST 2020

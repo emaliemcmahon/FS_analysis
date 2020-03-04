@@ -1,0 +1,149 @@
+selxavg3-sess log file
+/software/apps/freesurfer/6.0.0/fsfast/bin/selxavg3-sess
+-s s002 -df sessdir -analysis psts-surface-lh-sm5 -svres
+$Id: selxavg3-sess,v 1.68 2016/05/10 03:24:18 greve Exp $
+uid=3996(emcmaho7@jhu.edu) gid=1405(lisik3) groups=1405(lisik3),1502(mbonner5)
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Wed Mar  4 16:15:13 EST 2020
+preproc-sess -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -a psts-surface-lh-sm5 -nolog
+--------------------------------------------------------------
+preproc-sess logfile is /dev/null
+--------------------------------------------------------------
+$Id: preproc-sess,v 1.64.2.1 2016/08/02 21:19:09 greve Exp $
+emcmaho7@jhu.edu
+setenv FREESURFER_HOME /software/apps/freesurfer/6.0.0
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/preproc-sess
+-s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -a psts-surface-lh-sm5 -nolog
+Wed Mar  4 16:15:13 EST 2020
+instem   f 
+mc   1     f fmcpr 
+stc  0     fmcpr
+sm   0   
+mask 1   brain
+s002 Template -----------------------------
+mktemplate-sess -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -rlf psts.rlf -nolog -update
+ 
+Session: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 ----------------
+Wed Mar  4 16:15:13 EST 2020
+Detected input format at nii
+s002 Update not needed
+  Run: 007 ----------------
+  Wed Mar  4 16:15:13 EST 2020
+  s002 007 Update not needed
+  Run: 012 ----------------
+  Wed Mar  4 16:15:13 EST 2020
+  s002 012 Update not needed
+  Run: 018 ----------------
+  Wed Mar  4 16:15:13 EST 2020
+  s002 018 Update not needed
+Wed Mar  4 16:15:13 EST 2020
+mktemplate-sess completed 
+s002 Registration -----------------------------
+register-sess -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -delete-dat -dof 6 -bold -rlf psts.rlf -per-run -nolog -update -init-coreg
+--------------------------------------------------------------
+register-sess logfile is /dev/null
+--------------------------------------------------------------
+Wed Mar  4 16:15:13 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/register-sess -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -delete-dat -dof 6 -bold -rlf psts.rlf -per-run -nolog -update -init-coreg
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+ 
+Session: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 ----------------
+Wed Mar  4 16:15:13 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002
+  Run: 007 ----------------
+Wed Mar  4 16:15:13 EST 2020
+Update not needed
+  Run: 012 ----------------
+Wed Mar  4 16:15:13 EST 2020
+Update not needed
+  Run: 018 ----------------
+Wed Mar  4 16:15:13 EST 2020
+Update not needed
+Wed Mar  4 16:15:13 EST 2020
+register-sess completed 
+s002 Mask ------------------------
+mkbrainmask-sess -maskstem brain -fsd bold -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -per-run -rlf psts.rlf -nolog -update
+------------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 
+Wed Mar  4 16:15:14 EST 2020
+s002 Update not needed for session-level mask
+s002 Update not needed for run 007 mask
+s002 Update not needed for run 012 mask
+s002 Update not needed for run 018 mask
+s002 Update not needed for run 007 meanval
+s002 Update not needed for run 012 meanval
+s002 Update not needed for run 018 meanval
+Wed Mar  4 16:15:14 EST 2020
+mkbrainmask-sess done
+s002 MC -----------------------------
+mc-sess -fstem f -fmcstem fmcpr -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -rlf psts.rlf -per-run -nolog -update
+Logfile is /dev/null
+-------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 
+RunList: 007 012 018
+s002 007 Update not needed
+s002 012 Update not needed
+s002 018 Update not needed
+
+
+Wed Mar  4 16:15:14 EST 2020
+mc-sess completed SUCCESSFULLY
+s002 To Surface -----------------------------
+rawfunc2surf-sess -fwhm 5 -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -hemi lh -self -rlf psts.rlf -nolog -update -per-run
+instem fmcpr
+outstem fmcpr.sm5.self.hemi
+------------------------------ 
+1/1 s002
+  1/1 s002 007 lh ---------
+    Wed Mar  4 16:15:14 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/007/masks/brain.self.lh.pr.nii.gz does not need updating
+  1/1 s002 012 lh ---------
+    Wed Mar  4 16:15:14 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/012/masks/brain.self.lh.pr.nii.gz does not need updating
+  1/1 s002 018 lh ---------
+    Wed Mar  4 16:15:14 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/018/masks/brain.self.lh.pr.nii.gz does not need updating
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/masks/brain.self.lh.pr.nii.gz does not need updating
+  1/1 s002 007 lh ---------
+    Wed Mar  4 16:15:14 EST 2020
+    s002 007 Update not needed
+  1/1 s002 012 lh ---------
+    Wed Mar  4 16:15:14 EST 2020
+    s002 012 Update not needed
+  1/1 s002 018 lh ---------
+    Wed Mar  4 16:15:14 EST 2020
+    s002 018 Update not needed
+
+Wed Mar  4 16:15:14 EST 2020
+rawfunc2surf-sess completed 
+----------------------------------------
+Started at Wed Mar 4 16:15:13 EST 2020
+Ended   at Wed Mar  4 16:15:14 EST 2020
+preproc-sess done
+-------------------------------------------
+1/1 /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 
+Wed Mar  4 16:15:15 EST 2020
+anadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/psts-surface-lh-sm5
+    s002 Update not needed
+MLF is /tmp/selxavg3-sess-59555.m
+------------------------------------------
+% Wed Mar  4 16:15:14 EST 2020  
+% /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis  
+%  psts-surface-lh-sm5  
+which fast_selxavg3
+which fast_ldanaflac
+which MRIread
+  
+  
+quit;
+------------------------------------------
+INFO: no data sets needed processing

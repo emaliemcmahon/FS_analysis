@@ -1,7 +1,7 @@
 #!/bin/bash -l
 #SBATCH
 #SBATCH --job-name=glm
-#SBATCH --time=10:0:0
+#SBATCH --time=2:0:0
 #SBATCH --partition=shared
 #SBATCH --nodes=1
 #SBATCH --mail-type=end
@@ -19,3 +19,5 @@ source SetUpFreeSurfer.sh
 selxavg3-sess -s ${sid} -df sessdir \
 -analysis ${a_name} \
 -svres ${wise}
+
+mv *.out ./slurm_out/

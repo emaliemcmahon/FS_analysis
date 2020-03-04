@@ -20,3 +20,5 @@ mri_surf2surf --srcsubject ${sid} \
             --trgsubject fsaverage \
             --tval ${path}/beta_mni.nii.gz \
             --hemi ${hemi}
+
+mv *.out ./slurm_out/

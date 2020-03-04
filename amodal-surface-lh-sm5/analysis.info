@@ -1,7 +1,7 @@
-# FSBUILD freesurfer-Darwin-OSX-stable-pub-v6.0.0-2beb96c
-# MKAVERSION $Id: FreeSurferEnv.csh,v 1.89 2016/06/09 14:54:31 zkaufman Exp $
-# MKACMD /Applications/freesurfer/fsfast/bin/mkanalysis-sess -a amodal-surface-lh-sm5 -surface self lh -fsd bold -fwhm 5 -event-related -paradigm amodal.para -nconditions 16 -refeventdur 2 -TR 2 -nskip 2 -polyfit 1 -spmhrf 0 -runlistfile amodal.rlf -mcextreg -per-run -force
-# DATE Tue Mar  3 08:07:43 EST 2020
+# FSBUILD freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+# MKAVERSION $Id: mkanalysis-sess,v 1.78 2015/12/10 22:51:30 zkaufman Exp $
+# MKACMD /software/apps/freesurfer/6.0.0/fsfast/bin/mkanalysis-sess -a amodal-surface-lh-sm5 -surface self lh -fsd bold -fwhm 5 -event-related -paradigm amodal.para -nconditions 2 -refeventdur 16 -TR 2 -nskip 2 -polyfit 1 -spmhrf 0 -runlistfile amodal.rlf -mcextreg -per-run -force
+# DATE Wed Mar  4 15:38:39 EST 2020
 
 analysis amodal-surface-lh-sm5
 mcstem fmcpr
@@ -27,9 +27,9 @@ nskip 2
 polyfit 1
 HPFCutoffHz 0
 HeteroGCor 0
-nconditions 16
+nconditions 2
 parname amodal.para
-RefEventDur 2
+RefEventDur 16
 timewindow 40.000000
 prestim 0
 TER 0.050000
@@ -37,18 +37,4 @@ spmhrf 0
 stimulusdelay -1.00000000000000000000
 Condition 1 Condition01
 Condition 2 Condition02
-Condition 3 Condition03
-Condition 4 Condition04
-Condition 5 Condition05
-Condition 6 Condition06
-Condition 7 Condition07
-Condition 8 Condition08
-Condition 9 Condition09
-Condition 10 Condition10
-Condition 11 Condition11
-Condition 12 Condition12
-Condition 13 Condition13
-Condition 14 Condition14
-Condition 15 Condition15
-Condition 16 Condition16
 nuisreg mcprextreg 3

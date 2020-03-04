@@ -1,0 +1,1162 @@
+selxavg3-sess log file
+/software/apps/freesurfer/6.0.0/fsfast/bin/selxavg3-sess
+-s s002 -df sessdir -analysis maintask-surface-lh-sm0 -svres -run-wise
+$Id: selxavg3-sess,v 1.68 2016/05/10 03:24:18 greve Exp $
+uid=3996(emcmaho7@jhu.edu) gid=1405(lisik3) groups=1405(lisik3),1502(mbonner5)
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Wed Mar  4 13:56:30 EST 2020
+preproc-sess -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -a maintask-surface-lh-sm0 -nolog
+--------------------------------------------------------------
+preproc-sess logfile is /dev/null
+--------------------------------------------------------------
+$Id: preproc-sess,v 1.64.2.1 2016/08/02 21:19:09 greve Exp $
+emcmaho7@jhu.edu
+setenv FREESURFER_HOME /software/apps/freesurfer/6.0.0
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/preproc-sess
+-s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -a maintask-surface-lh-sm0 -nolog
+Wed Mar  4 13:56:31 EST 2020
+instem   f 
+mc   1     f fmc 
+stc  0     fmc
+sm   0   
+mask 1   brain
+s002 Template -----------------------------
+mktemplate-sess -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -rlf maintask.rlf -nolog -update
+ 
+Session: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 ----------------
+Wed Mar  4 13:56:31 EST 2020
+Detected input format at nii
+s002 Update not needed
+  Run: 003 ----------------
+  Wed Mar  4 13:56:31 EST 2020
+  s002 003 Update not needed
+  Run: 004 ----------------
+  Wed Mar  4 13:56:31 EST 2020
+  s002 004 Update not needed
+  Run: 005 ----------------
+  Wed Mar  4 13:56:31 EST 2020
+  s002 005 Update not needed
+  Run: 006 ----------------
+  Wed Mar  4 13:56:31 EST 2020
+  s002 006 Update not needed
+  Run: 010 ----------------
+  Wed Mar  4 13:56:32 EST 2020
+  s002 010 Update not needed
+  Run: 011 ----------------
+  Wed Mar  4 13:56:32 EST 2020
+  s002 011 Update not needed
+  Run: 016 ----------------
+  Wed Mar  4 13:56:32 EST 2020
+  s002 016 Update not needed
+  Run: 017 ----------------
+  Wed Mar  4 13:56:32 EST 2020
+  s002 017 Update not needed
+  Run: 020 ----------------
+  Wed Mar  4 13:56:32 EST 2020
+  s002 020 Update not needed
+  Run: 021 ----------------
+  Wed Mar  4 13:56:32 EST 2020
+  s002 021 Update not needed
+Wed Mar  4 13:56:32 EST 2020
+mktemplate-sess completed 
+s002 Registration -----------------------------
+register-sess -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -delete-dat -dof 6 -bold -rlf maintask.rlf -per-session -nolog -update -init-coreg
+--------------------------------------------------------------
+register-sess logfile is /dev/null
+--------------------------------------------------------------
+Wed Mar  4 13:56:32 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/register-sess -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -delete-dat -dof 6 -bold -rlf maintask.rlf -per-session -nolog -update -init-coreg
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+ 
+Session: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 ----------------
+Wed Mar  4 13:56:32 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002
+Wed Mar  4 13:56:32 EST 2020
+register-sess completed 
+s002 Mask ------------------------
+mkbrainmask-sess -maskstem brain -fsd bold -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -per-session -rlf maintask.rlf -nolog -update
+------------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 
+Wed Mar  4 13:56:32 EST 2020
+s002 Update not needed for session-level mask
+s002 Update not needed for run 003 meanval
+s002 Update not needed for run 004 meanval
+s002 Update not needed for run 005 meanval
+s002 Update not needed for run 006 meanval
+s002 Update not needed for run 010 meanval
+s002 Update not needed for run 011 meanval
+s002 Update not needed for run 016 meanval
+s002 Update not needed for run 017 meanval
+s002 Update not needed for run 020 meanval
+s002 Update not needed for run 021 meanval
+Wed Mar  4 13:56:34 EST 2020
+mkbrainmask-sess done
+s002 MC -----------------------------
+mc-sess -fstem f -fmcstem fmc -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -rlf maintask.rlf -per-session -nolog -update
+Logfile is /dev/null
+-------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 
+RunList: 003 004 005 006 010 011 016 017 020 021
+s002 003 Update not needed
+s002 004 Update not needed
+s002 005 Update not needed
+s002 006 Update not needed
+s002 010 Update not needed
+s002 011 Update not needed
+s002 016 Update not needed
+s002 017 Update not needed
+s002 020 Update not needed
+s002 021 Update not needed
+
+
+Wed Mar  4 13:56:35 EST 2020
+mc-sess completed SUCCESSFULLY
+s002 To Surface -----------------------------
+rawfunc2surf-sess -fwhm 0 -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -hemi lh -self -rlf maintask.rlf -nolog -update -per-session
+instem fmc
+outstem fmc.sm0.self.hemi
+------------------------------ 
+1/1 s002
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/masks/brain.self.lh.nii.gz does not need updating
+  1/1 s002 003 lh ---------
+    Wed Mar  4 13:56:35 EST 2020
+    s002 003 Update not needed
+  1/1 s002 004 lh ---------
+    Wed Mar  4 13:56:35 EST 2020
+    s002 004 Update not needed
+  1/1 s002 005 lh ---------
+    Wed Mar  4 13:56:35 EST 2020
+    s002 005 Update not needed
+  1/1 s002 006 lh ---------
+    Wed Mar  4 13:56:35 EST 2020
+    s002 006 Update not needed
+  1/1 s002 010 lh ---------
+    Wed Mar  4 13:56:35 EST 2020
+    s002 010 Update not needed
+  1/1 s002 011 lh ---------
+    Wed Mar  4 13:56:35 EST 2020
+    s002 011 Update not needed
+  1/1 s002 016 lh ---------
+    Wed Mar  4 13:56:35 EST 2020
+    s002 016 Update not needed
+  1/1 s002 017 lh ---------
+    Wed Mar  4 13:56:35 EST 2020
+    s002 017 Update not needed
+  1/1 s002 020 lh ---------
+    Wed Mar  4 13:56:35 EST 2020
+    s002 020 Update not needed
+  1/1 s002 021 lh ---------
+    Wed Mar  4 13:56:35 EST 2020
+    s002 021 Update not needed
+
+Wed Mar  4 13:56:35 EST 2020
+rawfunc2surf-sess completed 
+----------------------------------------
+Started at Wed Mar 4 13:56:31 EST 2020
+Ended   at Wed Mar  4 13:56:35 EST 2020
+preproc-sess done
+-------------------------------------------
+1/1 /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 
+Wed Mar  4 13:56:36 EST 2020
+anadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0
+    s002 Update needed
+MLF is /tmp/selxavg3-sess-24232.m
+------------------------------------------
+% Wed Mar  4 13:56:35 EST 2020  
+% /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis  
+%  maintask-surface-lh-sm0  
+which fast_selxavg3
+which fast_ldanaflac
+which MRIread
+  
+  
+fast_selxavg3b('/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/sxa3.config.txt')
+if(~fast_fileexists('/tmp/selxavg3-sess-24232.ok')); quit; end
+%--------------------------------
+  
+  
+quit;
+------------------------------------------
+------------------------------------------
+------- matlab output --------------------
+MATLAB is selecting SOFTWARE OPENGL rendering.
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2019 The MathWorks, Inc.
+                  R2019a (9.6.0.1072779) 64-bit (glnxa64)
+                               March 8, 2019
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> /software/apps/freesurfer/6.0.0/fsfast/toolbox/fast_selxavg3.m
+>> /software/apps/freesurfer/6.0.0/fsfast/toolbox/fast_ldanaflac.m
+>> /software/apps/freesurfer/6.0.0/matlab/MRIread.m
+>> >> >> starting fast_selxavg3b
+
+
+#@# s002 ###############################
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002
+-------------------------
+$Id: fast_selxavg3b.m,v 1.4 2016/05/04 22:16:47 greve Exp $
+-------------------------
+outtop = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata
+Extension format = nii.gz
+INFO: key nSliceGroups unrecognized, line 12, skipping
+ 1 fixation.mat
+Excluding 2 points
+nruns = 10
+autostimdur = 
+
+
+outanadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr003
+Excluding 2 points
+parfiles condition id list:  1  2  3  4 
+Found 135564/143568 (94.4) voxels in mask 1
+Creating Design Matrix
+ ... creation time =  0.002 sec
+DoMCFit = 1
+ntptot = 118, nX = 11, DOF = 107
+Saving X matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr003/Xtmp.mat
+XCond = 675.053 (normalized)
+Computing compensation for resdual AR1 bias
+ 1  -0.5  -0.499136    (t=0.025373)
+ 2  -0.25  -0.273119    (t=0.026656)
+ 3  0  -0.0563855    (t=0.02826)
+ 4  0.25  0.14694    (t=0.028994)
+ 5  0.5  0.32563    (t=0.032824)
+AR1 Correction M: 0.0858523 1.20555
+Computing contrast matrices
+OLS Beta Pass 
+  run 1    t= 0.0
+reading data ... 0.850224
+    Global Mean 121275.00
+Global In-Mask Mean = 121275 (115548)
+Rescale Target = 100
+RescaleFactor = 0.000824572
+OLS Residual Pass 
+  run 1    t= 0.0
+reading data ... 0.865985
+Saving rho1
+Smoothing ACF
+/software/apps/freesurfer/6.0.0/bin/mris_fwhm --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr003/mask.nii.gz --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr003/rho1mn.nii.gz --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr003/rho1mn.sm.nii.gz --fwhm 20.000000 --smooth-only --s s002 --hemi lh --sd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+s002 lh white
+Number of vertices 143568
+Number of faces    287132
+Total area         98667.226562
+GroupSurface 0
+AvgVtxArea       0.687251
+AvgVtxDist       0.906255
+StdVtxDist       0.253760
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr003/mask.nii.gz
+Found 135564 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=20.000000, gstd=8.493218, niters=215 
+Only smoothing, so saving and exiting now
+
+Found 0 voxels with corrected AR1 > 0.90
+Whitening
+Computing whitening matrices
+Alloc Sinv: 118 118 30 ...  done t = 0.002984 sec
+  seg   1   4519  nrho1 = 0.085
+  seg   2   4519  nrho1 = 0.141
+  seg   3   4519  nrho1 = 0.176
+  seg   4   4519  nrho1 = 0.200
+  seg   5   4519  nrho1 = 0.223
+  seg   6   4519  nrho1 = 0.241
+  seg   7   4519  nrho1 = 0.258
+  seg   8   4519  nrho1 = 0.272
+  seg   9   4519  nrho1 = 0.285
+  seg  10   4519  nrho1 = 0.298
+  seg  11   4519  nrho1 = 0.311
+  seg  12   4519  nrho1 = 0.324
+  seg  13   4519  nrho1 = 0.335
+  seg  14   4519  nrho1 = 0.345
+  seg  15   4519  nrho1 = 0.354
+  seg  16   4519  nrho1 = 0.362
+  seg  17   4519  nrho1 = 0.370
+  seg  18   4519  nrho1 = 0.379
+  seg  19   4519  nrho1 = 0.389
+  seg  20   4519  nrho1 = 0.398
+  seg  21   4519  nrho1 = 0.409
+  seg  22   4519  nrho1 = 0.419
+  seg  23   4519  nrho1 = 0.431
+  seg  24   4519  nrho1 = 0.442
+  seg  25   4519  nrho1 = 0.453
+  seg  26   4519  nrho1 = 0.464
+  seg  27   4519  nrho1 = 0.477
+  seg  28   4519  nrho1 = 0.497
+  seg  29   4519  nrho1 = 0.529
+  seg  30   4513  nrho1 = 0.600
+GLS Beta Pass 
+  run 1    t= 0.0
+GLS Residual Pass 
+  run 1    t= 0.0
+Found 8004 zero-valued voxels
+Computing contrasts
+Starting contrasts
+fixation J=1 -------------
+Saving efficiency 12.3433
+Testing Motion Correction Parameters
+  0.24   0.52  -0.27  -0.21  -0.49  -0.10   0.26   0.23   0.48  -0.16  -0.34  -0.25   0.06   0.27   0.26   0.23  -0.26  -0.23 
+Saving h.dat to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr003/h.dat
+
+
+outanadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr004
+Excluding 2 points
+parfiles condition id list:  1  2  3  4 
+Found 135564/143568 (94.4) voxels in mask 1
+Creating Design Matrix
+ ... creation time =  0.001 sec
+DoMCFit = 1
+ntptot = 118, nX = 11, DOF = 107
+Saving X matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr004/Xtmp.mat
+XCond = 815.881 (normalized)
+Computing compensation for resdual AR1 bias
+ 1  -0.5  -0.498456    (t=0.001446)
+ 2  -0.25  -0.274666    (t=0.002548)
+ 3  0  -0.0586297    (t=0.003129)
+ 4  0.25  0.144387    (t=0.003609)
+ 5  0.5  0.323475    (t=0.004092)
+AR1 Correction M: 0.0880374 1.20967
+Computing contrast matrices
+OLS Beta Pass 
+  run 2    t= 0.0
+reading data ... 0.940041
+    Global Mean 121724.00
+Global In-Mask Mean = 121724 (116006)
+Rescale Target = 100
+RescaleFactor = 0.000821531
+OLS Residual Pass 
+  run 2    t= 0.0
+reading data ... 0.834174
+Saving rho1
+Smoothing ACF
+/software/apps/freesurfer/6.0.0/bin/mris_fwhm --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr004/mask.nii.gz --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr004/rho1mn.nii.gz --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr004/rho1mn.sm.nii.gz --fwhm 20.000000 --smooth-only --s s002 --hemi lh --sd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+s002 lh white
+Number of vertices 143568
+Number of faces    287132
+Total area         98667.226562
+GroupSurface 0
+AvgVtxArea       0.687251
+AvgVtxDist       0.906255
+StdVtxDist       0.253760
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr004/mask.nii.gz
+Found 135564 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=20.000000, gstd=8.493218, niters=215 
+Only smoothing, so saving and exiting now
+
+Found 0 voxels with corrected AR1 > 0.90
+Whitening
+Computing whitening matrices
+Alloc Sinv: 118 118 30 ...  done t = 0.002882 sec
+  seg   1   4519  nrho1 = 0.075
+  seg   2   4519  nrho1 = 0.106
+  seg   3   4519  nrho1 = 0.129
+  seg   4   4519  nrho1 = 0.146
+  seg   5   4519  nrho1 = 0.156
+  seg   6   4519  nrho1 = 0.165
+  seg   7   4519  nrho1 = 0.175
+  seg   8   4519  nrho1 = 0.184
+  seg   9   4519  nrho1 = 0.192
+  seg  10   4519  nrho1 = 0.199
+  seg  11   4519  nrho1 = 0.206
+  seg  12   4519  nrho1 = 0.213
+  seg  13   4519  nrho1 = 0.219
+  seg  14   4519  nrho1 = 0.225
+  seg  15   4519  nrho1 = 0.231
+  seg  16   4519  nrho1 = 0.236
+  seg  17   4519  nrho1 = 0.241
+  seg  18   4519  nrho1 = 0.247
+  seg  19   4519  nrho1 = 0.253
+  seg  20   4519  nrho1 = 0.258
+  seg  21   4519  nrho1 = 0.263
+  seg  22   4519  nrho1 = 0.268
+  seg  23   4519  nrho1 = 0.273
+  seg  24   4519  nrho1 = 0.279
+  seg  25   4519  nrho1 = 0.285
+  seg  26   4519  nrho1 = 0.293
+  seg  27   4519  nrho1 = 0.303
+  seg  28   4519  nrho1 = 0.316
+  seg  29   4519  nrho1 = 0.332
+  seg  30   4513  nrho1 = 0.356
+GLS Beta Pass 
+  run 2    t= 0.0
+GLS Residual Pass 
+  run 2    t= 0.0
+Found 8004 zero-valued voxels
+Computing contrasts
+Starting contrasts
+fixation J=1 -------------
+Saving efficiency 15.9887
+Testing Motion Correction Parameters
+  0.00   0.33  -0.05   1.05   0.62   0.74   0.48   0.51  -0.19   0.13  -0.07   1.07   0.29  -0.94   0.48   0.51  -0.48  -0.51 
+Saving h.dat to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr004/h.dat
+
+
+outanadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr005
+Excluding 2 points
+parfiles condition id list:  1  2  3  4 
+Found 135564/143568 (94.4) voxels in mask 1
+Creating Design Matrix
+ ... creation time =  0.001 sec
+DoMCFit = 1
+ntptot = 131, nX = 11, DOF = 120
+Saving X matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr005/Xtmp.mat
+XCond = 89.1766 (normalized)
+Computing compensation for resdual AR1 bias
+ 1  -0.5  -0.505715    (t=0.000436)
+ 2  -0.25  -0.277154    (t=0.001036)
+ 3  0  -0.0567481    (t=0.001582)
+ 4  0.25  0.150888    (t=0.002124)
+ 5  0.5  0.33468    (t=0.002673)
+AR1 Correction M: 0.0837987 1.18343
+Computing contrast matrices
+OLS Beta Pass 
+  run 3    t= 0.0
+reading data ... 1.03002
+    Global Mean 122696.00
+Global In-Mask Mean = 122696 (116533)
+Rescale Target = 100
+RescaleFactor = 0.000815022
+OLS Residual Pass 
+  run 3    t= 0.0
+reading data ... 0.926635
+Saving rho1
+Smoothing ACF
+/software/apps/freesurfer/6.0.0/bin/mris_fwhm --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr005/mask.nii.gz --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr005/rho1mn.nii.gz --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr005/rho1mn.sm.nii.gz --fwhm 20.000000 --smooth-only --s s002 --hemi lh --sd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+s002 lh white
+Number of vertices 143568
+Number of faces    287132
+Total area         98667.226562
+GroupSurface 0
+AvgVtxArea       0.687251
+AvgVtxDist       0.906255
+StdVtxDist       0.253760
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr005/mask.nii.gz
+Found 135564 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=20.000000, gstd=8.493218, niters=215 
+Only smoothing, so saving and exiting now
+
+Found 0 voxels with corrected AR1 > 0.90
+Whitening
+Computing whitening matrices
+Alloc Sinv: 131 131 30 ...  done t = 0.002164 sec
+  seg   1   4519  nrho1 = 0.090
+  seg   2   4519  nrho1 = 0.104
+  seg   3   4519  nrho1 = 0.118
+  seg   4   4519  nrho1 = 0.128
+  seg   5   4519  nrho1 = 0.139
+  seg   6   4519  nrho1 = 0.147
+  seg   7   4519  nrho1 = 0.153
+  seg   8   4519  nrho1 = 0.157
+  seg   9   4519  nrho1 = 0.161
+  seg  10   4519  nrho1 = 0.165
+  seg  11   4519  nrho1 = 0.170
+  seg  12   4519  nrho1 = 0.175
+  seg  13   4519  nrho1 = 0.180
+  seg  14   4519  nrho1 = 0.184
+  seg  15   4519  nrho1 = 0.188
+  seg  16   4519  nrho1 = 0.192
+  seg  17   4519  nrho1 = 0.196
+  seg  18   4519  nrho1 = 0.199
+  seg  19   4519  nrho1 = 0.203
+  seg  20   4519  nrho1 = 0.206
+  seg  21   4519  nrho1 = 0.210
+  seg  22   4519  nrho1 = 0.213
+  seg  23   4519  nrho1 = 0.217
+  seg  24   4519  nrho1 = 0.220
+  seg  25   4519  nrho1 = 0.224
+  seg  26   4519  nrho1 = 0.227
+  seg  27   4519  nrho1 = 0.231
+  seg  28   4519  nrho1 = 0.237
+  seg  29   4519  nrho1 = 0.246
+  seg  30   4513  nrho1 = 0.262
+GLS Beta Pass 
+  run 3    t= 0.0
+GLS Residual Pass 
+  run 3    t= 0.0
+Found 8004 zero-valued voxels
+Computing contrasts
+Starting contrasts
+fixation J=1 -------------
+Saving efficiency 18.1827
+Testing Motion Correction Parameters
+ -0.01   0.14   0.11  -0.20   0.27   0.15   0.08  -0.08  -0.20   0.19   0.08  -0.15   0.06   0.16   0.08  -0.08  -0.08   0.08 
+Saving h.dat to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr005/h.dat
+
+
+outanadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr006
+Excluding 2 points
+parfiles condition id list:  1  2  3  4 
+Found 135564/143568 (94.4) voxels in mask 1
+Creating Design Matrix
+ ... creation time =  0.000 sec
+DoMCFit = 1
+ntptot = 131, nX = 11, DOF = 120
+Saving X matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr006/Xtmp.mat
+XCond = 163.903 (normalized)
+Computing compensation for resdual AR1 bias
+ 1  -0.5  -0.506865    (t=0.000418)
+ 2  -0.25  -0.277882    (t=0.000998)
+ 3  0  -0.0567303    (t=0.001545)
+ 4  0.25  0.151898    (t=0.002108)
+ 5  0.5  0.337463    (t=0.00265)
+AR1 Correction M: 0.0829727 1.1782
+Computing contrast matrices
+OLS Beta Pass 
+  run 4    t= 0.0
+reading data ... 0.921789
+    Global Mean 122584.00
+Global In-Mask Mean = 122584 (116126)
+Rescale Target = 100
+RescaleFactor = 0.000815767
+OLS Residual Pass 
+  run 4    t= 0.0
+reading data ... 0.94368
+Saving rho1
+Smoothing ACF
+/software/apps/freesurfer/6.0.0/bin/mris_fwhm --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr006/mask.nii.gz --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr006/rho1mn.nii.gz --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr006/rho1mn.sm.nii.gz --fwhm 20.000000 --smooth-only --s s002 --hemi lh --sd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+s002 lh white
+Number of vertices 143568
+Number of faces    287132
+Total area         98667.226562
+GroupSurface 0
+AvgVtxArea       0.687251
+AvgVtxDist       0.906255
+StdVtxDist       0.253760
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr006/mask.nii.gz
+Found 135564 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=20.000000, gstd=8.493218, niters=215 
+Only smoothing, so saving and exiting now
+
+Found 0 voxels with corrected AR1 > 0.90
+Whitening
+Computing whitening matrices
+Alloc Sinv: 131 131 30 ...  done t = 0.003074 sec
+  seg   1   4519  nrho1 = 0.094
+  seg   2   4519  nrho1 = 0.108
+  seg   3   4519  nrho1 = 0.121
+  seg   4   4519  nrho1 = 0.131
+  seg   5   4519  nrho1 = 0.141
+  seg   6   4519  nrho1 = 0.147
+  seg   7   4519  nrho1 = 0.152
+  seg   8   4519  nrho1 = 0.156
+  seg   9   4519  nrho1 = 0.160
+  seg  10   4519  nrho1 = 0.163
+  seg  11   4519  nrho1 = 0.166
+  seg  12   4519  nrho1 = 0.168
+  seg  13   4519  nrho1 = 0.171
+  seg  14   4519  nrho1 = 0.173
+  seg  15   4519  nrho1 = 0.176
+  seg  16   4519  nrho1 = 0.179
+  seg  17   4519  nrho1 = 0.182
+  seg  18   4519  nrho1 = 0.184
+  seg  19   4519  nrho1 = 0.186
+  seg  20   4519  nrho1 = 0.189
+  seg  21   4519  nrho1 = 0.191
+  seg  22   4519  nrho1 = 0.193
+  seg  23   4519  nrho1 = 0.196
+  seg  24   4519  nrho1 = 0.198
+  seg  25   4519  nrho1 = 0.200
+  seg  26   4519  nrho1 = 0.203
+  seg  27   4519  nrho1 = 0.206
+  seg  28   4519  nrho1 = 0.211
+  seg  29   4519  nrho1 = 0.216
+  seg  30   4513  nrho1 = 0.230
+GLS Beta Pass 
+  run 4    t= 0.0
+GLS Residual Pass 
+  run 4    t= 0.0
+Found 8004 zero-valued voxels
+Computing contrasts
+Starting contrasts
+fixation J=1 -------------
+Saving efficiency 17.5676
+Testing Motion Correction Parameters
+  1.10  -1.60   1.07  -0.73  -1.33  -0.93   0.14   0.31   0.11  -1.76  -0.21   1.87  -2.79  -0.77   0.14   0.31  -0.14  -0.31 
+Saving h.dat to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr006/h.dat
+
+
+outanadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr010
+Excluding 2 points
+parfiles condition id list:  1  2  3  4 
+Found 135564/143568 (94.4) voxels in mask 1
+Creating Design Matrix
+ ... creation time =  0.004 sec
+DoMCFit = 1
+ntptot = 131, nX = 11, DOF = 120
+Saving X matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr010/Xtmp.mat
+XCond = 112.025 (normalized)
+Computing compensation for resdual AR1 bias
+ 1  -0.5  -0.500039    (t=0.000548)
+ 2  -0.25  -0.273009    (t=0.001136)
+ 3  0  -0.0532476    (t=0.001674)
+ 4  0.25  0.154826    (t=0.002301)
+ 5  0.5  0.341453    (t=0.002855)
+AR1 Correction M: 0.078062 1.1827
+Computing contrast matrices
+OLS Beta Pass 
+  run 5    t= 0.0
+reading data ... 0.919765
+    Global Mean 121661.00
+Global In-Mask Mean = 121661 (115509)
+Rescale Target = 100
+RescaleFactor = 0.000821956
+OLS Residual Pass 
+  run 5    t= 0.0
+reading data ... 0.921964
+Saving rho1
+Smoothing ACF
+/software/apps/freesurfer/6.0.0/bin/mris_fwhm --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr010/mask.nii.gz --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr010/rho1mn.nii.gz --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr010/rho1mn.sm.nii.gz --fwhm 20.000000 --smooth-only --s s002 --hemi lh --sd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+s002 lh white
+Number of vertices 143568
+Number of faces    287132
+Total area         98667.226562
+GroupSurface 0
+AvgVtxArea       0.687251
+AvgVtxDist       0.906255
+StdVtxDist       0.253760
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr010/mask.nii.gz
+Found 135564 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=20.000000, gstd=8.493218, niters=215 
+Only smoothing, so saving and exiting now
+
+Found 0 voxels with corrected AR1 > 0.90
+Whitening
+Computing whitening matrices
+Alloc Sinv: 131 131 30 ...  done t = 0.003697 sec
+  seg   1   4519  nrho1 = 0.080
+  seg   2   4519  nrho1 = 0.090
+  seg   3   4519  nrho1 = 0.097
+  seg   4   4519  nrho1 = 0.104
+  seg   5   4519  nrho1 = 0.110
+  seg   6   4519  nrho1 = 0.114
+  seg   7   4519  nrho1 = 0.117
+  seg   8   4519  nrho1 = 0.120
+  seg   9   4519  nrho1 = 0.122
+  seg  10   4519  nrho1 = 0.125
+  seg  11   4519  nrho1 = 0.127
+  seg  12   4519  nrho1 = 0.129
+  seg  13   4519  nrho1 = 0.131
+  seg  14   4519  nrho1 = 0.133
+  seg  15   4519  nrho1 = 0.134
+  seg  16   4519  nrho1 = 0.136
+  seg  17   4519  nrho1 = 0.138
+  seg  18   4519  nrho1 = 0.140
+  seg  19   4519  nrho1 = 0.142
+  seg  20   4519  nrho1 = 0.144
+  seg  21   4519  nrho1 = 0.146
+  seg  22   4519  nrho1 = 0.149
+  seg  23   4519  nrho1 = 0.151
+  seg  24   4519  nrho1 = 0.153
+  seg  25   4519  nrho1 = 0.156
+  seg  26   4519  nrho1 = 0.158
+  seg  27   4519  nrho1 = 0.161
+  seg  28   4519  nrho1 = 0.165
+  seg  29   4519  nrho1 = 0.173
+  seg  30   4513  nrho1 = 0.185
+GLS Beta Pass 
+  run 5    t= 0.0
+GLS Residual Pass 
+  run 5    t= 0.0
+Found 8004 zero-valued voxels
+Computing contrasts
+Starting contrasts
+fixation J=1 -------------
+Saving efficiency 19.0156
+Testing Motion Correction Parameters
+  0.04  -0.78  -1.14  -2.07   3.86  -3.00   0.11   0.02   1.81  -0.34  -1.45   0.05   2.67  -1.17   0.11   0.02  -0.11  -0.02 
+Saving h.dat to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr010/h.dat
+
+
+outanadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr011
+Excluding 2 points
+parfiles condition id list:  1  2  3  4 
+Found 135564/143568 (94.4) voxels in mask 1
+Creating Design Matrix
+ ... creation time =  0.000 sec
+DoMCFit = 1
+ntptot = 131, nX = 11, DOF = 120
+Saving X matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr011/Xtmp.mat
+XCond = 171.747 (normalized)
+Computing compensation for resdual AR1 bias
+ 1  -0.5  -0.500491    (t=0.000389)
+ 2  -0.25  -0.273226    (t=0.000956)
+ 3  0  -0.0538583    (t=0.001507)
+ 4  0.25  0.153124    (t=0.002051)
+ 5  0.5  0.337116    (t=0.002605)
+AR1 Correction M: 0.0801271 1.18765
+Computing contrast matrices
+OLS Beta Pass 
+  run 6    t= 0.0
+reading data ... 1.03086
+    Global Mean 121558.00
+Global In-Mask Mean = 121558 (115860)
+Rescale Target = 100
+RescaleFactor = 0.000822653
+OLS Residual Pass 
+  run 6    t= 0.0
+reading data ... 0.920826
+Saving rho1
+Smoothing ACF
+/software/apps/freesurfer/6.0.0/bin/mris_fwhm --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr011/mask.nii.gz --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr011/rho1mn.nii.gz --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr011/rho1mn.sm.nii.gz --fwhm 20.000000 --smooth-only --s s002 --hemi lh --sd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+s002 lh white
+Number of vertices 143568
+Number of faces    287132
+Total area         98667.226562
+GroupSurface 0
+AvgVtxArea       0.687251
+AvgVtxDist       0.906255
+StdVtxDist       0.253760
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr011/mask.nii.gz
+Found 135564 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=20.000000, gstd=8.493218, niters=215 
+Only smoothing, so saving and exiting now
+
+Found 0 voxels with corrected AR1 > 0.90
+Whitening
+Computing whitening matrices
+Alloc Sinv: 131 131 30 ...  done t = 0.002012 sec
+  seg   1   4519  nrho1 = 0.080
+  seg   2   4519  nrho1 = 0.085
+  seg   3   4519  nrho1 = 0.091
+  seg   4   4519  nrho1 = 0.097
+  seg   5   4519  nrho1 = 0.102
+  seg   6   4519  nrho1 = 0.105
+  seg   7   4519  nrho1 = 0.108
+  seg   8   4519  nrho1 = 0.111
+  seg   9   4519  nrho1 = 0.113
+  seg  10   4519  nrho1 = 0.115
+  seg  11   4519  nrho1 = 0.116
+  seg  12   4519  nrho1 = 0.117
+  seg  13   4519  nrho1 = 0.118
+  seg  14   4519  nrho1 = 0.119
+  seg  15   4519  nrho1 = 0.120
+  seg  16   4519  nrho1 = 0.121
+  seg  17   4519  nrho1 = 0.122
+  seg  18   4519  nrho1 = 0.123
+  seg  19   4519  nrho1 = 0.124
+  seg  20   4519  nrho1 = 0.125
+  seg  21   4519  nrho1 = 0.126
+  seg  22   4519  nrho1 = 0.127
+  seg  23   4519  nrho1 = 0.128
+  seg  24   4519  nrho1 = 0.130
+  seg  25   4519  nrho1 = 0.131
+  seg  26   4519  nrho1 = 0.133
+  seg  27   4519  nrho1 = 0.135
+  seg  28   4519  nrho1 = 0.137
+  seg  29   4519  nrho1 = 0.140
+  seg  30   4513  nrho1 = 0.144
+GLS Beta Pass 
+  run 6    t= 0.0
+GLS Residual Pass 
+  run 6    t= 0.0
+Found 8004 zero-valued voxels
+Computing contrasts
+Starting contrasts
+fixation J=1 -------------
+Saving efficiency 17.3859
+Testing Motion Correction Parameters
+  0.83  -0.06  -0.32   0.10  -0.51   0.49   0.27   0.02  -0.31  -0.78  -0.74   0.09   0.12   0.14   0.27   0.02  -0.27  -0.02 
+Saving h.dat to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr011/h.dat
+
+
+outanadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr016
+Excluding 2 points
+parfiles condition id list:  1  2  3  4 
+Found 135564/143568 (94.4) voxels in mask 1
+Creating Design Matrix
+ ... creation time =  0.000 sec
+DoMCFit = 1
+ntptot = 131, nX = 11, DOF = 120
+Saving X matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr016/Xtmp.mat
+XCond = 152.828 (normalized)
+Computing compensation for resdual AR1 bias
+ 1  -0.5  -0.49779    (t=0.000378)
+ 2  -0.25  -0.270835    (t=0.000959)
+ 3  0  -0.0512201    (t=0.001497)
+ 4  0.25  0.157404    (t=0.002051)
+ 5  0.5  0.346301    (t=0.002589)
+AR1 Correction M: 0.0745947 1.17977
+Computing contrast matrices
+OLS Beta Pass 
+  run 7    t= 0.0
+reading data ... 0.924494
+    Global Mean 113229.00
+Global In-Mask Mean = 113229 (106280)
+Rescale Target = 100
+RescaleFactor = 0.000883166
+OLS Residual Pass 
+  run 7    t= 0.0
+reading data ... 0.926622
+Saving rho1
+Smoothing ACF
+/software/apps/freesurfer/6.0.0/bin/mris_fwhm --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr016/mask.nii.gz --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr016/rho1mn.nii.gz --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr016/rho1mn.sm.nii.gz --fwhm 20.000000 --smooth-only --s s002 --hemi lh --sd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+s002 lh white
+Number of vertices 143568
+Number of faces    287132
+Total area         98667.226562
+GroupSurface 0
+AvgVtxArea       0.687251
+AvgVtxDist       0.906255
+StdVtxDist       0.253760
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr016/mask.nii.gz
+Found 135564 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=20.000000, gstd=8.493218, niters=215 
+Only smoothing, so saving and exiting now
+
+Found 0 voxels with corrected AR1 > 0.90
+Whitening
+Computing whitening matrices
+Alloc Sinv: 131 131 30 ...  done t = 0.003003 sec
+  seg   1   4519  nrho1 = 0.081
+  seg   2   4519  nrho1 = 0.089
+  seg   3   4519  nrho1 = 0.096
+  seg   4   4519  nrho1 = 0.103
+  seg   5   4519  nrho1 = 0.108
+  seg   6   4519  nrho1 = 0.112
+  seg   7   4519  nrho1 = 0.115
+  seg   8   4519  nrho1 = 0.117
+  seg   9   4519  nrho1 = 0.119
+  seg  10   4519  nrho1 = 0.121
+  seg  11   4519  nrho1 = 0.122
+  seg  12   4519  nrho1 = 0.124
+  seg  13   4519  nrho1 = 0.125
+  seg  14   4519  nrho1 = 0.127
+  seg  15   4519  nrho1 = 0.128
+  seg  16   4519  nrho1 = 0.129
+  seg  17   4519  nrho1 = 0.131
+  seg  18   4519  nrho1 = 0.132
+  seg  19   4519  nrho1 = 0.133
+  seg  20   4519  nrho1 = 0.134
+  seg  21   4519  nrho1 = 0.135
+  seg  22   4519  nrho1 = 0.137
+  seg  23   4519  nrho1 = 0.138
+  seg  24   4519  nrho1 = 0.139
+  seg  25   4519  nrho1 = 0.141
+  seg  26   4519  nrho1 = 0.143
+  seg  27   4519  nrho1 = 0.145
+  seg  28   4519  nrho1 = 0.148
+  seg  29   4519  nrho1 = 0.151
+  seg  30   4513  nrho1 = 0.157
+GLS Beta Pass 
+  run 7    t= 0.0
+GLS Residual Pass 
+  run 7    t= 0.0
+Found 8004 zero-valued voxels
+Computing contrasts
+Starting contrasts
+fixation J=1 -------------
+Saving efficiency 16.2851
+Testing Motion Correction Parameters
+  0.48   0.90  -0.42   0.08  -0.18  -0.66  -0.94  -1.13   0.13  -0.29  -0.45  -0.17   0.09  -0.55  -0.94  -1.13   0.94   1.13 
+Saving h.dat to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr016/h.dat
+
+
+outanadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr017
+Excluding 2 points
+parfiles condition id list:  1  2  3  4 
+Found 135564/143568 (94.4) voxels in mask 1
+Creating Design Matrix
+ ... creation time =  0.000 sec
+DoMCFit = 1
+ntptot = 131, nX = 11, DOF = 120
+Saving X matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr017/Xtmp.mat
+XCond = 141.633 (normalized)
+Computing compensation for resdual AR1 bias
+ 1  -0.5  -0.505456    (t=0.000388)
+ 2  -0.25  -0.276547    (t=0.000969)
+ 3  0  -0.0555902    (t=0.001506)
+ 4  0.25  0.15338    (t=0.002059)
+ 5  0.5  0.340842    (t=0.002601)
+AR1 Correction M: 0.0807687 1.17611
+Computing contrast matrices
+OLS Beta Pass 
+  run 8    t= 0.0
+reading data ... 0.927316
+    Global Mean 113403.00
+Global In-Mask Mean = 113403 (106568)
+Rescale Target = 100
+RescaleFactor = 0.000881811
+OLS Residual Pass 
+  run 8    t= 0.0
+reading data ... 0.932156
+Saving rho1
+Smoothing ACF
+/software/apps/freesurfer/6.0.0/bin/mris_fwhm --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr017/mask.nii.gz --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr017/rho1mn.nii.gz --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr017/rho1mn.sm.nii.gz --fwhm 20.000000 --smooth-only --s s002 --hemi lh --sd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+s002 lh white
+Number of vertices 143568
+Number of faces    287132
+Total area         98667.226562
+GroupSurface 0
+AvgVtxArea       0.687251
+AvgVtxDist       0.906255
+StdVtxDist       0.253760
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr017/mask.nii.gz
+Found 135564 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=20.000000, gstd=8.493218, niters=215 
+Only smoothing, so saving and exiting now
+
+Found 0 voxels with corrected AR1 > 0.90
+Whitening
+Computing whitening matrices
+Alloc Sinv: 131 131 30 ...  done t = 0.002192 sec
+  seg   1   4519  nrho1 = 0.091
+  seg   2   4519  nrho1 = 0.098
+  seg   3   4519  nrho1 = 0.105
+  seg   4   4519  nrho1 = 0.110
+  seg   5   4519  nrho1 = 0.113
+  seg   6   4519  nrho1 = 0.116
+  seg   7   4519  nrho1 = 0.118
+  seg   8   4519  nrho1 = 0.120
+  seg   9   4519  nrho1 = 0.122
+  seg  10   4519  nrho1 = 0.124
+  seg  11   4519  nrho1 = 0.126
+  seg  12   4519  nrho1 = 0.127
+  seg  13   4519  nrho1 = 0.129
+  seg  14   4519  nrho1 = 0.130
+  seg  15   4519  nrho1 = 0.132
+  seg  16   4519  nrho1 = 0.133
+  seg  17   4519  nrho1 = 0.134
+  seg  18   4519  nrho1 = 0.136
+  seg  19   4519  nrho1 = 0.137
+  seg  20   4519  nrho1 = 0.138
+  seg  21   4519  nrho1 = 0.139
+  seg  22   4519  nrho1 = 0.140
+  seg  23   4519  nrho1 = 0.141
+  seg  24   4519  nrho1 = 0.142
+  seg  25   4519  nrho1 = 0.143
+  seg  26   4519  nrho1 = 0.145
+  seg  27   4519  nrho1 = 0.146
+  seg  28   4519  nrho1 = 0.148
+  seg  29   4519  nrho1 = 0.152
+  seg  30   4513  nrho1 = 0.158
+GLS Beta Pass 
+  run 8    t= 0.0
+GLS Residual Pass 
+  run 8    t= 0.0
+Found 8004 zero-valued voxels
+Computing contrasts
+Starting contrasts
+fixation J=1 -------------
+Saving efficiency 15.6837
+Testing Motion Correction Parameters
+ -1.54  -1.05   2.04  -0.80  -0.19  -1.28  -2.12  -2.02  -0.19   0.90   1.86  -0.54  -0.61  -0.01  -2.12  -2.02   2.12   2.02 
+Saving h.dat to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr017/h.dat
+
+
+outanadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr020
+Excluding 2 points
+parfiles condition id list:  1  2  3  4 
+Found 135564/143568 (94.4) voxels in mask 1
+Creating Design Matrix
+ ... creation time =  0.000 sec
+DoMCFit = 1
+ntptot = 131, nX = 11, DOF = 120
+Saving X matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr020/Xtmp.mat
+XCond = 570.666 (normalized)
+Computing compensation for resdual AR1 bias
+ 1  -0.5  -0.501549    (t=0.00041)
+ 2  -0.25  -0.273452    (t=0.000985)
+ 3  0  -0.0528427    (t=0.001536)
+ 4  0.25  0.156228    (t=0.002089)
+ 5  0.5  0.344173    (t=0.002631)
+AR1 Correction M: 0.0770798 1.17699
+Computing contrast matrices
+OLS Beta Pass 
+  run 9    t= 0.0
+reading data ... 0.929316
+    Global Mean 113896.00
+Global In-Mask Mean = 113896 (107331)
+Rescale Target = 100
+RescaleFactor = 0.000877994
+OLS Residual Pass 
+  run 9    t= 0.0
+reading data ... 0.99401
+Saving rho1
+Smoothing ACF
+/software/apps/freesurfer/6.0.0/bin/mris_fwhm --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr020/mask.nii.gz --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr020/rho1mn.nii.gz --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr020/rho1mn.sm.nii.gz --fwhm 20.000000 --smooth-only --s s002 --hemi lh --sd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+s002 lh white
+Number of vertices 143568
+Number of faces    287132
+Total area         98667.226562
+GroupSurface 0
+AvgVtxArea       0.687251
+AvgVtxDist       0.906255
+StdVtxDist       0.253760
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr020/mask.nii.gz
+Found 135564 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=20.000000, gstd=8.493218, niters=215 
+Only smoothing, so saving and exiting now
+
+Found 0 voxels with corrected AR1 > 0.90
+Whitening
+Computing whitening matrices
+Alloc Sinv: 131 131 30 ...  done t = 0.002054 sec
+  seg   1   4519  nrho1 = 0.082
+  seg   2   4519  nrho1 = 0.088
+  seg   3   4519  nrho1 = 0.092
+  seg   4   4519  nrho1 = 0.096
+  seg   5   4519  nrho1 = 0.100
+  seg   6   4519  nrho1 = 0.102
+  seg   7   4519  nrho1 = 0.104
+  seg   8   4519  nrho1 = 0.106
+  seg   9   4519  nrho1 = 0.108
+  seg  10   4519  nrho1 = 0.109
+  seg  11   4519  nrho1 = 0.110
+  seg  12   4519  nrho1 = 0.112
+  seg  13   4519  nrho1 = 0.113
+  seg  14   4519  nrho1 = 0.114
+  seg  15   4519  nrho1 = 0.116
+  seg  16   4519  nrho1 = 0.117
+  seg  17   4519  nrho1 = 0.118
+  seg  18   4519  nrho1 = 0.119
+  seg  19   4519  nrho1 = 0.120
+  seg  20   4518  nrho1 = 0.121
+  seg  21   4520  nrho1 = 0.122
+  seg  22   4519  nrho1 = 0.122
+  seg  23   4519  nrho1 = 0.123
+  seg  24   4519  nrho1 = 0.124
+  seg  25   4519  nrho1 = 0.125
+  seg  26   4519  nrho1 = 0.127
+  seg  27   4519  nrho1 = 0.128
+  seg  28   4519  nrho1 = 0.130
+  seg  29   4519  nrho1 = 0.132
+  seg  30   4513  nrho1 = 0.136
+GLS Beta Pass 
+  run 9    t= 0.0
+GLS Residual Pass 
+  run 9    t= 0.0
+Found 8004 zero-valued voxels
+Computing contrasts
+Starting contrasts
+fixation J=1 -------------
+Saving efficiency 17.6848
+Testing Motion Correction Parameters
+ -0.34  -0.49   0.03  -0.24   0.17  -0.36   0.31   0.18  -0.34   0.26   0.20  -0.18   0.09   0.01   0.31   0.18  -0.31  -0.18 
+Saving h.dat to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr020/h.dat
+
+
+outanadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr021
+Excluding 2 points
+parfiles condition id list:  1  2  3  4 
+Found 135564/143568 (94.4) voxels in mask 1
+Creating Design Matrix
+ ... creation time =  0.000 sec
+DoMCFit = 1
+ntptot = 131, nX = 11, DOF = 120
+Saving X matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr021/Xtmp.mat
+XCond = 108.779 (normalized)
+Computing compensation for resdual AR1 bias
+ 1  -0.5  -0.49987    (t=0.000377)
+ 2  -0.25  -0.272855    (t=0.000955)
+ 3  0  -0.0526097    (t=0.001494)
+ 4  0.25  0.156072    (t=0.002047)
+ 5  0.5  0.343271    (t=0.002604)
+AR1 Correction M: 0.0769531 1.18029
+Computing contrast matrices
+OLS Beta Pass 
+  run 10    t= 0.0
+reading data ... 0.920645
+    Global Mean 114041.00
+Global In-Mask Mean = 114041 (107461)
+Rescale Target = 100
+RescaleFactor = 0.000876878
+OLS Residual Pass 
+  run 10    t= 0.0
+reading data ... 0.924002
+Saving rho1
+Smoothing ACF
+/software/apps/freesurfer/6.0.0/bin/mris_fwhm --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr021/mask.nii.gz --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr021/rho1mn.nii.gz --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr021/rho1mn.sm.nii.gz --fwhm 20.000000 --smooth-only --s s002 --hemi lh --sd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+s002 lh white
+Number of vertices 143568
+Number of faces    287132
+Total area         98667.226562
+GroupSurface 0
+AvgVtxArea       0.687251
+AvgVtxDist       0.906255
+StdVtxDist       0.253760
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr021/mask.nii.gz
+Found 135564 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=20.000000, gstd=8.493218, niters=215 
+Only smoothing, so saving and exiting now
+
+Found 0 voxels with corrected AR1 > 0.90
+Whitening
+Computing whitening matrices
+Alloc Sinv: 131 131 30 ...  done t = 0.002878 sec
+  seg   1   4519  nrho1 = 0.083
+  seg   2   4519  nrho1 = 0.088
+  seg   3   4519  nrho1 = 0.092
+  seg   4   4519  nrho1 = 0.097
+  seg   5   4519  nrho1 = 0.101
+  seg   6   4519  nrho1 = 0.104
+  seg   7   4519  nrho1 = 0.107
+  seg   8   4519  nrho1 = 0.108
+  seg   9   4519  nrho1 = 0.110
+  seg  10   4519  nrho1 = 0.111
+  seg  11   4519  nrho1 = 0.113
+  seg  12   4519  nrho1 = 0.114
+  seg  13   4519  nrho1 = 0.115
+  seg  14   4519  nrho1 = 0.116
+  seg  15   4519  nrho1 = 0.118
+  seg  16   4519  nrho1 = 0.119
+  seg  17   4519  nrho1 = 0.121
+  seg  18   4519  nrho1 = 0.122
+  seg  19   4519  nrho1 = 0.124
+  seg  20   4519  nrho1 = 0.126
+  seg  21   4519  nrho1 = 0.127
+  seg  22   4519  nrho1 = 0.129
+  seg  23   4519  nrho1 = 0.130
+  seg  24   4519  nrho1 = 0.131
+  seg  25   4519  nrho1 = 0.132
+  seg  26   4519  nrho1 = 0.133
+  seg  27   4519  nrho1 = 0.134
+  seg  28   4519  nrho1 = 0.136
+  seg  29   4519  nrho1 = 0.139
+  seg  30   4513  nrho1 = 0.144
+GLS Beta Pass 
+  run 10    t= 0.0
+GLS Residual Pass 
+  run 10    t= 0.0
+Found 8004 zero-valued voxels
+Computing contrasts
+Starting contrasts
+fixation J=1 -------------
+Saving efficiency 16.5779
+Testing Motion Correction Parameters
+ -0.02  -0.49  -0.16  -0.46   0.29  -0.53  -0.20  -0.02  -1.05  -0.07  -0.05  -0.42   0.31   0.32  -0.20  -0.02   0.20   0.02 
+Saving h.dat to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/maintask-surface-lh-sm0/pr021/h.dat
+cputime-min 0.865500
+fast_selxavg3 done for /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002
+
+ans =
+
+     0
+
+>> >> >> >> >> ------------------------------------------
+Started at Wed Mar 4 13:56:30 EST 2020
+Ended   at Wed Mar  4 13:59:35 EST 2020
+ 
+selxavg3-sess completed
+ 

@@ -127,3 +127,6 @@ You create all the folders in `studies/`.
 - Done after `run_04_preproc.sh`
 - Done on MARCC in an interactive session, but the png file that is created in `unpackdata/${sid}/bold/` will not open
 - Example call: `source check_motion.sh s001`
+
+#
+Licensed with [MIT License](/LICENSE)

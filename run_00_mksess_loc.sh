@@ -8,8 +8,8 @@
 
 hemi=$1
 loc=$2
-nconds=$4
-dur=$3
+nconds=$3
+dur=$4
 
 ml freesurfer
 ml matlab

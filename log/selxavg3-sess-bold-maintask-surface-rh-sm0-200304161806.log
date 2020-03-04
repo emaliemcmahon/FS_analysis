@@ -1,0 +1,816 @@
+selxavg3-sess log file
+/software/apps/freesurfer/6.0.0/fsfast/bin/selxavg3-sess
+-s s003 -df sessdir -analysis maintask-surface-rh-sm0 -svres -run-wise
+$Id: selxavg3-sess,v 1.68 2016/05/10 03:24:18 greve Exp $
+uid=3996(emcmaho7@jhu.edu) gid=1405(lisik3) groups=1405(lisik3),1502(mbonner5)
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+Linux compute0197 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Wed Mar  4 16:18:06 EST 2020
+preproc-sess -s s003 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -a maintask-surface-rh-sm0 -nolog
+--------------------------------------------------------------
+preproc-sess logfile is /dev/null
+--------------------------------------------------------------
+$Id: preproc-sess,v 1.64.2.1 2016/08/02 21:19:09 greve Exp $
+emcmaho7@jhu.edu
+setenv FREESURFER_HOME /software/apps/freesurfer/6.0.0
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+Linux compute0197 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/preproc-sess
+-s s003 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -a maintask-surface-rh-sm0 -nolog
+Wed Mar  4 16:18:06 EST 2020
+instem   f 
+mc   1     f fmc 
+stc  0     fmc
+sm   0   
+mask 1   brain
+s003 Template -----------------------------
+mktemplate-sess -s s003 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -rlf maintask.rlf -nolog -update
+ 
+Session: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003 ----------------
+Wed Mar  4 16:18:07 EST 2020
+Detected input format at nii
+s003 Update not needed
+  Run: 004 ----------------
+  Wed Mar  4 16:18:07 EST 2020
+  s003 004 Update not needed
+  Run: 005 ----------------
+  Wed Mar  4 16:18:07 EST 2020
+  s003 005 Update not needed
+  Run: 009 ----------------
+  Wed Mar  4 16:18:07 EST 2020
+  s003 009 Update not needed
+  Run: 010 ----------------
+  Wed Mar  4 16:18:07 EST 2020
+  s003 010 Update not needed
+  Run: 013 ----------------
+  Wed Mar  4 16:18:07 EST 2020
+  s003 013 Update not needed
+  Run: 014 ----------------
+  Wed Mar  4 16:18:07 EST 2020
+  s003 014 Update not needed
+  Run: 018 ----------------
+  Wed Mar  4 16:18:07 EST 2020
+  s003 018 Update not needed
+  Run: 019 ----------------
+  Wed Mar  4 16:18:07 EST 2020
+  s003 019 Update not needed
+  Run: 022 ----------------
+  Wed Mar  4 16:18:07 EST 2020
+  s003 022 Update not needed
+  Run: 023 ----------------
+  Wed Mar  4 16:18:07 EST 2020
+  s003 023 Update not needed
+Wed Mar  4 16:18:07 EST 2020
+mktemplate-sess completed 
+s003 Registration -----------------------------
+register-sess -s s003 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -delete-dat -dof 6 -bold -rlf maintask.rlf -per-session -nolog -update -init-coreg
+--------------------------------------------------------------
+register-sess logfile is /dev/null
+--------------------------------------------------------------
+Wed Mar  4 16:18:07 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/register-sess -s s003 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -delete-dat -dof 6 -bold -rlf maintask.rlf -per-session -nolog -update -init-coreg
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0197 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+ 
+Session: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003 ----------------
+Wed Mar  4 16:18:07 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003
+Wed Mar  4 16:18:07 EST 2020
+register-sess completed 
+s003 Mask ------------------------
+mkbrainmask-sess -maskstem brain -fsd bold -s s003 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -per-session -rlf maintask.rlf -nolog -update
+------------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003 
+Wed Mar  4 16:18:07 EST 2020
+s003 Update not needed for session-level mask
+s003 Update not needed for run 004 meanval
+s003 Update not needed for run 005 meanval
+s003 Update not needed for run 009 meanval
+s003 Update not needed for run 010 meanval
+s003 Update not needed for run 013 meanval
+s003 Update not needed for run 014 meanval
+s003 Update not needed for run 018 meanval
+s003 Update not needed for run 019 meanval
+s003 Update not needed for run 022 meanval
+s003 Update not needed for run 023 meanval
+Wed Mar  4 16:18:08 EST 2020
+mkbrainmask-sess done
+s003 MC -----------------------------
+mc-sess -fstem f -fmcstem fmc -s s003 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -rlf maintask.rlf -per-session -nolog -update
+Logfile is /dev/null
+-------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003 
+RunList: 004 005 009 010 013 014 018 019 022 023
+  ------- ************************** -----------
+  ------- Motion Correcting Run 004 -----------
+  ------- ************************** -----------
+sess = s003
+Wed Mar  4 16:18:08 EST 2020
+mc-afni2 --i 004/f.nii --t template.nii.gz --o 004/fmc.nii.gz --mcdat 004/fmc.mcdat
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_info --nframes --o /tmp/mriinfo.24474 template.nii.gz
+log file is 004/fmc.nii.gz.mclog
+mcdat file is 004/fmc.mcdat
+tmp dir is 004/tmp.mc-afni2.24474
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert template.nii.gz 004/tmp.mc-afni2.24474/tempvol.nii.gz --nskip 0 --ndrop 0 -odt float
+mri_convert.bin template.nii.gz 004/tmp.mc-afni2.24474/tempvol.nii.gz --nskip 0 --ndrop 0 -odt float 
+nskip = 0
+ndrop = 0
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from template.nii.gz...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 004/tmp.mc-afni2.24474/tempvol.nii.gz...
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert 004/f.nii 004/tmp.mc-afni2.24474/invol.nii.gz -odt float
+mri_convert.bin 004/f.nii 004/tmp.mc-afni2.24474/invol.nii.gz -odt float 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from 004/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 004/tmp.mc-afni2.24474/invol.nii.gz...
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+3dvolreg.afni -verbose -dfile 004/fmc.mcdat -1Dmatrix_save 004/fmc.mat -base 004/tmp.mc-afni2.24474/tempvol.nii.gz -prefix 004/tmp.mc-afni2.24474/outvol.nii.gz 004/tmp.mc-afni2.24474/invol.nii.gz
+++ 3dvolreg: AFNI version=AFNI_2011_12_21_1014 (Aug 29 2012) [64-bit]
+++ Authored by: RW Cox
+*+ WARNING:   If you are performing spatial transformations on an oblique dset, 
+  such as 004/tmp.mc-afni2.24474/tempvol.nii.gz,
+  or viewing/combining it with volumes of differing obliquity,
+  you should consider running: 
+     3dWarp -deoblique 
+  on this and  other oblique datasets in the same session.
+ See 3dWarp -help for details.
+++ Oblique dataset:004/tmp.mc-afni2.24474/tempvol.nii.gz is 9.976459 degrees from plumb.
+++ Reading in base dataset 004/tmp.mc-afni2.24474/tempvol.nii.gz
+++ Oblique dataset:004/tmp.mc-afni2.24474/invol.nii.gz is 9.976459 degrees from plumb.
+++ Reading input dataset 004/tmp.mc-afni2.24474/invol.nii.gz
+++ Edging: x=4 y=4 z=2
+++ Creating mask for -maxdisp
+ + Automask has 55895 voxels
+ + 7181 voxels left in -maxdisp mask after erosion
+++ Initializing alignment base
+++ Starting final pass on 118 sub-bricks: 0..1..2..3..4..5..6..7..8..9..10..11..12..13..14..15..16..17..18..19..20..21..22..23..24..25..26..27..28..29..30..31..32..33..34..35..36..37..38..39..40..41..42..43..44..45..46..47..48..49..50..51..52..53..54..55..56..57..58..59..60..61..62..63..64..65..66..67..68..69..70..71..72..73..74..75..76..77..78..79..80..81..82..83..84..85..86..87..88..89..90..91..92..93..94..95..96..97..98..99..100..101..102..103..104..105..106..107..108..109..110..111..112..113..114..115..116..117..
+++ CPU time for realignment=0 s  [=0 s/sub-brick]
+++ Min : roll=-0.075  pitch=-0.290  yaw=-0.003  dS=-0.351  dL=-0.087  dP=-0.237
+++ Mean: roll=+0.005  pitch=-0.154  yaw=+0.132  dS=+0.072  dL=-0.053  dP=-0.147
+++ Max : roll=+0.060  pitch=+0.204  yaw=+0.219  dS=+0.215  dL=+0.000  dP=-0.000
+++ Max displacements (mm) for each sub-brick:
+ 0.00 0.13 0.10 0.17 0.17 0.18 0.26 0.17 0.20 0.53 0.28 0.63 0.32 0.28 0.25 0.26 0.25 0.26 0.25 0.26 0.31 0.33 0.29 0.36 0.38 0.37 0.40 0.42 0.42 0.47 0.51 0.48 0.48 0.44 0.41 0.43 0.43 0.44 0.41 0.45 0.36 0.41 0.42 0.39 0.43 0.46 0.38 0.48 0.48 0.51 0.51 0.57 0.57 0.61 0.62 0.60 0.62 0.62 0.61 0.64 0.61 0.66 0.67 0.63 0.64 0.71 0.64 0.67 0.69 0.60 0.35 0.62 0.63 0.62 0.66 0.70 0.70 0.72 0.70 0.73 0.65 0.64 0.62 0.68 0.67 0.71 0.78 0.73 0.72 0.78 0.70 0.81 0.74 0.69 0.68 0.66 0.55 0.53 0.54 0.58 0.61 0.62 0.62 0.60 0.52 0.62 0.58 0.55 0.64 0.59 0.65 0.73 0.69 0.71 0.45 0.79 0.80 0.88
+++ Max displacement in automask = 0.88 (mm) at sub-brick 117
+++ Wrote dataset to disk in 004/tmp.mc-afni2.24474/outvol.nii.gz
+** Warning: overwriting file 004/fmc.mcdat
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert 004/tmp.mc-afni2.24474/outvol.nii.gz 004/fmc.nii.gz --in_like template.nii.gz
+mri_convert.bin 004/tmp.mc-afni2.24474/outvol.nii.gz 004/fmc.nii.gz --in_like template.nii.gz 
+reading info from template.nii.gz...
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from 004/tmp.mc-afni2.24474/outvol.nii.gz...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+INFO: frames are not the same
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 004/fmc.nii.gz...
+... cleaning up ....
+Wed Mar  4 16:18:41 EST 2020
+mc-afni2 done
+INFO: Making external regressor from mc params
+mcdat2mcextreg --i 004/fmc.mcdat --o 004/mcextreg
+Wed Mar  4 16:18:41 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mcdat2mcextreg --i 004/fmc.mcdat --o 004/mcextreg
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0197 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_glmfit --table /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/004/tmpdir.mcdat2extreg.25124/table.dat --glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/004/tmpdir.mcdat2extreg.25124/glm --osgm --y-out /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/004/tmpdir.mcdat2extreg.25124/y.out.nii --pca
+
+$Id: mri_glmfit.c,v 1.241.2.4 2016/12/08 22:02:40 zkaufman Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+cmdline mri_glmfit.bin --table /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/004/tmpdir.mcdat2extreg.25124/table.dat --glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/004/tmpdir.mcdat2extreg.25124/glm --osgm --y-out /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/004/tmpdir.mcdat2extreg.25124/y.out.nii --pca 
+sysname  Linux
+hostname compute0197
+machine  x86_64
+user     emcmaho7@jhu.edu
+FixVertexAreaFlag = 1
+UseMaskWithSmoothing     1
+OneSampleGroupMean 1
+y    /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/004/tmpdir.mcdat2extreg.25124/table.dat
+logyflag 0
+usedti  0
+glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/004/tmpdir.mcdat2extreg.25124/glm
+IllCondOK 0
+ReScaleX 1
+DoFFx 0
+Creating output directory /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/004/tmpdir.mcdat2extreg.25124/glm
+Loading y from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/004/tmpdir.mcdat2extreg.25124/table.dat
+Found 6 data colums
+Found 118 data rows
+Saving design matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/004/tmpdir.mcdat2extreg.25124/glm/Xg.dat
+Computing normalized matrix
+Normalized matrix condition is 1
+Matrix condition is 1
+search space = 6.000000
+DOF = 117
+Starting fit and test
+Fit completed in 0 minutes
+Writing results
+  osgm
+    maxvox sig=1e+10  F=610.135  at  index 2 0 0    seed=1583721378
+Measure:MC                        osgm 
+Tx                                  1.221 
+Ty                                -36.110 
+Tz                                10000000000.000 
+Rx                                 12.930 
+Ry                                -10000000000.000 
+Rz                                -10000000000.000 
+Computing PCA (118)
+mri_glmfit done
+ninputs = 1
+Checking inputs
+nframestot = 118
+Allocing output
+Done allocing
+nframes = 118
+Computing PCA
+Writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/004/tmpdir.mcdat2extreg.25124/pca.nii
+mcdat2mcextreg done
+  ------- ************************** -----------
+  ------- Motion Correcting Run 005 -----------
+  ------- ************************** -----------
+sess = s003
+Wed Mar  4 16:18:41 EST 2020
+mc-afni2 --i 005/f.nii --t template.nii.gz --o 005/fmc.nii.gz --mcdat 005/fmc.mcdat
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_info --nframes --o /tmp/mriinfo.25247 template.nii.gz
+log file is 005/fmc.nii.gz.mclog
+mcdat file is 005/fmc.mcdat
+tmp dir is 005/tmp.mc-afni2.25247
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert template.nii.gz 005/tmp.mc-afni2.25247/tempvol.nii.gz --nskip 0 --ndrop 0 -odt float
+mri_convert.bin template.nii.gz 005/tmp.mc-afni2.25247/tempvol.nii.gz --nskip 0 --ndrop 0 -odt float 
+nskip = 0
+ndrop = 0
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from template.nii.gz...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 005/tmp.mc-afni2.25247/tempvol.nii.gz...
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert 005/f.nii 005/tmp.mc-afni2.25247/invol.nii.gz -odt float
+mri_convert.bin 005/f.nii 005/tmp.mc-afni2.25247/invol.nii.gz -odt float 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from 005/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 005/tmp.mc-afni2.25247/invol.nii.gz...
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+3dvolreg.afni -verbose -dfile 005/fmc.mcdat -1Dmatrix_save 005/fmc.mat -base 005/tmp.mc-afni2.25247/tempvol.nii.gz -prefix 005/tmp.mc-afni2.25247/outvol.nii.gz 005/tmp.mc-afni2.25247/invol.nii.gz
+++ 3dvolreg: AFNI version=AFNI_2011_12_21_1014 (Aug 29 2012) [64-bit]
+++ Authored by: RW Cox
+*+ WARNING:   If you are performing spatial transformations on an oblique dset, 
+  such as 005/tmp.mc-afni2.25247/tempvol.nii.gz,
+  or viewing/combining it with volumes of differing obliquity,
+  you should consider running: 
+     3dWarp -deoblique 
+  on this and  other oblique datasets in the same session.
+ See 3dWarp -help for details.
+++ Oblique dataset:005/tmp.mc-afni2.25247/tempvol.nii.gz is 9.976459 degrees from plumb.
+++ Reading in base dataset 005/tmp.mc-afni2.25247/tempvol.nii.gz
+++ Oblique dataset:005/tmp.mc-afni2.25247/invol.nii.gz is 9.976459 degrees from plumb.
+++ Reading input dataset 005/tmp.mc-afni2.25247/invol.nii.gz
+++ Edging: x=4 y=4 z=2
+++ Creating mask for -maxdisp
+ + Automask has 55981 voxels
+ + 7145 voxels left in -maxdisp mask after erosion
+++ Initializing alignment base
+++ Starting final pass on 118 sub-bricks: 0..1..2..3..4..5..6..7..8..9..10..11..12..13..14..15..16..17..18..19..20..21..22..23..24..25..26..27..28..29..30..31..32..33..34..35..36..37..38..39..40..41..42..43..44..45..46..47..48..49..50..51..52..53..54..55..56..57..58..59..60..61..62..63..64..65..66..67..68..69..70..71..72..73..74..75..76..77..78..79..80..81..82..83..84..85..86..87..88..89..90..91..92..93..94..95..96..97..98..99..100..101..102..103..104..105..106..107..108..109..110..111..112..113..114..115..116..117..
+++ CPU time for realignment=0 s  [=0 s/sub-brick]
+++ Min : roll=-0.221  pitch=-0.300  yaw=-0.026  dS=-0.616  dL=-0.062  dP=-0.009
+++ Mean: roll=-0.064  pitch=-0.030  yaw=+0.215  dS=+0.058  dL=+0.013  dP=+0.077
+++ Max : roll=+0.036  pitch=+1.247  yaw=+0.350  dS=+0.337  dL=+0.096  dP=+0.350
+++ Max displacements (mm) for each sub-brick:
+ 0.59 0.57 0.65 0.60 0.71 0.71 0.69 0.71 0.71 0.67 0.64 0.69 0.66 0.75 0.81 0.78 0.78 0.80 0.79 0.84 0.81 0.79 0.66 0.60 0.55 0.54 0.55 0.59 0.59 0.53 0.55 0.48 0.46 0.39 0.47 0.54 0.48 0.47 0.53 0.53 0.54 0.72 0.78 0.76 0.80 0.67 0.77 0.87 0.86 0.74 0.61 0.58 0.40 0.38 0.34 0.35 0.31 0.57 0.33 0.36 0.37 0.39 0.40 0.33 0.38 0.33 0.35 0.34 0.38 0.45 0.50 0.52 1.03 0.44 0.41 0.30 0.55 2.19 1.16 0.77 0.76 0.69 0.66 0.58 0.54 0.52 0.55 0.61 0.60 0.42 0.49 0.39 0.56 0.34 0.33 0.45 0.42 0.44 0.37 0.50 0.42 0.43 0.38 0.45 0.40 0.42 0.44 0.44 0.45 0.44 0.46 0.46 0.45 0.48 0.50 0.52 0.46 0.71
+++ Max displacement in automask = 2.19 (mm) at sub-brick 77
+++ Wrote dataset to disk in 005/tmp.mc-afni2.25247/outvol.nii.gz
+** Warning: overwriting file 005/fmc.mcdat
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert 005/tmp.mc-afni2.25247/outvol.nii.gz 005/fmc.nii.gz --in_like template.nii.gz
+mri_convert.bin 005/tmp.mc-afni2.25247/outvol.nii.gz 005/fmc.nii.gz --in_like template.nii.gz 
+reading info from template.nii.gz...
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from 005/tmp.mc-afni2.25247/outvol.nii.gz...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+INFO: frames are not the same
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 005/fmc.nii.gz...
+... cleaning up ....
+Wed Mar  4 16:19:14 EST 2020
+mc-afni2 done
+INFO: Making external regressor from mc params
+mcdat2mcextreg --i 005/fmc.mcdat --o 005/mcextreg
+Wed Mar  4 16:19:14 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mcdat2mcextreg --i 005/fmc.mcdat --o 005/mcextreg
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0197 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_glmfit --table /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/005/tmpdir.mcdat2extreg.26087/table.dat --glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/005/tmpdir.mcdat2extreg.26087/glm --osgm --y-out /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/005/tmpdir.mcdat2extreg.26087/y.out.nii --pca
+
+$Id: mri_glmfit.c,v 1.241.2.4 2016/12/08 22:02:40 zkaufman Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+cmdline mri_glmfit.bin --table /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/005/tmpdir.mcdat2extreg.26087/table.dat --glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/005/tmpdir.mcdat2extreg.26087/glm --osgm --y-out /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/005/tmpdir.mcdat2extreg.26087/y.out.nii --pca 
+sysname  Linux
+hostname compute0197
+machine  x86_64
+user     emcmaho7@jhu.edu
+FixVertexAreaFlag = 1
+UseMaskWithSmoothing     1
+OneSampleGroupMean 1
+y    /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/005/tmpdir.mcdat2extreg.26087/table.dat
+logyflag 0
+usedti  0
+glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/005/tmpdir.mcdat2extreg.26087/glm
+IllCondOK 0
+ReScaleX 1
+DoFFx 0
+Creating output directory /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/005/tmpdir.mcdat2extreg.26087/glm
+Loading y from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/005/tmpdir.mcdat2extreg.26087/table.dat
+Found 6 data colums
+Found 118 data rows
+Saving design matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/005/tmpdir.mcdat2extreg.26087/glm/Xg.dat
+Computing normalized matrix
+Normalized matrix condition is 1
+Matrix condition is 1
+search space = 6.000000
+DOF = 117
+Starting fit and test
+Fit completed in 0 minutes
+Writing results
+  osgm
+    maxvox sig=1e+10  F=693.398  at  index 2 0 0    seed=1583614177
+Measure:MC                        osgm 
+Tx                                -19.086 
+Ty                                 -0.968 
+Tz                                10000000000.000 
+Rx                                  4.556 
+Ry                                  3.934 
+Rz                                 34.964 
+Computing PCA (118)
+mri_glmfit done
+ninputs = 1
+Checking inputs
+nframestot = 118
+Allocing output
+Done allocing
+nframes = 118
+Computing PCA
+Writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/005/tmpdir.mcdat2extreg.26087/pca.nii
+mcdat2mcextreg done
+  ------- ************************** -----------
+  ------- Motion Correcting Run 009 -----------
+  ------- ************************** -----------
+sess = s003
+Wed Mar  4 16:19:14 EST 2020
+mc-afni2 --i 009/f.nii --t template.nii.gz --o 009/fmc.nii.gz --mcdat 009/fmc.mcdat
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_info --nframes --o /tmp/mriinfo.26232 template.nii.gz
+log file is 009/fmc.nii.gz.mclog
+mcdat file is 009/fmc.mcdat
+tmp dir is 009/tmp.mc-afni2.26232
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert template.nii.gz 009/tmp.mc-afni2.26232/tempvol.nii.gz --nskip 0 --ndrop 0 -odt float
+mri_convert.bin template.nii.gz 009/tmp.mc-afni2.26232/tempvol.nii.gz --nskip 0 --ndrop 0 -odt float 
+nskip = 0
+ndrop = 0
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from template.nii.gz...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 009/tmp.mc-afni2.26232/tempvol.nii.gz...
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert 009/f.nii 009/tmp.mc-afni2.26232/invol.nii.gz -odt float
+mri_convert.bin 009/f.nii 009/tmp.mc-afni2.26232/invol.nii.gz -odt float 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from 009/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 009/tmp.mc-afni2.26232/invol.nii.gz...
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+3dvolreg.afni -verbose -dfile 009/fmc.mcdat -1Dmatrix_save 009/fmc.mat -base 009/tmp.mc-afni2.26232/tempvol.nii.gz -prefix 009/tmp.mc-afni2.26232/outvol.nii.gz 009/tmp.mc-afni2.26232/invol.nii.gz
+++ 3dvolreg: AFNI version=AFNI_2011_12_21_1014 (Aug 29 2012) [64-bit]
+++ Authored by: RW Cox
+*+ WARNING:   If you are performing spatial transformations on an oblique dset, 
+  such as 009/tmp.mc-afni2.26232/tempvol.nii.gz,
+  or viewing/combining it with volumes of differing obliquity,
+  you should consider running: 
+     3dWarp -deoblique 
+  on this and  other oblique datasets in the same session.
+ See 3dWarp -help for details.
+++ Oblique dataset:009/tmp.mc-afni2.26232/tempvol.nii.gz is 9.976459 degrees from plumb.
+++ Reading in base dataset 009/tmp.mc-afni2.26232/tempvol.nii.gz
+++ Oblique dataset:009/tmp.mc-afni2.26232/invol.nii.gz is 9.976459 degrees from plumb.
+++ Reading input dataset 009/tmp.mc-afni2.26232/invol.nii.gz
+++ Edging: x=4 y=4 z=2
+++ Creating mask for -maxdisp
+ + Automask has 56112 voxels
+ + 7135 voxels left in -maxdisp mask after erosion
+++ Initializing alignment base
+++ Starting final pass on 118 sub-bricks: 0..1..2..3..4..5..6..7..8..9..10..11..12..13..14..15..16..17..18..19..20..21..22..23..24..25..26..27..28..29..30..31..32..33..34..35..36..37..38..39..40..41..42..43..44..45..46..47..48..49..50..51..52..53..54..55..56..57..58..59..60..61..62..63..64..65..66..67..68..69..70..71..72..73..74..75..76..77..78..79..80..81..82..83..84..85..86..87..88..89..90..91..92..93..94..95..96..97..98..99..100..101..102..103..104..105..106..107..108..109..110..111..112..113..114..115..116..117..
+++ CPU time for realignment=0 s  [=0 s/sub-brick]
+++ Min : roll=-0.250  pitch=-0.493  yaw=-0.661  dS=-0.297  dL=-0.074  dP=+0.013
+++ Mean: roll=-0.170  pitch=-0.382  yaw=-0.302  dS=+0.111  dL=-0.005  dP=+0.109
+++ Max : roll=-0.079  pitch=+0.037  yaw=+0.083  dS=+0.369  dL=+0.093  dP=+0.275
+++ Max displacements (mm) for each sub-brick:
+ 0.37 0.61 0.50 0.69 0.60 0.79 0.74 0.90 0.76 0.88 0.61 0.91 0.82 0.91 0.87 0.89 0.88 0.83 0.86 0.68 0.78 0.86 0.94 0.73 0.78 0.79 0.79 0.99 1.00 0.90 0.96 0.85 1.09 0.96 1.05 0.99 1.07 1.10 0.96 0.97 1.15 1.07 1.07 1.11 1.00 0.82 0.96 0.91 1.03 1.17 1.19 1.22 1.05 1.03 1.13 1.00 0.92 1.06 0.91 1.00 1.14 1.00 1.00 0.79 0.81 0.83 0.56 0.84 0.78 0.99 0.96 1.00 0.85 1.00 0.86 0.98 0.85 0.96 0.87 1.00 0.95 0.96 0.91 0.99 1.16 0.91 0.84 0.92 1.04 0.96 0.94 1.08 0.89 0.89 0.89 0.92 0.87 0.79 0.94 0.94 1.11 0.99 0.84 0.77 0.81 0.86 1.03 1.12 1.13 1.33 1.27 1.24 1.12 1.37 1.14 1.38 1.35 1.41
+++ Max displacement in automask = 1.41 (mm) at sub-brick 117
+++ Wrote dataset to disk in 009/tmp.mc-afni2.26232/outvol.nii.gz
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert 009/tmp.mc-afni2.26232/outvol.nii.gz 009/fmc.nii.gz --in_like template.nii.gz
+mri_convert.bin 009/tmp.mc-afni2.26232/outvol.nii.gz 009/fmc.nii.gz --in_like template.nii.gz 
+reading info from template.nii.gz...
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from 009/tmp.mc-afni2.26232/outvol.nii.gz...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+INFO: frames are not the same
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 009/fmc.nii.gz...
+... cleaning up ....
+Wed Mar  4 16:19:48 EST 2020
+mc-afni2 done
+INFO: Making external regressor from mc params
+mcdat2mcextreg --i 009/fmc.mcdat --o 009/mcextreg
+Wed Mar  4 16:19:48 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mcdat2mcextreg --i 009/fmc.mcdat --o 009/mcextreg
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0197 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_glmfit --table /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/009/tmpdir.mcdat2extreg.26556/table.dat --glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/009/tmpdir.mcdat2extreg.26556/glm --osgm --y-out /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/009/tmpdir.mcdat2extreg.26556/y.out.nii --pca
+
+$Id: mri_glmfit.c,v 1.241.2.4 2016/12/08 22:02:40 zkaufman Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+cmdline mri_glmfit.bin --table /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/009/tmpdir.mcdat2extreg.26556/table.dat --glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/009/tmpdir.mcdat2extreg.26556/glm --osgm --y-out /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/009/tmpdir.mcdat2extreg.26556/y.out.nii --pca 
+sysname  Linux
+hostname compute0197
+machine  x86_64
+user     emcmaho7@jhu.edu
+FixVertexAreaFlag = 1
+UseMaskWithSmoothing     1
+OneSampleGroupMean 1
+y    /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/009/tmpdir.mcdat2extreg.26556/table.dat
+logyflag 0
+usedti  0
+glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/009/tmpdir.mcdat2extreg.26556/glm
+IllCondOK 0
+ReScaleX 1
+DoFFx 0
+Creating output directory /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/009/tmpdir.mcdat2extreg.26556/glm
+Loading y from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/009/tmpdir.mcdat2extreg.26556/table.dat
+Found 6 data colums
+Found 118 data rows
+Saving design matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/009/tmpdir.mcdat2extreg.26556/glm/Xg.dat
+Computing normalized matrix
+Normalized matrix condition is 1
+Matrix condition is 1
+search space = 6.000000
+DOF = 117
+Starting fit and test
+Fit completed in 1.66667e-05 minutes
+Writing results
+  osgm
+    maxvox sig=-1e+10  F=1703.63  at  index 0 0 0    seed=1583396979
+Measure:MC                        osgm 
+Tx                                -10000000000.000 
+Ty                                -10000000000.000 
+Tz                                -31.633 
+Rx                                 10.455 
+Ry                                 -0.692 
+Rz                                 37.548 
+Computing PCA (118)
+mri_glmfit done
+ninputs = 1
+Checking inputs
+nframestot = 118
+Allocing output
+Done allocing
+nframes = 118
+Computing PCA
+Writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/009/tmpdir.mcdat2extreg.26556/pca.nii
+mcdat2mcextreg done
+  ------- ************************** -----------
+  ------- Motion Correcting Run 010 -----------
+  ------- ************************** -----------
+sess = s003
+Wed Mar  4 16:19:49 EST 2020
+mc-afni2 --i 010/f.nii --t template.nii.gz --o 010/fmc.nii.gz --mcdat 010/fmc.mcdat
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_info --nframes --o /tmp/mriinfo.26682 template.nii.gz
+log file is 010/fmc.nii.gz.mclog
+mcdat file is 010/fmc.mcdat
+tmp dir is 010/tmp.mc-afni2.26682
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert template.nii.gz 010/tmp.mc-afni2.26682/tempvol.nii.gz --nskip 0 --ndrop 0 -odt float
+mri_convert.bin template.nii.gz 010/tmp.mc-afni2.26682/tempvol.nii.gz --nskip 0 --ndrop 0 -odt float 
+nskip = 0
+ndrop = 0
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from template.nii.gz...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 010/tmp.mc-afni2.26682/tempvol.nii.gz...
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert 010/f.nii 010/tmp.mc-afni2.26682/invol.nii.gz -odt float
+mri_convert.bin 010/f.nii 010/tmp.mc-afni2.26682/invol.nii.gz -odt float 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from 010/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 010/tmp.mc-afni2.26682/invol.nii.gz...
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+3dvolreg.afni -verbose -dfile 010/fmc.mcdat -1Dmatrix_save 010/fmc.mat -base 010/tmp.mc-afni2.26682/tempvol.nii.gz -prefix 010/tmp.mc-afni2.26682/outvol.nii.gz 010/tmp.mc-afni2.26682/invol.nii.gz
+++ 3dvolreg: AFNI version=AFNI_2011_12_21_1014 (Aug 29 2012) [64-bit]
+++ Authored by: RW Cox
+*+ WARNING:   If you are performing spatial transformations on an oblique dset, 
+  such as 010/tmp.mc-afni2.26682/tempvol.nii.gz,
+  or viewing/combining it with volumes of differing obliquity,
+  you should consider running: 
+     3dWarp -deoblique 
+  on this and  other oblique datasets in the same session.
+ See 3dWarp -help for details.
+++ Oblique dataset:010/tmp.mc-afni2.26682/tempvol.nii.gz is 9.976459 degrees from plumb.
+++ Reading in base dataset 010/tmp.mc-afni2.26682/tempvol.nii.gz
+++ Oblique dataset:010/tmp.mc-afni2.26682/invol.nii.gz is 9.976459 degrees from plumb.
+++ Reading input dataset 010/tmp.mc-afni2.26682/invol.nii.gz
+++ Edging: x=4 y=4 z=2
+++ Creating mask for -maxdisp
+ + Automask has 55650 voxels
+ + 7132 voxels left in -maxdisp mask after erosion
+++ Initializing alignment base
+++ Starting final pass on 118 sub-bricks: 0..1..2..3..4..5..6..7..8..9..10..11..12..13..14..15..16..17..18..19..20..21..22..23..24..25..26..27..28..29..30..31..32..33..34..35..36..37..38..39..40..41..42..43..44..45..46..47..48..49..50..51..52..53..54..55..56..57..58..59..60..61..62..63..64..65..66..67..68..69..70..71..72..73..74..75..76..77..78..79..80..81..82..83..84..85..86..87..88..89..90..91..92..93..94..95..96..97..98..99..100..101..102..103..104..105..106..107..108..109..110..111..112..113..114..115..116..117..
+++ CPU time for realignment=0 s  [=0 s/sub-brick]
+++ Min : roll=-0.330  pitch=-0.998  yaw=-0.702  dS=+1.339  dL=-0.178  dP=-0.120
+++ Mean: roll=-0.258  pitch=-0.770  yaw=-0.516  dS=+1.582  dL=-0.098  dP=-0.024
+++ Max : roll=-0.212  pitch=-0.512  yaw=-0.322  dS=+1.955  dL=-0.065  dP=+0.112
+++ Max displacements (mm) for each sub-brick:
+ 2.53 2.59 2.48 2.68 2.52 2.93 2.76 2.79 2.77 2.78 2.99 2.90 2.79 2.87 3.03 3.02 3.13 2.92 3.08 2.91 3.07 2.83 2.90 3.05 3.25 3.16 2.85 2.91 3.11 2.80 3.10 2.82 3.12 3.02 3.03 3.04 3.00 3.13 2.95 3.10 2.95 3.17 2.98 3.30 2.97 2.96 2.82 3.02 3.40 2.99 3.15 3.22 3.01 2.93 3.00 2.95 3.08 2.88 2.80 3.06 2.94 3.04 2.95 2.84 2.79 2.97 2.81 3.00 2.78 3.00 2.78 2.95 2.98 2.75 3.12 2.77 3.01 2.85 2.98 2.90 2.83 3.06 2.76 2.97 2.71 3.08 2.70 3.00 2.68 3.02 2.72 3.00 2.80 2.79 3.05 2.81 3.07 2.77 2.91 2.76 3.01 2.80 3.00 2.84 2.95 3.05 2.99 3.64 2.88 3.07 2.79 3.03 2.90 2.89 3.05 2.96 2.94 3.01
+++ Max displacement in automask = 3.64 (mm) at sub-brick 107
+++ Wrote dataset to disk in 010/tmp.mc-afni2.26682/outvol.nii.gz
+** Warning: overwriting file 010/fmc.mcdat
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert 010/tmp.mc-afni2.26682/outvol.nii.gz 010/fmc.nii.gz --in_like template.nii.gz
+mri_convert.bin 010/tmp.mc-afni2.26682/outvol.nii.gz 010/fmc.nii.gz --in_like template.nii.gz 
+reading info from template.nii.gz...
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from 010/tmp.mc-afni2.26682/outvol.nii.gz...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+INFO: frames are not the same
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 010/fmc.nii.gz...
+... cleaning up ....
+Wed Mar  4 16:20:27 EST 2020
+mc-afni2 done
+INFO: Making external regressor from mc params
+mcdat2mcextreg --i 010/fmc.mcdat --o 010/mcextreg
+Wed Mar  4 16:20:27 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mcdat2mcextreg --i 010/fmc.mcdat --o 010/mcextreg
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0197 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_glmfit --table /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/010/tmpdir.mcdat2extreg.27123/table.dat --glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/010/tmpdir.mcdat2extreg.27123/glm --osgm --y-out /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/010/tmpdir.mcdat2extreg.27123/y.out.nii --pca
+
+$Id: mri_glmfit.c,v 1.241.2.4 2016/12/08 22:02:40 zkaufman Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+cmdline mri_glmfit.bin --table /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/010/tmpdir.mcdat2extreg.27123/table.dat --glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/010/tmpdir.mcdat2extreg.27123/glm --osgm --y-out /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/010/tmpdir.mcdat2extreg.27123/y.out.nii --pca 
+sysname  Linux
+hostname compute0197
+machine  x86_64
+user     emcmaho7@jhu.edu
+FixVertexAreaFlag = 1
+UseMaskWithSmoothing     1
+OneSampleGroupMean 1
+y    /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/010/tmpdir.mcdat2extreg.27123/table.dat
+logyflag 0
+usedti  0
+glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/010/tmpdir.mcdat2extreg.27123/glm
+IllCondOK 0
+ReScaleX 1
+DoFFx 0
+Creating output directory /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/010/tmpdir.mcdat2extreg.27123/glm
+Loading y from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/010/tmpdir.mcdat2extreg.27123/table.dat
+Found 6 data colums
+Found 118 data rows
+Saving design matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/010/tmpdir.mcdat2extreg.27123/glm/Xg.dat
+Computing normalized matrix
+Normalized matrix condition is 1
+Matrix condition is 1
+search space = 6.000000
+DOF = 117
+Starting fit and test
+Fit completed in 1.66667e-05 minutes
+Writing results
+  osgm
+    maxvox sig=-1e+10  F=11360.3  at  index 0 0 0    seed=1583836075
+Measure:MC                        osgm 
+Tx                                -10000000000.000 
+Ty                                -10000000000.000 
+Tz                                -10000000000.000 
+Rx                                10000000000.000 
+Ry                                -10000000000.000 
+Rz                                 -3.896 
+Computing PCA (118)
+mri_glmfit done
+ninputs = 1
+Checking inputs
+nframestot = 118
+Allocing output
+Done allocing
+nframes = 118
+Computing PCA
+Writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/010/tmpdir.mcdat2extreg.27123/pca.nii
+mcdat2mcextreg done
+  ------- ************************** -----------
+  ------- Motion Correcting Run 013 -----------
+  ------- ************************** -----------
+sess = s003
+Wed Mar  4 16:20:27 EST 2020
+mc-afni2 --i 013/f.nii --t template.nii.gz --o 013/fmc.nii.gz --mcdat 013/fmc.mcdat
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_info --nframes --o /tmp/mriinfo.27229 template.nii.gz
+log file is 013/fmc.nii.gz.mclog
+mcdat file is 013/fmc.mcdat
+tmp dir is 013/tmp.mc-afni2.27229
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert template.nii.gz 013/tmp.mc-afni2.27229/tempvol.nii.gz --nskip 0 --ndrop 0 -odt float
+mri_convert.bin template.nii.gz 013/tmp.mc-afni2.27229/tempvol.nii.gz --nskip 0 --ndrop 0 -odt float 
+nskip = 0
+ndrop = 0
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from template.nii.gz...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 013/tmp.mc-afni2.27229/tempvol.nii.gz...
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert 013/f.nii 013/tmp.mc-afni2.27229/invol.nii.gz -odt float
+mri_convert.bin 013/f.nii 013/tmp.mc-afni2.27229/invol.nii.gz -odt float 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from 013/f.nii...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 013/tmp.mc-afni2.27229/invol.nii.gz...
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+3dvolreg.afni -verbose -dfile 013/fmc.mcdat -1Dmatrix_save 013/fmc.mat -base 013/tmp.mc-afni2.27229/tempvol.nii.gz -prefix 013/tmp.mc-afni2.27229/outvol.nii.gz 013/tmp.mc-afni2.27229/invol.nii.gz
+++ 3dvolreg: AFNI version=AFNI_2011_12_21_1014 (Aug 29 2012) [64-bit]
+++ Authored by: RW Cox
+*+ WARNING:   If you are performing spatial transformations on an oblique dset, 
+  such as 013/tmp.mc-afni2.27229/tempvol.nii.gz,
+  or viewing/combining it with volumes of differing obliquity,
+  you should consider running: 
+     3dWarp -deoblique 
+  on this and  other oblique datasets in the same session.
+ See 3dWarp -help for details.
+++ Oblique dataset:013/tmp.mc-afni2.27229/tempvol.nii.gz is 9.976459 degrees from plumb.
+++ Reading in base dataset 013/tmp.mc-afni2.27229/tempvol.nii.gz
+++ Oblique dataset:013/tmp.mc-afni2.27229/invol.nii.gz is 9.976459 degrees from plumb.
+++ Reading input dataset 013/tmp.mc-afni2.27229/invol.nii.gz
+++ Edging: x=4 y=4 z=2
+++ Creating mask for -maxdisp
+ + Automask has 56280 voxels
+ + 7182 voxels left in -maxdisp mask after erosion
+++ Initializing alignment base
+++ Starting final pass on 118 sub-bricks: 0..1..2..3..4..5..6..7..8..9..10..11..12..13..14..15..16..17..18..19..20..21..22..23..24..25..26..27..28..29..30..31..32..33..34..35..36..37..38..39..40..41..42..43..44..45..46..47..48..49..50..51..52..53..54..55..56..57..58..59..60..61..62..63..64..65..66..67..68..69..70..71..72..73..74..75..76..77..78..79..80..81..82..83..84..85..86..87..88..89..90..91..92..93..94..95..96..97..98..99..100..101..102..103..104..105..106..107..108..109..110..111..112..113..114..115..116..117..
+++ CPU time for realignment=0 s  [=0 s/sub-brick]
+++ Min : roll=-0.121  pitch=-0.554  yaw=-0.388  dS=-0.580  dL=+0.104  dP=+0.040
+++ Mean: roll=-0.075  pitch=-0.456  yaw=-0.225  dS=-0.317  dL=+0.130  dP=+0.104
+++ Max : roll=-0.005  pitch=-0.298  yaw=+0.041  dS=-0.159  dL=+0.167  dP=+0.184
+++ Max displacements (mm) for each sub-brick:
+ 1.02 0.99 0.98 0.98 0.91 0.83 0.83 0.84 0.91 0.85 0.80 0.85 0.93 0.97 0.94 0.99 0.90 1.09 0.94 0.91 0.91 0.94 1.07 1.17 1.22 1.08 1.22 1.22 1.10 1.11 1.13 1.02 1.04 0.96 0.96 0.97 0.97 0.98 0.95 1.02 1.00 1.00 0.95 0.96 0.99 0.99 0.90 0.97 0.99 0.95 0.98 1.04 1.17 1.03 1.23 1.13 0.98 1.08 1.21 1.20 1.20 1.13 1.18 1.10 1.20 1.17 1.47 1.19 1.14 1.29 1.22 1.40 1.27 1.20 1.31 1.34 1.24 1.19 1.21 1.17 1.05 1.10 1.12 1.13 1.12 1.17 1.23 1.22 1.37 1.30 1.27 1.21 1.15 1.10 1.13 1.14 1.17 1.21 1.19 1.15 1.12 1.18 1.31 1.22 1.28 1.32 1.27 1.37 1.26 1.19 1.20 1.26 1.26 1.27 1.28 1.20 1.17 1.17
+++ Max displacement in automask = 1.47 (mm) at sub-brick 66
+++ Wrote dataset to disk in 013/tmp.mc-afni2.27229/outvol.nii.gz
+#@# --------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+mri_convert 013/tmp.mc-afni2.27229/outvol.nii.gz 013/fmc.nii.gz --in_like template.nii.gz
+mri_convert.bin 013/tmp.mc-afni2.27229/outvol.nii.gz 013/fmc.nii.gz --in_like template.nii.gz 
+reading info from template.nii.gz...
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from 013/tmp.mc-afni2.27229/outvol.nii.gz...
+TR=2000.00, TE=0.00, TI=0.00, flip angle=0.00
+INFO: frames are not the same
+i_ras = (-0.999852, -0.00914438, -0.0145384)
+j_ras = (-0.011518, 0.984919, 0.172633)
+k_ras = (-0.0127406, -0.172775, 0.984879)
+writing to 013/fmc.nii.gz...
+... cleaning up ....
+Wed Mar  4 16:21:02 EST 2020
+mc-afni2 done
+INFO: Making external regressor from mc params
+mcdat2mcextreg --i 013/fmc.mcdat --o 013/mcextreg
+Wed Mar  4 16:21:02 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+/software/apps/freesurfer/6.0.0/fsfast/bin/mcdat2mcextreg --i 013/fmc.mcdat --o 013/mcextreg
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0197 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+cat: 013/fmc.mcdat: No such file or directory
+mri_glmfit --table /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/013/tmpdir.mcdat2extreg.27493/table.dat --glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/013/tmpdir.mcdat2extreg.27493/glm --osgm --y-out /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/013/tmpdir.mcdat2extreg.27493/y.out.nii --pca
+
+$Id: mri_glmfit.c,v 1.241.2.4 2016/12/08 22:02:40 zkaufman Exp $
+cwd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold
+cmdline mri_glmfit.bin --table /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/013/tmpdir.mcdat2extreg.27493/table.dat --glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/013/tmpdir.mcdat2extreg.27493/glm --osgm --y-out /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/013/tmpdir.mcdat2extreg.27493/y.out.nii --pca 
+sysname  Linux
+hostname compute0197
+machine  x86_64
+user     emcmaho7@jhu.edu
+FixVertexAreaFlag = 1
+UseMaskWithSmoothing     1
+OneSampleGroupMean 1
+y    /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/013/tmpdir.mcdat2extreg.27493/table.dat
+logyflag 0
+usedti  0
+glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/013/tmpdir.mcdat2extreg.27493/glm
+IllCondOK 0
+ReScaleX 1
+DoFFx 0
+Creating output directory /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/013/tmpdir.mcdat2extreg.27493/glm
+Loading y from /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/013/tmpdir.mcdat2extreg.27493/table.dat
+Found 6 data colums
+Found 0 data rows
+Saving design matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/013/tmpdir.mcdat2extreg.27493/glm/Xg.dat
+Computing normalized matrix
+Normalized matrix condition is 1e+10
+Design matrix ------------------
+--------------------------------
+ERROR: matrix is ill-conditioned or badly scaled, condno = 1e+10
+--------------------------------
+Possible problem with experimental design:
+Check for duplicate entries and/or lack of range of
+continuous variables within a class.
+If you seek help with this problem, make sure to send:
+  1. Your command line:
+    mri_glmfit.bin --table /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/013/tmpdir.mcdat2extreg.27493/table.dat --glmdir /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/013/tmpdir.mcdat2extreg.27493/glm --osgm --y-out /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s003/bold/013/tmpdir.mcdat2extreg.27493/y.out.nii --pca 
+  2. The FSGD file (if using one)
+  3. And the design matrix above
+Attempting to diagnose further 
+SumSq: Min=0.000000 (col 1), Max=0.000000 (col 0)
+Column 1,  all values are 0

@@ -19,3 +19,5 @@ preproc-sess \
 	-fsd bold \
 	-fwhm 0 \
 	-force 
+
+mv *.out ./slurm_out/
