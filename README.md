@@ -19,15 +19,18 @@ You create all the folders in `studies/`.
 # Functions
 
 `run_00_mksess_loc.sh` and `run_00_mksess_main.sh` 
+- Calls [mkanalysis-sess](https://surfer.nmr.mgh.harvard.edu/fswiki/mkanalysis-sess) and [mkcontrast-sess](http://freesurfer.net/fswiki/mkcontrast-sess)
 - These call freesurfer functions that define how the analysis will be conducted. They only have to be one one for the entire project. 
 - Example call:  `source run_00_mkses_main.sh s001 lh`
 - Should be done on MARCC
 
 `run_01_unpackdata.sh`
+- Calls [dcm2niix](https://github.com/rordenlab/dcm2niix)
 - Must be preformed locally because the rawdata has face and MARCC is not HIPAA compliant
 - The script may need to be modified depending on the run orders
 
 `run_02_deface.sh`
+- Calls [mri_deface](https://surfer.nmr.mgh.harvard.edu/fswiki/mri_deface)
 - Removes the face from the MPRAGE
 - Inputs are the subject name and folder name of the anatomical run 
 - Must be done locally for same reason as above
@@ -35,6 +38,7 @@ You create all the folders in `studies/`.
 - Example call: `source run_02_deface.sh s001 002`
 
 `run_03_reconall.sh`
+- Calls [recon-al](https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all)
 - Performs the cortical reconstruction on the defaced MRPAGE
 - Inputs are again the subject name and the folder name of the anatomical run
 - Must be done on MARCC
@@ -42,6 +46,7 @@ You create all the folders in `studies/`.
 - Example call: `sbatch run_03_reconall.sh s001 002`
 
 `run_04_preproc.sh`
+- Call [preproc-sess](https://surfer.nmr.mgh.harvard.edu/fswiki/preproc-sess)
 - Runs the processing for all functional runs
 - Input is the subject name
 - Performed on MARCC
@@ -49,6 +54,7 @@ You create all the folders in `studies/`.
 - Example call: `sbatch run_04_preproc.sh s001`
 
 `run_05_glm.sh`
+- Calls [selxavg3-sess](https://surfer.nmr.mgh.harvard.edu/fswiki/selxavg3-sess)
 - Finds the beta values for the specified analysis
 - Must be called separately for all analyses (and hemispheres)
 - Inputs are the subject name, analysis name, and `-run-wise` or nothing
@@ -59,6 +65,7 @@ You create all the folders in `studies/`.
 - Example call: `sbatch run_05_glm.sh s001 psts-surface-lh-sm5  `
 
 `run_06_MNImain.sh` and `swurm_06_MNImain.sh`
+- Calls [mri_surf2surf](http://freesurfer.net/fswiki/mri_surf2surf)
 - Converts the maintask beta values from native space to MNI space
 - The swurm scrip submits many batch calls of `run_06_MNImain.sh`
 - Inputs are the subject name and the hemisphere
@@ -68,6 +75,7 @@ You create all the folders in `studies/`.
 - Example call: `source swurm_06_MNImain.sh s001 lh`
 
 `run_07_MNIloc.sh` and `swurm_06_MNIloc.sh`
+- Calls [mri_surf2surf](http://freesurfer.net/fswiki/mri_surf2surf)
 - Same as above but with the localizer name
 - Must be done for all localizers and hemispheres
 - Done on MARCC
@@ -76,16 +84,20 @@ You create all the folders in `studies/`.
 
 Prior to the next to steps:
 `interact -X -t 2:00:00`
+
 `module load matlab`
+
 `matlab` -- A MATLAB GUI will open
 
 `run_08_probROIs.m`
+- Run in MATLAB and uses [MRIread](https://surfer.nmr.mgh.harvard.edu/fswiki/CoordinateSystems) and [MRIwrite](https://surfer.nmr.mgh.harvard.edu/fswiki/CoordinateSystems)
 - Defines the ROIs using parcellations
 - Input is the subject name
 - Call in the MATLAB command line
 - Example call: `run_08_probROIs.m('s001')`
 
 `run_09_reorgdata.m`
+- Run in MATLAB and uses [MRIread](https://surfer.nmr.mgh.harvard.edu/fswiki/CoordinateSystems)
 - Selects the data within each ROI and saves it in a format for further analysis
 - Input is the subject name
 - Call in the MATLAB command line
