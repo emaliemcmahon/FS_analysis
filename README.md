@@ -20,7 +20,7 @@ You create all the folders in `studies/`.
 
 ![FS_dir_design](/images/FS_dir_design.jpeg)
 
-# Functions
+# Pre-process Functions
 
 `run_00_mksess_loc.sh` and `run_00_mksess_main.sh` 
 - Calls [mkanalysis-sess](https://surfer.nmr.mgh.harvard.edu/fswiki/mkanalysis-sess) and [mkcontrast-sess](http://freesurfer.net/fswiki/mkcontrast-sess)
@@ -104,3 +104,26 @@ You create all the folders in `studies/`.
 - Input is the subject name
 - Call in the MATLAB command line
 - Example call: `run_09_reorgdata.m('s001')`
+
+# Checking Functions
+
+`check_surf.sh`
+- Uses [freeview](https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/OutputData_freeview)
+- Input is the subject number
+- Done after `run_03_reconall.sh`
+- Done locally
+- Example call: `source check_surf.sh s001`
+
+`check_ROIs.sh`
+- Uses [tksurferfv](https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/5.3.0-patch/tksurferfv)
+- Inputs are the subject number, hemisphere, ROI, and contrast
+- Done after `run_08_probROIs.sh` and after the data has been transferred from MARCC to your local machine
+- Done locally
+- Example call: 
+
+`check_motion.sh`
+- Uses [plot-twf-sess](https://surfer.nmr.mgh.harvard.edu/fswiki/plot-twf-sess)
+- Input is the subject number
+- Done after `run_04_preproc.sh`
+- Done on MARCC in an interactive session, but the png file that is created in `unpackdata/${sid}/bold/` will not open
+- Example call: `source check_motion.sh s001`
