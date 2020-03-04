@@ -1,3 +1,7 @@
+# Dependencies
+- Freesurfer
+- MATLAB
+
 # Directory Structure
 
 There is a strict expected directory structure. It is depicted below. 
@@ -38,7 +42,7 @@ You create all the folders in `studies/`.
 - Example call: `source run_02_deface.sh s001 002`
 
 `run_03_reconall.sh`
-- Calls [recon-al](https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all)
+- Calls [recon-all](https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all)
 - Performs the cortical reconstruction on the defaced MRPAGE
 - Inputs are again the subject name and the folder name of the anatomical run
 - Must be done on MARCC
@@ -46,7 +50,7 @@ You create all the folders in `studies/`.
 - Example call: `sbatch run_03_reconall.sh s001 002`
 
 `run_04_preproc.sh`
-- Call [preproc-sess](https://surfer.nmr.mgh.harvard.edu/fswiki/preproc-sess)
+- Calls [preproc-sess](https://surfer.nmr.mgh.harvard.edu/fswiki/preproc-sess)
 - Runs the processing for all functional runs
 - Input is the subject name
 - Performed on MARCC
@@ -82,12 +86,10 @@ You create all the folders in `studies/`.
 - Takes about 1 minute
 - Example call: `source swurm_07_MNIloc.sh s001 lh FBO`
 
-Prior to the next to steps:
-`interact -X -t 2:00:00`
-
-`module load matlab`
-
-`matlab` -- A MATLAB GUI will open
+**Prior to the next to steps:**
+- `interact -X -t 2:00:00`
+ - `module load matlab`
+- `matlab` -- A MATLAB GUI will open
 
 `run_08_probROIs.m`
 - Run in MATLAB and uses [MRIread](https://surfer.nmr.mgh.harvard.edu/fswiki/CoordinateSystems) and [MRIwrite](https://surfer.nmr.mgh.harvard.edu/fswiki/CoordinateSystems)
