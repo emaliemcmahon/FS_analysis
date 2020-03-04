@@ -72,3 +72,14 @@ mkcontrast-sess -analysis ${loc}-surface-${hemi}-sm5 \
 -contrast fixation -a 1 -a 2
 
 fi
+
+if [ ${loc} == amodal ]
+then
+
+mkcontrast-sess -analysis ${loc}-surface-${hemi}-sm5 \
+-contrast interaction -a 1 -c 2
+
+mkcontrast-sess -analysis ${loc}-surface-${hemi}-sm5 \
+-contrast fixation -a 1 -a 2
+
+fi

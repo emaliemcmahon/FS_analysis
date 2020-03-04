@@ -31,6 +31,7 @@ You create all the folders in `studies/`.
 - Removes the face from the MPRAGE
 - Inputs are the subject name and folder name of the anatomical run 
 - Must be done locally for same reason as above
+- FS `mri_deface` has been deprecated, so if there is an error, there is not good support to solve the problem. [pydeface ](https://github.com/poldracklab/pydeface) may be a good alternative although FSL is a dependency.
 - Example call: `source run_02_deface.sh s001 002`
 
 `run_03_reconall.sh`

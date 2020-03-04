@@ -2,12 +2,12 @@ sid=$1
 
 cd  /Users/emcmaho7/Desktop/mri_data/studies/cont_actions/rawdata/${sid}
 
-dcm2niix *_2_1.par
+dcm2niix *mprage*.par
 mkdir -p ../../unpackdata/${sid}/3danat/002
 mv *.nii ../../unpackdata/${sid}/3danat/002/T1.nii
 mv *.json ../../unpackdata/${sid}/3danat/002/T1.json
 
-for irun in {3..20};
+for irun in {3..24};
 do
 dcm2niix *_${irun}_1.par
 
