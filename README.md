@@ -121,19 +121,19 @@ You create all the folders in `studies/`.
 - Done locally
 - Example call: `source check_registration.sh s001`
 
-`check_ROIs.sh`
-- Uses [tksurferfv](https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/5.3.0-patch/tksurferfv)
-- Inputs are the subject number, hemisphere, ROI, and contrast
-- Done after `run_08_probROIs.sh` and after the data has been transferred from MARCC to your local machine
-- Done locally
-- Example call: 
-
 `check_motion.sh`
 - Uses [plot-twf-sess](https://surfer.nmr.mgh.harvard.edu/fswiki/plot-twf-sess)
 - Input is the subject number
 - Done after `run_04_preproc.sh`
 - Done on MARCC in an interactive session, but the png file that is created in `unpackdata/${sid}/bold/` will not open
 - Example call: `source check_motion.sh s001`
+
+`check_ROIs.sh`
+- Uses [tksurferfv](https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/5.3.0-patch/tksurferfv)
+- Inputs are the subject number, hemisphere, ROI, and contrast
+- Done after `run_08_probROIs.sh` and after the data has been transferred from MARCC to your local machine
+- Done locally
+- Example call: 
 
 #
 Licensed with [MIT License](/LICENSE)
