@@ -87,7 +87,7 @@ You create all the folders in `studies/`.
 - Example call: `source swurm_07_MNIloc.sh s001 lh FBO`
 
 **Prior to the next to steps:**
-- On the MARCC login nodes: `interact -X -t 2:00:00`
+- On the MARCC login node: `interact -X -t 2:00:00`
  - `module load matlab`
 - `matlab` -- A MATLAB GUI will open
 
