@@ -3,6 +3,6 @@ sid=$1
 ml freesurfer
 ml matlab
 ml gnuplot
-source SetUpFreesurfer.sh
+source SetUpFreeSurfer.sh
 
 plot-twf-sess -s ${sid} -df sessdir -fsd bold -mc

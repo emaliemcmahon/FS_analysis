@@ -2,8 +2,8 @@ mkcontrast-sess log file
 $Id: mkcontrast-sess,v 1.19 2015/12/10 22:51:30 zkaufman Exp $
 $0
 Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
-Wed Mar  4 15:39:15 EST 2020
--analysis amodal-surface-rh-sm5 -contrast fixation -a 1 -a 2
+Thu Mar  5 15:18:19 EST 2020
+-analysis biomotion-surface-rh-sm5 -contrast fixation -a 1 -a 2 -a 3 -a 4
 /software/apps/freesurfer/6.0.0/fsfast/bin/mkcontrast
-Condition Weights: .50000000000000000000 .50000000000000000000
-Wed Mar  4 15:39:26 EST 2020
+Condition Weights: .25000000000000000000 .25000000000000000000 .25000000000000000000 .25000000000000000000
+Thu Mar  5 15:18:28 EST 2020

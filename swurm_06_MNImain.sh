@@ -1,8 +1,12 @@
 subj=$1
-hemi=$2
+
+allHemis=(lh rh)
+
+for hemi in ${allHemis[@]}; do
 
 toppath=../unpackdata/${subj}/bold/maintask-surface-${hemi}-sm0
 
 for path in ${toppath}/*/ ; do
-    sbatch run_08_MNImain.sh ${subj} ${hemi} ${path}
+    sbatch run_06_MNImain.sh ${subj} ${hemi} ${path}
+done
 done

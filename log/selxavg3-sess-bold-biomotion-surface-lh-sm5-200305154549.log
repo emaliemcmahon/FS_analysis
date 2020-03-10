@@ -1,0 +1,303 @@
+selxavg3-sess log file
+/software/apps/freesurfer/6.0.0/fsfast/bin/selxavg3-sess
+-s s002 -df sessdir -analysis biomotion-surface-lh-sm5 -svres
+$Id: selxavg3-sess,v 1.68 2016/05/10 03:24:18 greve Exp $
+uid=3996(emcmaho7@jhu.edu) gid=1405(lisik3) groups=1405(lisik3),1502(mbonner5)
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Thu Mar  5 15:45:50 EST 2020
+preproc-sess -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -a biomotion-surface-lh-sm5 -nolog
+--------------------------------------------------------------
+preproc-sess logfile is /dev/null
+--------------------------------------------------------------
+$Id: preproc-sess,v 1.64.2.1 2016/08/02 21:19:09 greve Exp $
+emcmaho7@jhu.edu
+setenv FREESURFER_HOME /software/apps/freesurfer/6.0.0
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/preproc-sess
+-s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -a biomotion-surface-lh-sm5 -nolog
+Thu Mar  5 15:45:50 EST 2020
+instem   f 
+mc   1     f fmcpr 
+stc  0     fmcpr
+sm   0   
+mask 1   brain
+s002 Template -----------------------------
+mktemplate-sess -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -rlf biomotion.rlf -nolog -update
+ 
+Session: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 ----------------
+Thu Mar  5 15:45:50 EST 2020
+Detected input format at nii
+s002 Update not needed
+  Run: 013 ----------------
+  Thu Mar  5 15:45:50 EST 2020
+  s002 013 Update not needed
+  Run: 022 ----------------
+  Thu Mar  5 15:45:50 EST 2020
+  s002 022 Update not needed
+Thu Mar  5 15:45:50 EST 2020
+mktemplate-sess completed 
+s002 Registration -----------------------------
+register-sess -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -delete-dat -dof 6 -bold -rlf biomotion.rlf -per-run -nolog -update -init-coreg
+--------------------------------------------------------------
+register-sess logfile is /dev/null
+--------------------------------------------------------------
+Thu Mar  5 15:45:50 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/register-sess -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -delete-dat -dof 6 -bold -rlf biomotion.rlf -per-run -nolog -update -init-coreg
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+ 
+Session: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 ----------------
+Thu Mar  5 15:45:50 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002
+  Run: 013 ----------------
+Thu Mar  5 15:45:50 EST 2020
+Update not needed
+  Run: 022 ----------------
+Thu Mar  5 15:45:51 EST 2020
+Update not needed
+Thu Mar  5 15:45:51 EST 2020
+register-sess completed 
+s002 Mask ------------------------
+mkbrainmask-sess -maskstem brain -fsd bold -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -per-run -rlf biomotion.rlf -nolog -update
+------------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 
+Thu Mar  5 15:45:51 EST 2020
+s002 Update not needed for session-level mask
+s002 Update not needed for run 013 mask
+s002 Update not needed for run 022 mask
+s002 Update not needed for run 013 meanval
+s002 Update not needed for run 022 meanval
+Thu Mar  5 15:45:51 EST 2020
+mkbrainmask-sess done
+s002 MC -----------------------------
+mc-sess -fstem f -fmcstem fmcpr -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -rlf biomotion.rlf -per-run -nolog -update
+Logfile is /dev/null
+-------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 
+RunList: 013 022
+s002 013 Update not needed
+s002 022 Update not needed
+
+
+Thu Mar  5 15:45:51 EST 2020
+mc-sess completed SUCCESSFULLY
+s002 To Surface -----------------------------
+rawfunc2surf-sess -fwhm 5 -s s002 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -hemi lh -self -rlf biomotion.rlf -nolog -update -per-run
+instem fmcpr
+outstem fmcpr.sm5.self.hemi
+------------------------------ 
+1/1 s002
+  1/1 s002 013 lh ---------
+    Thu Mar  5 15:45:51 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/013/masks/brain.self.lh.pr.nii.gz does not need updating
+  1/1 s002 022 lh ---------
+    Thu Mar  5 15:45:51 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/022/masks/brain.self.lh.pr.nii.gz does not need updating
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/masks/brain.self.lh.pr.nii.gz does not need updating
+  1/1 s002 013 lh ---------
+    Thu Mar  5 15:45:51 EST 2020
+    s002 013 Update not needed
+  1/1 s002 022 lh ---------
+    Thu Mar  5 15:45:51 EST 2020
+    s002 022 Update not needed
+
+Thu Mar  5 15:45:51 EST 2020
+rawfunc2surf-sess completed 
+----------------------------------------
+Started at Thu Mar 5 15:45:50 EST 2020
+Ended   at Thu Mar  5 15:45:51 EST 2020
+preproc-sess done
+-------------------------------------------
+1/1 /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002 
+Thu Mar  5 15:45:52 EST 2020
+anadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/biomotion-surface-lh-sm5
+    s002 Update needed
+MLF is /tmp/selxavg3-sess-306055.m
+------------------------------------------
+% Thu Mar  5 15:45:51 EST 2020  
+% /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis  
+%  biomotion-surface-lh-sm5  
+which fast_selxavg3
+which fast_ldanaflac
+which MRIread
+  
+  
+fast_selxavg3b('/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/biomotion-surface-lh-sm5/sxa3.config.txt')
+if(~fast_fileexists('/tmp/selxavg3-sess-306055.ok')); quit; end
+%--------------------------------
+  
+  
+quit;
+------------------------------------------
+------------------------------------------
+------- matlab output --------------------
+MATLAB is selecting SOFTWARE OPENGL rendering.
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2019 The MathWorks, Inc.
+                  R2019a (9.6.0.1072779) 64-bit (glnxa64)
+                               March 8, 2019
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> /software/apps/freesurfer/6.0.0/fsfast/toolbox/fast_selxavg3.m
+>> /software/apps/freesurfer/6.0.0/fsfast/toolbox/fast_ldanaflac.m
+>> /software/apps/freesurfer/6.0.0/matlab/MRIread.m
+>> >> >> starting fast_selxavg3b
+
+
+#@# s002 ###############################
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002
+-------------------------
+$Id: fast_selxavg3b.m,v 1.4 2016/05/04 22:16:47 greve Exp $
+-------------------------
+outtop = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata
+Extension format = nii.gz
+INFO: key nSliceGroups unrecognized, line 12, skipping
+ 1 bio_scrambled.mat
+ 2 bio_translation.mat
+ 3 fixation.mat
+ 4 motion_static.mat
+Excluding 2 points
+nruns = 2
+autostimdur = 
+
+
+outanadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/biomotion-surface-lh-sm5
+Excluding 2 points
+Excluding 2 points
+parfiles condition id list:  1  2  3  4 
+Found 135564/143568 (94.4) voxels in mask 1
+Creating Design Matrix
+ ... creation time =  0.005 sec
+DoMCFit = 1
+ntptot = 422, nX = 18, DOF = 404
+Saving X matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/biomotion-surface-lh-sm5/Xtmp.mat
+XCond = 226.861 (normalized)
+Computing compensation for resdual AR1 bias
+ 1  -0.5  -0.499748    (t=0.019271)
+ 2  -0.25  -0.26211    (t=0.028952)
+ 3  0  -0.0285773    (t=0.036239)
+ 4  0.25  0.197736    (t=0.043404)
+ 5  0.5  0.408799    (t=0.054008)
+AR1 Correction M: 0.040362 1.09739
+Computing contrast matrices
+OLS Beta Pass 
+  run 1    t= 0.0
+reading data ... 1.52434
+    Global Mean 121053.00
+  run 2    t= 2.4
+reading data ... 1.54622
+    Global Mean 114240.00
+Global In-Mask Mean = 117646 (111664)
+Rescale Target = 100
+RescaleFactor = 0.000850004
+OLS Residual Pass 
+  run 1    t= 0.0
+reading data ... 1.53899
+Saving rho1
+  run 2    t= 3.8
+reading data ... 1.54376
+Saving rho1
+Smoothing ACF
+/software/apps/freesurfer/6.0.0/bin/mris_fwhm --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/biomotion-surface-lh-sm5/mask.nii.gz --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/biomotion-surface-lh-sm5/rho1mn.nii.gz --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/biomotion-surface-lh-sm5/rho1mn.sm.nii.gz --fwhm 20.000000 --smooth-only --s s002 --hemi lh --sd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+s002 lh white
+Number of vertices 143568
+Number of faces    287132
+Total area         98667.226562
+GroupSurface 0
+AvgVtxArea       0.687251
+AvgVtxDist       0.906255
+StdVtxDist       0.253760
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/biomotion-surface-lh-sm5/mask.nii.gz
+Found 135564 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=20.000000, gstd=8.493218, niters=215 
+Only smoothing, so saving and exiting now
+
+Found 0 voxels with corrected AR1 > 0.90
+Whitening
+Computing whitening matrices
+Alloc Sinv: 422 422 30 ...  done t = 0.002521 sec
+  seg   1   4519  nrho1 = 0.145
+  seg   2   4519  nrho1 = 0.206
+  seg   3   4519  nrho1 = 0.272
+  seg   4   4519  nrho1 = 0.325
+  seg   5   4519  nrho1 = 0.365
+  seg   6   4519  nrho1 = 0.388
+  seg   7   4519  nrho1 = 0.407
+  seg   8   4519  nrho1 = 0.424
+  seg   9   4519  nrho1 = 0.437
+  seg  10   4519  nrho1 = 0.449
+  seg  11   4519  nrho1 = 0.461
+  seg  12   4519  nrho1 = 0.471
+  seg  13   4519  nrho1 = 0.479
+  seg  14   4519  nrho1 = 0.487
+  seg  15   4519  nrho1 = 0.494
+  seg  16   4519  nrho1 = 0.501
+  seg  17   4519  nrho1 = 0.508
+  seg  18   4519  nrho1 = 0.516
+  seg  19   4519  nrho1 = 0.523
+  seg  20   4519  nrho1 = 0.531
+  seg  21   4519  nrho1 = 0.540
+  seg  22   4519  nrho1 = 0.547
+  seg  23   4519  nrho1 = 0.555
+  seg  24   4519  nrho1 = 0.562
+  seg  25   4519  nrho1 = 0.570
+  seg  26   4519  nrho1 = 0.577
+  seg  27   4519  nrho1 = 0.586
+  seg  28   4519  nrho1 = 0.599
+  seg  29   4519  nrho1 = 0.623
+  seg  30   4513  nrho1 = 0.662
+GLS Beta Pass 
+  run 1    t= 0.0
+  run 2    t= 2.2
+GLS Residual Pass 
+  run 1    t= 0.0
+  run 2    t=10.1
+Found 8004 zero-valued voxels
+Computing contrasts
+Starting contrasts
+bio_scrambled J=1 -------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/biomotion-surface-lh-sm5/bio_scrambled exists, deleting
+Saving efficiency 24.6137
+Testing Motion Correction Parameters
+  1.77  -0.81   0.75  -0.35   0.81   1.48  -1.03  -0.95  -1.16  -1.73  -0.75  -0.21  -0.12   0.55  -1.03  -0.95   1.03   0.95 
+bio_translation J=1 -------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/biomotion-surface-lh-sm5/bio_translation exists, deleting
+Saving efficiency 25.5536
+Testing Motion Correction Parameters
+  0.30  -1.13   0.88  -1.25   0.33  -0.02   0.09   0.06  -1.49  -0.50   0.34  -1.22  -0.41   1.23   0.09   0.06  -0.09  -0.06 
+fixation J=1 -------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/biomotion-surface-lh-sm5/fixation exists, deleting
+Saving efficiency 64.1069
+Testing Motion Correction Parameters
+ -1.30   0.03  -0.36   0.08   3.42  -0.21   0.10   0.15   0.86   1.01   0.81   0.09   2.19  -0.11   0.10   0.15  -0.10  -0.15 
+motion_static J=1 -------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/biomotion-surface-lh-sm5/motion_static exists, deleting
+Saving efficiency 38.923
+Testing Motion Correction Parameters
+  0.16  -0.16  -0.02   0.30   0.87   2.21  -0.39  -0.46   0.61  -0.18  -0.21   0.52   0.45  -0.10  -0.39  -0.46   0.39   0.46 
+Saving h.dat to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002/bold/biomotion-surface-lh-sm5/h.dat
+cputime-min 0.379000
+fast_selxavg3 done for /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s002
+
+ans =
+
+     0
+
+>> >> >> >> >> ------------------------------------------
+Started at Thu Mar 5 15:45:50 EST 2020
+Ended   at Thu Mar  5 15:50:11 EST 2020
+ 
+selxavg3-sess completed
+ 

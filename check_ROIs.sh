@@ -6,5 +6,5 @@ contrast=$4
 funcdir=$FUNCTIONALS_DIR/${subj}/bold
 
 
-tksurferfv fsaverage ${hemi} inflated \
--overlay ${funcdir}/${loc}-surface-${hemi}-sm5/${contrast}/mask_mni.nii.gz
+tksurferfv ${subj} ${hemi} inflated \
+-overlay ${funcdir}/${loc}-surface-${hemi}-sm5/${contrast}/sig.nii.gz

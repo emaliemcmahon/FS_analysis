@@ -1,10 +1,10 @@
-function run_11_reorgdata(subj)
+function run_09_reorgdata(subj)
 %Gets the activity in each roi for one subject.
 %Written by EG McMahon 02/24/2019
 
 %% Set up Enviornment
 if nargin < 1
-    subj = 's001';
+    subj = 's005';
 end
 addpath('/software/apps/freesurfer/6.0.0/matlab/');
 
@@ -12,17 +12,16 @@ analysis_path = pwd;
 top_path = '/home-2/emcmaho7@jhu.edu/work/mcmahoneg/mri_data_anlys/';
 bold_path = ['studies/cont_actions/unpackdata/',subj,'/bold/'];
 out_path = ['studies/cont_actions/analysis/ROI_data/',subj,'/'];
-if ~exist(out_path,'dir')
-    mkdir(out_path)
-end 
 
-localizer.names = {'FBO','biomotion','psts'};
-localizer.regions = {{'EBA','FFA','LOC'},{'BioMotion','MT'},{'pSTS'}};
-localizer.filenames = {{'EBA_surf.nii.gz','FFA_surf.nii.gz','LOC_surf.nii.gz'},...
-    {'BioMotion_STS_SubMap.nii.gz','h.MT_exvivo'},...
-    {'STS.nii.gz'}};
-localizer.contrast = {{'body_object','face_object','object_face'},...
-    {'bio_translation','motion_static'},...
+% localizer.names = {'FBO','biomotion','psts'};
+% localizer.regions = {{'EBA','FFA','LOC'},{'BioMotion','MT'},{'pSTS'}};
+% localizer.contrast = {{'body_object','face_object','object_face'},...
+%     {'bio_translation','motion_static'},...
+%     {'interaction'}};
+
+localizer.names = {'biomotion','psts'};
+localizer.regions = {{'BioMotion','MT'},{'pSTS'}};
+localizer.contrast = {{'bio_translation','motion_static'},...
     {'interaction'}};
 
 beta_name = 'beta_mni.nii.gz';
@@ -32,6 +31,9 @@ nruns = 10;
 
 %% Load Data
 cd(top_path)
+if ~exist(out_path,'dir')
+    mkdir(out_path)
+end 
 for iloc = 1:length(localizer.names)
     for ireg = 1:length(localizer.regions{iloc})
         for ir = 1:nruns

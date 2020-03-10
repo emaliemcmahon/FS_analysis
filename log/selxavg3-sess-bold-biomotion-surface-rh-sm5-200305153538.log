@@ -1,0 +1,403 @@
+selxavg3-sess log file
+/software/apps/freesurfer/6.0.0/fsfast/bin/selxavg3-sess
+-s s001 -df sessdir -analysis biomotion-surface-rh-sm5 -svres
+$Id: selxavg3-sess,v 1.68 2016/05/10 03:24:18 greve Exp $
+uid=3996(emcmaho7@jhu.edu) gid=1405(lisik3) groups=1405(lisik3),1502(mbonner5)
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Thu Mar  5 15:36:06 EST 2020
+preproc-sess -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -a biomotion-surface-rh-sm5 -nolog
+--------------------------------------------------------------
+preproc-sess logfile is /dev/null
+--------------------------------------------------------------
+$Id: preproc-sess,v 1.64.2.1 2016/08/02 21:19:09 greve Exp $
+emcmaho7@jhu.edu
+setenv FREESURFER_HOME /software/apps/freesurfer/6.0.0
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/preproc-sess
+-s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -a biomotion-surface-rh-sm5 -nolog
+Thu Mar  5 15:36:06 EST 2020
+instem   f 
+mc   1     f fmcpr 
+stc  0     fmcpr
+sm   0   
+mask 1   brain
+s001 Template -----------------------------
+mktemplate-sess -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -rlf biomotion.rlf -nolog -update
+ 
+Session: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001 ----------------
+Thu Mar  5 15:36:06 EST 2020
+Detected input format at nii
+s001 Update not needed
+  Run: 010 ----------------
+  Thu Mar  5 15:36:06 EST 2020
+  s001 010 Update not needed
+  Run: 018 ----------------
+  Thu Mar  5 15:36:06 EST 2020
+  s001 018 Update not needed
+Thu Mar  5 15:36:06 EST 2020
+mktemplate-sess completed 
+s001 Registration -----------------------------
+register-sess -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -delete-dat -dof 6 -bold -rlf biomotion.rlf -per-run -nolog -update -init-coreg
+--------------------------------------------------------------
+register-sess logfile is /dev/null
+--------------------------------------------------------------
+Thu Mar  5 15:36:07 EST 2020
+
+setenv SUBJECTS_DIR /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+cd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis
+/software/apps/freesurfer/6.0.0/fsfast/bin/register-sess -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -delete-dat -dof 6 -bold -rlf biomotion.rlf -per-run -nolog -update -init-coreg
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Linux compute0784 3.10.0-862.9.1.el7.x86_64 #1 SMP Mon Jul 16 16:29:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+ 
+Session: /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001 ----------------
+Thu Mar  5 15:36:07 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001
+  Run: 010 ----------------
+Thu Mar  5 15:36:07 EST 2020
+Update not needed
+  Run: 018 ----------------
+Thu Mar  5 15:36:07 EST 2020
+Update not needed
+Thu Mar  5 15:36:07 EST 2020
+register-sess completed 
+s001 Mask ------------------------
+mkbrainmask-sess -maskstem brain -fsd bold -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -per-run -rlf biomotion.rlf -nolog -update
+------------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001 
+Thu Mar  5 15:36:07 EST 2020
+s001 Update not needed for session-level mask
+s001 Update not needed for run 010 mask
+s001 Update not needed for run 018 mask
+s001 Update not needed for run 010 meanval
+s001 Update not needed for run 018 meanval
+Thu Mar  5 15:36:07 EST 2020
+mkbrainmask-sess done
+s001 MC -----------------------------
+mc-sess -fstem f -fmcstem fmcpr -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -rlf biomotion.rlf -per-run -nolog -update
+Logfile is /dev/null
+-------------------------------------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001 
+RunList: 010 018
+s001 010 Update not needed
+s001 018 Update not needed
+
+
+Thu Mar  5 15:36:07 EST 2020
+mc-sess completed SUCCESSFULLY
+s001 To Surface -----------------------------
+rawfunc2surf-sess -fwhm 5 -s s001 -d /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata -fsd bold -hemi rh -self -rlf biomotion.rlf -nolog -update -per-run
+instem fmcpr
+outstem fmcpr.sm5.self.hemi
+------------------------------ 
+1/1 s001
+  1/1 s001 010 rh ---------
+    Thu Mar  5 15:36:07 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.self.rh.pr.nii.gz does not need updating
+  1/1 s001 018 rh ---------
+    Thu Mar  5 15:36:07 EST 2020
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.self.rh.pr.nii.gz does not need updating
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/masks/brain.self.rh.pr.nii.gz does not need updating
+  1/1 s001 010 rh ---------
+    Thu Mar  5 15:36:07 EST 2020
+mri_vol2surf --mov /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/fmcpr.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/register.dof6.lta --trgsubject s001 --interp trilin --projfrac 0.5 --hemi rh --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/fmcpr.sm5.self.rh.nii.gz --noreshape --cortex
+srcvol = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/fmcpr.nii.gz
+srcreg = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/register.dof6.lta
+srcregold = 0
+srcwarp unspecified
+surf = white
+hemi = rh
+trgsubject = s001
+surfreg = sphere.reg
+ProjFrac = 0.5
+thickness = thickness
+reshape = 0
+interp = trilin
+float2int = round
+GetProjMax = 0
+INFO: float2int code = 0
+Done loading volume
+Input reg is LTA
+-------- original matrix -----------
+ 0.99878  -0.04720   0.01444   2.42293;
+-0.00919   0.10963   0.99393  -19.73030;
+-0.04850  -0.99285   0.10906  -1.64384;
+ 0.00000   0.00000   0.00000   1.00000;
+-------- original matrix -----------
+Loading label /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/label/rh.cortex.label
+Reading surface /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/surf/rh.white
+Done reading source surface
+Reading thickness /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/surf/rh.thickness
+Done
+Mapping Source Volume onto Source Subject Surface
+ 1 0.5 0.5 0.5
+using old
+Done mapping volume to surface
+Number of source voxels hit = 15074
+Masking with /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/label/rh.cortex.label
+Writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/fmcpr.sm5.self.rh.nii.gz
+Dim: 144338 1 1
+mris_fwhm --s s001 --hemi rh --smooth-only --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/fmcpr.sm5.self.rh.nii.gz --fwhm 5 --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/fmcpr.sm5.self.rh.nii.gz --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.self.rh.nii.gz --no-detrend
+s001 rh white
+Number of vertices 144338
+Number of faces    288672
+Total area         98255.976562
+GroupSurface 0
+AvgVtxArea       0.680735
+AvgVtxDist       0.902294
+StdVtxDist       0.251302
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/010/masks/brain.self.rh.nii.gz
+Found 136064 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=5.000000, gstd=2.123305, niters=14 
+Only smoothing, so saving and exiting now
+  1/1 s001 018 rh ---------
+    Thu Mar  5 15:36:39 EST 2020
+mri_vol2surf --mov /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/fmcpr.nii.gz --reg /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/register.dof6.lta --trgsubject s001 --interp trilin --projfrac 0.5 --hemi rh --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/fmcpr.sm5.self.rh.nii.gz --noreshape --cortex
+srcvol = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/fmcpr.nii.gz
+srcreg = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/register.dof6.lta
+srcregold = 0
+srcwarp unspecified
+surf = white
+hemi = rh
+trgsubject = s001
+surfreg = sphere.reg
+ProjFrac = 0.5
+thickness = thickness
+reshape = 0
+interp = trilin
+float2int = round
+GetProjMax = 0
+INFO: float2int code = 0
+Done loading volume
+Input reg is LTA
+-------- original matrix -----------
+ 0.99862  -0.04756   0.02213   2.92661;
+-0.01619   0.12200   0.99240  -19.82664;
+-0.04990  -0.99139   0.12106  -0.77823;
+ 0.00000   0.00000   0.00000   1.00000;
+-------- original matrix -----------
+Loading label /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/label/rh.cortex.label
+Reading surface /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/surf/rh.white
+Done reading source surface
+Reading thickness /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/surf/rh.thickness
+Done
+Mapping Source Volume onto Source Subject Surface
+ 1 0.5 0.5 0.5
+using old
+Done mapping volume to surface
+Number of source voxels hit = 15028
+Masking with /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects/s001/label/rh.cortex.label
+Writing to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/fmcpr.sm5.self.rh.nii.gz
+Dim: 144338 1 1
+mris_fwhm --s s001 --hemi rh --smooth-only --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/fmcpr.sm5.self.rh.nii.gz --fwhm 5 --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/fmcpr.sm5.self.rh.nii.gz --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.self.rh.nii.gz --no-detrend
+s001 rh white
+Number of vertices 144338
+Number of faces    288672
+Total area         98255.976562
+GroupSurface 0
+AvgVtxArea       0.680735
+AvgVtxDist       0.902294
+StdVtxDist       0.251302
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/018/masks/brain.self.rh.nii.gz
+Found 136064 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=5.000000, gstd=2.123305, niters=14 
+Only smoothing, so saving and exiting now
+
+Thu Mar  5 15:37:11 EST 2020
+rawfunc2surf-sess completed 
+----------------------------------------
+Started at Thu Mar 5 15:36:06 EST 2020
+Ended   at Thu Mar  5 15:37:11 EST 2020
+preproc-sess done
+-------------------------------------------
+1/1 /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001 
+Thu Mar  5 15:37:11 EST 2020
+anadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5
+    s001 Update needed
+MLF is /tmp/selxavg3-sess-284178.m
+------------------------------------------
+% Thu Mar  5 15:37:11 EST 2020  
+% /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/analysis  
+%  biomotion-surface-rh-sm5  
+which fast_selxavg3
+which fast_ldanaflac
+which MRIread
+  
+  
+fast_selxavg3b('/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/sxa3.config.txt')
+if(~fast_fileexists('/tmp/selxavg3-sess-284178.ok')); quit; end
+%--------------------------------
+  
+  
+quit;
+------------------------------------------
+------------------------------------------
+------- matlab output --------------------
+MATLAB is selecting SOFTWARE OPENGL rendering.
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2019 The MathWorks, Inc.
+                  R2019a (9.6.0.1072779) 64-bit (glnxa64)
+                               March 8, 2019
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> /software/apps/freesurfer/6.0.0/fsfast/toolbox/fast_selxavg3.m
+>> /software/apps/freesurfer/6.0.0/fsfast/toolbox/fast_ldanaflac.m
+>> /software/apps/freesurfer/6.0.0/matlab/MRIread.m
+>> >> >> starting fast_selxavg3b
+
+
+#@# s001 ###############################
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001
+-------------------------
+$Id: fast_selxavg3b.m,v 1.4 2016/05/04 22:16:47 greve Exp $
+-------------------------
+outtop = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata
+Extension format = nii.gz
+INFO: key nSliceGroups unrecognized, line 12, skipping
+ 1 bio_scrambled.mat
+ 2 bio_translation.mat
+ 3 fixation.mat
+ 4 motion_static.mat
+Excluding 2 points
+nruns = 2
+autostimdur = 
+
+
+outanadir = /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5
+Excluding 2 points
+Excluding 2 points
+parfiles condition id list:  1  2  3  4 
+Found 136064/144338 (94.3) voxels in mask 1
+Creating Design Matrix
+ ... creation time =  0.005 sec
+DoMCFit = 1
+ntptot = 422, nX = 18, DOF = 404
+Saving X matrix to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/Xtmp.mat
+XCond = 1164.38 (normalized)
+Computing compensation for resdual AR1 bias
+ 1  -0.5  -0.500275    (t=0.017888)
+ 2  -0.25  -0.262414    (t=0.026867)
+ 3  0  -0.0287009    (t=0.033676)
+ 4  0.25  0.197626    (t=0.040507)
+ 5  0.5  0.408239    (t=0.050748)
+AR1 Correction M: 0.0407151 1.0973
+Computing contrast matrices
+OLS Beta Pass 
+  run 1    t= 0.0
+reading data ... 1.51623
+    Global Mean 82746.60
+  run 2    t= 2.4
+reading data ... 1.51678
+    Global Mean 81956.50
+Global In-Mask Mean = 82351.6 (70287.1)
+Rescale Target = 100
+RescaleFactor = 0.00121431
+OLS Residual Pass 
+  run 1    t= 0.0
+reading data ... 1.5068
+Saving rho1
+  run 2    t= 3.6
+reading data ... 1.51634
+Saving rho1
+Smoothing ACF
+/software/apps/freesurfer/6.0.0/bin/mris_fwhm --mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/mask.nii.gz --i /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/rho1mn.nii.gz --o /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/rho1mn.sm.nii.gz --fwhm 20.000000 --smooth-only --s s001 --hemi rh --sd /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/subjects
+s001 rh white
+Number of vertices 144338
+Number of faces    288672
+Total area         98255.976562
+GroupSurface 0
+AvgVtxArea       0.680735
+AvgVtxDist       0.902294
+StdVtxDist       0.251302
+Loading mask /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/mask.nii.gz
+Found 136064 voxels in mask
+Not Polynomial detrending
+Smoothing input by fwhm=20.000000, gstd=8.493218, niters=217 
+Only smoothing, so saving and exiting now
+
+Found 0 voxels with corrected AR1 > 0.90
+Whitening
+Computing whitening matrices
+Alloc Sinv: 422 422 30 ...  done t = 0.002252 sec
+  seg   1   4535  nrho1 = 0.104
+  seg   2   4535  nrho1 = 0.179
+  seg   3   4535  nrho1 = 0.248
+  seg   4   4535  nrho1 = 0.299
+  seg   5   4535  nrho1 = 0.327
+  seg   6   4535  nrho1 = 0.348
+  seg   7   4535  nrho1 = 0.365
+  seg   8   4535  nrho1 = 0.378
+  seg   9   4535  nrho1 = 0.389
+  seg  10   4535  nrho1 = 0.400
+  seg  11   4535  nrho1 = 0.409
+  seg  12   4535  nrho1 = 0.418
+  seg  13   4535  nrho1 = 0.427
+  seg  14   4535  nrho1 = 0.435
+  seg  15   4535  nrho1 = 0.442
+  seg  16   4535  nrho1 = 0.450
+  seg  17   4535  nrho1 = 0.457
+  seg  18   4535  nrho1 = 0.463
+  seg  19   4535  nrho1 = 0.470
+  seg  20   4535  nrho1 = 0.477
+  seg  21   4535  nrho1 = 0.485
+  seg  22   4535  nrho1 = 0.491
+  seg  23   4535  nrho1 = 0.498
+  seg  24   4535  nrho1 = 0.505
+  seg  25   4535  nrho1 = 0.511
+  seg  26   4535  nrho1 = 0.519
+  seg  27   4535  nrho1 = 0.530
+  seg  28   4535  nrho1 = 0.544
+  seg  29   4535  nrho1 = 0.558
+  seg  30   4549  nrho1 = 0.576
+GLS Beta Pass 
+  run 1    t= 0.0
+  run 2    t= 2.3
+GLS Residual Pass 
+  run 1    t= 0.0
+  run 2    t= 9.7
+Found 8274 zero-valued voxels
+Computing contrasts
+Starting contrasts
+bio_scrambled J=1 -------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/bio_scrambled exists, deleting
+Saving efficiency 22.7848
+Testing Motion Correction Parameters
+ -0.03  -1.19   6.28   0.95  -2.66  -1.37   2.77   2.34   1.80  -0.39   1.81   2.18  -4.69  -1.62   2.77   2.34  -2.77  -2.34 
+bio_translation J=1 -------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/bio_translation exists, deleting
+Saving efficiency 22.772
+Testing Motion Correction Parameters
+  0.75  -0.56   1.06   0.17  -1.82   0.22   4.26   3.41   1.04  -1.21  -0.07   0.51  -1.73  -0.01   4.26   3.41  -4.26  -3.41 
+fixation J=1 -------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/fixation exists, deleting
+Saving efficiency 69.5722
+Testing Motion Correction Parameters
+  1.41   1.02  -4.95   0.32   1.82   1.20  15.43  12.92   6.48  -0.65  -3.37   0.01   3.45   0.20  15.42  12.92 -15.43 -12.92 
+motion_static J=1 -------------
+/scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/motion_static exists, deleting
+Saving efficiency 37.5243
+Testing Motion Correction Parameters
+  2.17   0.87   0.25   4.75   0.22   0.80   0.51   0.35  -1.41  -1.29  -1.03   4.79   0.03  -1.82   0.51   0.35  -0.51  -0.35 
+Saving h.dat to /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001/bold/biomotion-surface-rh-sm5/h.dat
+cputime-min 0.373667
+fast_selxavg3 done for /scratch/groups/lisik3/mcmahoneg/mri_data_anlys/studies/cont_actions/unpackdata/s001
+
+ans =
+
+     0
+
+>> >> >> >> >> ------------------------------------------
+Started at Thu Mar 5 15:36:06 EST 2020
+Ended   at Thu Mar  5 15:43:51 EST 2020
+ 
+selxavg3-sess completed
+ 

@@ -1,6 +1,6 @@
 #!/bin/bash -l
 #SBATCH
-#SBATCH --job-name=mksess_main
+#SBATCH --job-name=mksess_loc
 #SBATCH --time=2:0:0
 #SBATCH --partition=shared
 #SBATCH --nodes=1
@@ -49,13 +49,13 @@ if [ ${loc} == biomotion ]
 then
 
 mkcontrast-sess -analysis ${loc}-surface-${hemi}-sm5 \
--contrast bio_scrambled -a 1 -c 3
+-contrast bio_scrambled -a 1 -c 2
 
 mkcontrast-sess -analysis ${loc}-surface-${hemi}-sm5 \
 -contrast bio_translation -a 1 -c 4
 
 mkcontrast-sess -analysis ${loc}-surface-${hemi}-sm5 \
--contrast motion_static -a 1 -a 3 -a 4 -c 2 
+-contrast motion_static -a 1 -a 2 -a 4 -c 3 
 
 mkcontrast-sess -analysis ${loc}-surface-${hemi}-sm5 \
 -contrast fixation -a 1 -a 2 -a 3 -a 4 

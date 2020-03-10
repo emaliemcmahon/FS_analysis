@@ -1,7 +1,7 @@
 # FSBUILD freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
 # MKAVERSION $Id: mkanalysis-sess,v 1.78 2015/12/10 22:51:30 zkaufman Exp $
 # MKACMD /software/apps/freesurfer/6.0.0/fsfast/bin/mkanalysis-sess -a biomotion-surface-lh-sm5 -surface self lh -fsd bold -fwhm 5 -event-related -paradigm biomotion.para -nconditions 4 -refeventdur 16 -TR 2 -nskip 2 -polyfit 1 -spmhrf 0 -runlistfile biomotion.rlf -mcextreg -per-run -force
-# DATE Fri Feb 21 10:29:59 EST 2020
+# DATE Thu Mar  5 15:10:05 EST 2020
 
 analysis biomotion-surface-lh-sm5
 mcstem fmcpr
