@@ -38,7 +38,7 @@ You create all the folders in `studies/`.
 - Removes the face from the MPRAGE
 - Inputs are the subject name and folder name of the anatomical run 
 - Must be done locally for same reason as above
-- FS `mri_deface` has been deprecated, so if there is an error, there is not good support to solve the problem. [pydeface ](https://github.com/poldracklab/pydeface) may be a good alternative although FSL is a dependency.
+- FS `mri_deface` has been deprecated, so if there is an error, there is not good support to solve the problem. [pydeface ](https://github.com/poldracklab/pydeface) may be a good alternative although FSL is a dependency. See `run_02_pydeface.sh` for an example with 
 - Example call: `source run_02_deface.sh s001 002`
 
 `run_03_reconall.sh`
@@ -62,7 +62,7 @@ You create all the folders in `studies/`.
 - Finds the beta values for the specified analysis
 - Must be called separately for all analyses (and hemispheres)
 - Inputs are the subject name, analysis name, and `-run-wise` or nothing
-- `run-wise` is called fro the maintask only
+- `run-wise` is called for the maintask only
 - Done on MARCC
 - Takes about 15-30 minutes
 - Example call: `sbatch run_05_glm.sh s001 maintask-surface-lh-sm0 -run-wise`
@@ -96,14 +96,14 @@ You create all the folders in `studies/`.
 - Defines the ROIs using parcellations
 - Input is the subject name
 - Call in the MATLAB command line
-- Example call: `run_08_probROIs.m('s001')`
+- Example call: `run_08_probROIs('s001')`
 
 `run_09_reorgdata.m`
 - Run in MATLAB and uses [MRIread](https://surfer.nmr.mgh.harvard.edu/fswiki/CoordinateSystems)
 - Selects the data within each ROI and saves it in a format for further analysis
 - Input is the subject name
 - Call in the MATLAB command line
-- Example call: `run_09_reorgdata.m('s001')`
+- Example call: `run_09_reorgdata('s001')`
 
 # Checking Functions
 
@@ -133,7 +133,7 @@ You create all the folders in `studies/`.
 - Inputs are the subject number, hemisphere, ROI, and contrast
 - Done after `run_08_probROIs.sh` and after the data has been transferred from MARCC to your local machine
 - Done locally
-- Example call: 
+- Example call: `source check_ROIs.sh s001 lh biomotion motion_translation`
 
 #
 Licensed with [MIT License](/LICENSE)

@@ -5,6 +5,5 @@ contrast=$4
 
 funcdir=$FUNCTIONALS_DIR/${subj}/bold
 
-
 tksurferfv ${subj} ${hemi} inflated \
 -overlay ${funcdir}/${loc}-surface-${hemi}-sm5/${contrast}/sig.nii.gz
