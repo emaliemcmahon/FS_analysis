@@ -1,2 +1,3 @@
-**/ROI_data
-**/logs
+*.log
+/ROI_data
+/logs
