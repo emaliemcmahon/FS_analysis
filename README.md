@@ -114,6 +114,13 @@ You create all the folders in `studies/`.
 - Done locally
 - Example call: `source check_surf.sh s001`
 
+`check_registration.sh`
+- Uses [freeview](https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/OutputData_freeview)
+- Input is the subject number
+- Done after `run_04_preproc.sh`
+- Done locally
+- Example call: `source check_registration.sh s001`
+
 `check_ROIs.sh`
 - Uses [tksurferfv](https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/5.3.0-patch/tksurferfv)
 - Inputs are the subject number, hemisphere, ROI, and contrast
