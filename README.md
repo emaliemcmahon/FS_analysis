@@ -115,7 +115,7 @@ You create all the folders in `studies/`.
 - Example call: `source check_surf.sh s001`
 
 `check_registration.sh`
-- Uses [freeview](https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/OutputData_freeview)
+- Uses [tkregisterfv](https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MultiModalRegistration_freeview)
 - Input is the subject number
 - Done after `run_04_preproc.sh`
 - Done locally
