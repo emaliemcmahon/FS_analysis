@@ -22,12 +22,6 @@ You create all the folders in `studies/`.
 
 # Pre-process Functions
 
-`run_00_mksess_loc.sh` and `run_00_mksess_main.sh` 
-- Calls [mkanalysis-sess](https://surfer.nmr.mgh.harvard.edu/fswiki/mkanalysis-sess) and [mkcontrast-sess](http://freesurfer.net/fswiki/mkcontrast-sess)
-- These call freesurfer functions that define how the analysis will be conducted. They only have to be one one for the entire project. 
-- Example call:  `source run_00_mkses_main.sh s001 lh`
-- Should be done on MARCC
-
 `run_01_unpackdata.sh`
 - Calls [dcm2niix](https://github.com/rordenlab/dcm2niix)
 - Must be preformed locally because the rawdata has face and MARCC is not HIPAA compliant
@@ -56,6 +50,14 @@ You create all the folders in `studies/`.
 - Performed on MARCC
 - Takes about an hour
 - Example call: `sbatch run_04_preproc.sh s001`
+
+# Single Subject Analysis
+
+`run_00_mksess_loc.sh` and `run_00_mksess_main.sh` 
+- Calls [mkanalysis-sess](https://surfer.nmr.mgh.harvard.edu/fswiki/mkanalysis-sess) and [mkcontrast-sess](http://freesurfer.net/fswiki/mkcontrast-sess)
+- These call freesurfer functions that define how the analysis will be conducted. They only have to be one one for the entire project. 
+- Example call:  `source run_00_mkses_main.sh s001 lh`
+- Should be done on MARCC
 
 `run_05_glm.sh`
 - Calls [selxavg3-sess](https://surfer.nmr.mgh.harvard.edu/fswiki/selxavg3-sess)
